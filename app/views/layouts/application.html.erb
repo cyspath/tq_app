@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TqApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+  <div class="">
+    <% if user_signed_in? %>
+      Welcome
+      <%= link_to current_user.display_name, "/profile" %><br>
+      <%= link_to 'log out', destroy_user_session_path, method: 'DELETE' %>
+    <% else %>
+      Please
+        <%= link_to 'login', new_user_session_path %>
+        or
+        <%= link_to 'signup', new_user_registration_path %>
+    <% end %>
+  </div>
+
+  <%= yield %>
+
+</body>
+</html>

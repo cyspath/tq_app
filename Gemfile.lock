@@ -202,7 +202,7 @@ DEPENDENCIES
   rails (= 4.2.4)
   rails_12factor
   react-rails (~> 1.4.0)
-  react-router-rails
+  react-router-rails (~> 0.13.3.2)
   sass-rails (~> 5.0)
   spring
   sprockets

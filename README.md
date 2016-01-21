@@ -1,4 +1,7 @@
-### URL (heroku)
+### Heroku
 http://tongqu.herokuapp.com/
-//= require react_router
-//= require react_router_ujs
+
+#### production.rb (environment)
+`config.assets.compile = true`
+
+To troubleshoot heroku asset precompile issues locally type `RAILS_ENV=production bundle exec rake assets:precompile --trace`

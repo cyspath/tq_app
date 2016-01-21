@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
+  get 'profile' => 'profile#index'
+
   devise_for :users
 
 

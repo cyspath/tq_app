@@ -8,8 +8,8 @@ gem 'lodash-rails'
 # gem 'sprockets-es6', '0.6.1'
 gem 'faker'
 gem 'newrelic_rpm'
- 
-# gem 'sprockets', '>= 3.0.0'
+
+gem 'sprockets', '>= 3.0.0'
 # gem 'sprockets-es6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

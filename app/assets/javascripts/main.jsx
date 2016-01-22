@@ -12,10 +12,10 @@ var App = React.createClass({
             <nav>
               <ul>
                 <li>
-                  <Link to='/groups'>GROUPS PAGE</Link>
+                  <Link to='groups'>GROUPS PAGE</Link>
                 </li>
                 <li>
-                  <Link to='/profile'>PROFILE PAGE</Link>
+                  <Link to='profile'>PROFILE PAGE</Link>
                 </li>
               </ul>
             </nav>
@@ -27,9 +27,15 @@ var App = React.createClass({
 });
 
 this.AppRoutes = (
-  <Route handler={App}>
-    <Route path='/groups' handler={Groups} />
-    <Route path='/profile' handler={User} />
+  <Route path='/' handler={App}>
+    <Route name="groups" path='/groups' handler={GroupsIndex}>
+    </Route>
+    <Route name="profile" path='/profile' handler={User} />
 
   </Route>
 );
+
+
+// ReactRouter.run(this.AppRoutes, function (Handler) {
+//   ReactDOM.render(<Handler/>, document.getElementById('react'));
+// });

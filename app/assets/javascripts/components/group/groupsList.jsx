@@ -4,7 +4,7 @@ var GroupsList = React.createClass({
       return <Group key={group.id} {...group} />
     })
     return (
-      <div>
+      <div className="groups-index__container-inner" >
         { groups }
       </div>
     )

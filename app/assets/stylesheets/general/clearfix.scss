@@ -1,7 +1,13 @@
 div {
-  overflow: auto;
+  overflow: hidden;
   zoom: 1;
-  height: auto;
+  box-sizing: border-box;
+  position: relative;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
 }
 
 .clearfix:after {

@@ -9,16 +9,6 @@ var App = React.createClass({
   render: function() {
     return (
           <div className="main" >
-            <nav className="navbar__container" >
-              <div className="navbar__content" >
-                <div>
-                  <Link to='groups'>GROUPS PAGE</Link>
-                </div>
-                <div>
-                  <Link to='profile'>PROFILE PAGE</Link>
-                </div>
-              </div>
-            </nav>
             <RouteHandler {...this.props}/>
           </div>
         );
@@ -28,8 +18,7 @@ var App = React.createClass({
 
 this.AppRoutes = (
   <Route path='/' handler={App}>
-    <Route name="groups" path='/groups' handler={GroupsIndex}>
-    </Route>
+    <Route name="groups" path='/groups' handler={GroupsIndex} />
     <Route name="profile" path='/profile' handler={User} />
 
   </Route>

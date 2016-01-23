@@ -8,8 +8,10 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     resources :groups
-
+    resources :user, only: [:index]
   end
+
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

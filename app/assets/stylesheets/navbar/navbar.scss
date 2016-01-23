@@ -1,0 +1,9 @@
+.navbar__container {
+  position: fixed;
+  width: 100%;
+}
+
+.navbar__content {
+  margin: 0 auto;
+  max-width: $content-width;
+}

@@ -2,11 +2,11 @@ var Group = React.createClass({
 
   render: function() {
     return (
-      <div>
-        <img style={ { width: '50px', height: 'auto' }} src={this.props.avatar} />
+      <div className="groups-index__item">
+        <img src={this.props.avatar} />
         <span className="title">{this.props.name}</span>
-          <time>{this.props.formattedDate}</time>
-          <p>{this.props.body}</p>
+          <div>{this.props.created_at}</div>
+          <p>{this.props.description}</p>
       </div>
     )
   }

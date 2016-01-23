@@ -56,7 +56,7 @@ updated_at: "2016-01-22T02:56:48.804Z"
         "GROUPS!"
         <Link to="/profile">User profile</Link>
 
-        <GroupsList groups={this.state.groupsList}/>
+        <GroupsList className="groups-index__container" groups={this.state.groupsList}/>
       </div>
     )
   }

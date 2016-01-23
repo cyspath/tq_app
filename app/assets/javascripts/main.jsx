@@ -8,16 +8,16 @@ var RouteHandler = ReactRouter.RouteHandler;
 var App = React.createClass({
   render: function() {
     return (
-          <div>
-            <nav>
-              <ul>
-                <li>
+          <div className="main" >
+            <nav className="navbar__container" >
+              <div className="navbar__content" >
+                <div>
                   <Link to='groups'>GROUPS PAGE</Link>
-                </li>
-                <li>
+                </div>
+                <div>
                   <Link to='profile'>PROFILE PAGE</Link>
-                </li>
-              </ul>
+                </div>
+              </div>
             </nav>
             <RouteHandler {...this.props}/>
           </div>

@@ -4,10 +4,18 @@ var Group = React.createClass({
     return (
       <div className="groups-index__item-container">
         <img src={this.props.avatar} />
-        <div className="overlay" ></div>
-        <span className="title">{this.props.name}</span>
-          <div>{this.props.created_at}</div>
-          <p>{this.props.description}</p>
+
+        <div className="overlay" >
+
+          <div className="overlay__text-container" >
+            <div className="large-text">{this.props.name}</div>
+            <div className="small-text" >
+              我们是 {Math.floor((Math.random() * 2000) + 1)} 个同兴趣者
+            </div>
+          </div>
+
+        </div>
+
       </div>
     )
   }

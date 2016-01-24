@@ -1,0 +1,30 @@
+div {
+  overflow: hidden;
+  zoom: 1;
+  box-sizing: border-box;
+  position: relative;
+}
+
+a {
+  color: $blue-link;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: $blue-link-hover;
+}
+
+.clearfix:after {
+  display: block;
+  content: " ";
+  clear: both;
+
+  font-size: 0;
+  visibility: hidden;
+  height: 0;
+}
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */

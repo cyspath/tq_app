@@ -1,13 +1,19 @@
 source 'https://rubygems.org'
 
 gem 'devise'
-gem 'react-rails'
+gem 'react-rails', '~> 1.4.0'
 gem 'flux-rails-assets'
+gem 'react-router-rails', '~>0.13.3.2'
 gem 'lodash-rails'
-# gem 'sprockets-es6', '0.6.1'
-gem 'faker'
 gem 'newrelic_rpm'
 
+# generator for fake data
+gem 'faker'
+
+gem 'sprockets-rails', :require => 'sprockets/railtie'
+# gem 'sprockets'
+# gem 'sprockets-es6'
+# gem 'sprockets-es6', '0.6.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'

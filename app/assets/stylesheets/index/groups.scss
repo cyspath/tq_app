@@ -1,0 +1,49 @@
+.groups-index__container {
+  @include content-container;
+  .groups-index__container-inner {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+}
+
+.groups-index__item-container {
+  width: 225px;
+  height: 180px;
+  float: left;
+  border: 1px solid $grey-3;
+  border-radius: 5px;
+  margin: 10px;
+
+  .overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-image: -webkit-linear-gradient(rgba(15,20,31,0) 0,rgba(15,20,31,.1) 25%,rgba(15,20,31,.8) 100%);
+    background-image: linear-gradient(rgba(15,20,31,0) 0,rgba(15,20,31,.1) 25%,rgba(15,20,31,.8) 100%);
+  }
+
+  .overlay__text-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+    .large-text {
+      margin-bottom: 8px;
+      font-size: 23px;
+      color: $grey-2;
+      line-height: 1.2em;
+    }
+    .small-text {
+      font-size: 12px;
+      color: $grey-4;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+  }
+}

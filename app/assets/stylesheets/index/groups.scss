@@ -1,5 +1,6 @@
 .groups-index__container {
   @include content-container;
+  overflow: visible;
   .groups-index__container-inner {
     margin-left: -10px;
     margin-right: -10px;
@@ -10,9 +11,21 @@
   width: 225px;
   height: 180px;
   float: left;
-  border: 1px solid $grey-3;
-  border-radius: 5px;
+
+  border-top: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+
   margin: 10px;
+
+  overflow: hidden;
+  position: relative;
+
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+   -moz-box-shadow: 0 10px 6px -6px #777;
+        box-shadow: 0 10px 6px -6px #777;
+
+  transition: all .2s ease-in-out;
 
   .overlay {
     width: 100%;
@@ -30,12 +43,16 @@
     left: 0;
     padding: 20px;
     .large-text {
+      @include text-shadow__dark-medium;
       margin-bottom: 8px;
       font-size: 23px;
+      font-family: $kaiti;
       color: $grey-2;
       line-height: 1.2em;
     }
     .small-text {
+      @include text-shadow__dark-medium;
+
       font-size: 12px;
       color: $grey-4;
     }
@@ -46,4 +63,11 @@
     height: auto;
     min-height: 100%;
   }
+}
+
+
+.groups-index__item-container:hover {
+  cursor: hand;
+  cursor: pointer;
+  transform: scale(1.1);
 }

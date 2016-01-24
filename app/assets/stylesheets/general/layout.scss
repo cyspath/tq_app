@@ -1,0 +1,13 @@
+$content-width: 960px;
+
+
+.main {
+  background-color: $grey-2;
+}
+
+@mixin content-container {
+  max-width: $content-width;
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+}

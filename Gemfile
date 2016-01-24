@@ -5,8 +5,10 @@ gem 'react-rails', '~> 1.4.0'
 gem 'flux-rails-assets'
 gem 'react-router-rails', '~>0.13.3.2'
 gem 'lodash-rails'
-gem 'faker'
 gem 'newrelic_rpm'
+
+# generator for fake data
+gem 'faker'
 
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 # gem 'sprockets'

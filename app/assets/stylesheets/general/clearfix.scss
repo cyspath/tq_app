@@ -6,8 +6,12 @@ div {
 }
 
 a {
-  color: inherit;
+  color: $blue-link;
   text-decoration: inherit;
+}
+
+a:hover {
+  color: $blue-link-hover;
 }
 
 .clearfix:after {

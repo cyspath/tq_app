@@ -1,22 +1,54 @@
 <nav class="navbar__container">
   <div class="navbar__content">
-    <a href="#/groups">
+
+    <a href="/">
       <div class="navbar__logo">
         <img alt="同趣网" src="<%= image_url("tqlogo.png")%>">
       </div>
+    </a>
+
+    <a href="#/groups">
       <div class="navbar__action-btn">
-        寻找群
+        <p class="large-text">
+          探索
+        </p>
+        <p class="small-text">
+          您感兴趣的群
+        </p>
       </div>
     </a>
-    <% if user_signed_in? %>
-    Welcome
-    <%= link_to current_user.display_name, "/profile" %><br>
-    <%= link_to 'log out', destroy_user_session_path, method: 'DELETE' %>
-    <% else %>
-    Please
-    <%= link_to 'login', new_user_session_path %>
-    or
-    <%= link_to 'signup', new_user_registration_path %>
-    <% end %>
+
+    <a href="#/groups">
+      <div class="navbar__action-btn start-a-group">
+        <p class="large-text">
+          创建
+        </p>
+        <p class="small-text">
+          一个属于您的群
+        </p>
+      </div>
+    </a>
+
+    <a href="#/profile">
+      <div class="navbar__user-container">
+        <% if user_signed_in? %>
+
+          <% if current_user %>
+            <div><%= current_user.display_name %></div>
+          <% else %>
+            新朋友，欢迎浏览同趣网
+          <% end %>
+
+          <%= link_to "profile", "/profile" %>&nbsp;
+          <%= link_to '退出', destroy_user_session_path, method: 'DELETE' %>
+        <% else %>
+          请 &nbsp;
+          <%= link_to '登录', new_user_session_path %>
+          &nbsp; 或 &nbsp;
+          <%= link_to '注册', new_user_registration_path %>
+        <% end %>
+      </div>
+    </a>
+
   </div>
 </nav>

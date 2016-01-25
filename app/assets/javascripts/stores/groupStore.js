@@ -10,7 +10,7 @@ var GroupStore = new _.extend({}, EventEmitter.prototype, {
   },
 
   addGroup: function(group) {
-    this._groups[group.id || this._groups.length] = group
+    this._groups.unshift(group)
   },
 
   // upvoteGroup: function(group) {
@@ -21,11 +21,11 @@ var GroupStore = new _.extend({}, EventEmitter.prototype, {
   //   delete(this._groups[group.id])
   // },
 
-  groups: function(parentId) {
-    return _.chain(
-      this._groups.filter(function(c) { return c && c.parent_id === parentId })
-    ).sortBy('rank').reverse().value()
-  },
+  // groups: function(parentId) {
+  //   return _.chain(
+  //     this._groups.filter(function(c) { return c && c.parent_id === parentId })
+  //   ).sortBy('rank').reverse().value()
+  // },
 
   addChangeListener: function(callback) {
     this.on(Constants.CHANGE_EVENT, callback)

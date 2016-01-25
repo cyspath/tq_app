@@ -1,12 +1,5 @@
 var GroupActions = new _.extend({}, {
 
-  // setComments: function(params) {
-  //   AppDispatcher.dispatch({
-  //     actionType: Constants.SET_COMMENTS,
-  //     comments: params
-  //   })
-  // },
-
   getGroups: function() {
     Api.get('/api/groups').then(function(groups) {
       AppDispatcher.dispatch({
@@ -16,40 +9,35 @@ var GroupActions = new _.extend({}, {
     }.bind(this))
   },
 
-  addComment: function(params) {
-    Api
-      .post(
-        '/restaurants/' + this.restaurantId + '/comments',
-        { comment: params}
-      )
-      .then(function(comment) {
+  addGroup: function(params) {
+    Api.post('/api/groups', { group: params}).then(function(group) {
         window.AppDispatcher.dispatch({
-          actionType: Constants.ADD_COMMENT,
-          comment: comment
+          actionType: Constants.ADD_GROUP,
+          group: group
         });
       })
   },
 
-  // upvoteComment: function(comment) {
+  // upvoteGroup: function(comment) {
   //   Api
   //     .put(
   //       '/restaurants/' + this.restaurantId + '/comments/' + comment.id + '/upvote')
   //     .then(function(comment) {
   //       window.AppDispatcher.dispatch({
-  //         actionType: Constants.UPVOTE_COMMENT,
+  //         actionType: Constants.UPVOTE_GROUP,
   //         comment: comment
   //       });
   //     })
   // },
   //
   //
-  // deleteComment: function(comment) {
+  // deleteGroup: function(comment) {
   //   Api
   //     .delete('/restaurants/' + this.restaurantId + '/comments/' + comment.id)
-  //     .then(function(deletedComment) {
+  //     .then(function(deletedGroup) {
   //       window.AppDispatcher.dispatch({
-  //         actionType: Constants.DELETE_COMMENT,
-  //         comment: deletedComment
+  //         actionType: Constants.DELETE_GROUP,
+  //         comment: deletedGroup
   //       });
   //     })
   // }

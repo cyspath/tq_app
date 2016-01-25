@@ -4,7 +4,7 @@ group_names = ["好男儿不怕高山峰", "上班族咖啡谈心群", "周末�
 
 i = 0
 
-6.times do
+30.times do
   Group.create!(
     name: group_names[i],
     avatar: "https://cdn.tutsplus.com/photo/uploads/legacy/762_animalRU/" + (rand(50) + 1).to_s + ".jpg",
@@ -14,4 +14,5 @@ i = 0
     created_at: Faker::Time.between(DateTime.now - 20, DateTime.now)
   )
   i += 1
+  i = 0 if i == group_names.length
 end

@@ -11,7 +11,7 @@ class Api::GroupsController < ApplicationController
   end
 
   def create
-    @group = Group.new(group_params)
+    @group = Group.new(group_params.merge(author_id: current_user.id))
     if @group.save
       render json: @group
     else
@@ -35,7 +35,7 @@ class Api::GroupsController < ApplicationController
   end
 
   def group_params
-    params.require(:group).permit(:name, :author_id, :body)
+    params.require(:group).permit(:name, :location_id, :description)
   end
 
 end

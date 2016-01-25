@@ -1,0 +1,96 @@
+form {
+
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+
+  border: 1px $grey-7 solid;
+
+  margin-left:auto;
+  margin-right:auto;
+
+  max-width: 500px;
+  background: $grey-2;
+  border-radius: 20px;
+
+  font: 12px Arial, Helvetica, sans-serif;
+  color: #666;
+}
+form .form__upper {
+    padding: 10px 10px 10px 20px;
+    display: block;
+    background: $red;
+    margin-bottom: 20px;
+}
+form .form__lower {
+    padding: 10px 10px 10px 20px;
+    display: block;
+    background: $red;
+    border-bottom: 1px solid $grey-7;
+    margin-top: 20px;
+}
+form .form__upper>span {
+    display: block;
+    font-size: 30px;
+    color: white;
+    font-family: $kaiti;
+}
+
+form label>span {
+    float: left;
+    margin-top: 10px;
+    color: #5E5E5E;
+}
+form label {
+    display: block;
+    margin: 0px 0px 5px;
+}
+form label>span {
+    float: left;
+    width: 20%;
+    text-align: right;
+    padding-right: 15px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+form input[type="text"], form input[type="email"], form textarea, form select {
+    color: #888;
+    width: 68%;
+    padding: 0px 0px 0px 5px;
+    border: 1px solid #C5E2FF;
+    background: #FBFBFB;
+    outline: 0;
+    -webkit-box-shadow:inset 0px 1px 6px #ECF3F5;
+    box-shadow: inset 0px 1px 6px #ECF3F5;
+    font: 200 12px/25px;
+    height: 30px;
+    line-height:15px;
+    margin: 2px 6px 16px 0px;
+}
+form textarea{
+    height:100px;
+    padding: 5px 0px 0px 5px;
+    width: 68%;
+}
+form select {
+   appearance:none;
+    -webkit-appearance:none;
+   -moz-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: '';
+    width: 70%;
+}
+form .submit-btn {
+    padding: 10px 30px 10px 30px;
+    background: $red;
+    border: none;
+    color: #FFF;
+    box-shadow: 1px 1px 1px #4C6E91;
+    -webkit-box-shadow: 1px 1px 1px #4C6E91;
+    -moz-box-shadow: 1px 1px 1px #4C6E91;
+    text-shadow: 1px 1px 1px #5079A3;
+    font-size: 20px;
+}
+form .submit-btn:hover {
+    background: $red-lighter;
+}

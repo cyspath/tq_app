@@ -1,8 +1,8 @@
 $content-width: 960px;
 
-
 .main {
   background-color: $grey-2;
+  height: 100%;
 }
 
 @mixin content-container {

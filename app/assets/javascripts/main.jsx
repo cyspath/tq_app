@@ -17,8 +17,11 @@ var App = React.createClass({
 
 this.AppRoutes = (
   <Route path='/' handler={App} >
-    <Route name="groups" path='/groups' handler={GroupsIndex}>
-    </Route>
+
+    <Route name="groups" path='/groups' handler={GroupsIndex}></Route>
+
+    <Route path='/groups/:id' handler={GroupPage} ></Route>
+    
     <Route name="profile" path='/profile' handler={User} />
 
   </Route>

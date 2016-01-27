@@ -5,6 +5,9 @@ var EventsList = React.createClass({
     })
     return (
       <div className="events-index__container-inner" >
+        <div>
+          {moment(this.props.date).format('ddd, MMM Do')}
+        </div>
         { events }
       </div>
     )

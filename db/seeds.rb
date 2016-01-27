@@ -40,11 +40,17 @@ start_times = [
 57600]
 
 i = 1
-while i <= 10
-  date = Date.today + rand(-30..30)
+while i <= 100
+  date = Date.today + rand(-3..15)
   time = start_times.sample
+
+  arr = "环路和高速路都实现了不靠人工干预的完全自动驾驶".split("")
+  r = rand(15) + 5
+  event_name = ""
+  r.times {event_name += arr.sample}
+
   Event.create!(
-    name: "活动"+" "+i.to_s,
+    name: event_name,
     date: date,
     start_time: time,
     end_time: time + 3600,

@@ -6,6 +6,7 @@ gem 'flux-rails-assets'
 gem 'react-router-rails', '~>0.13.3.2'
 gem 'lodash-rails'
 gem 'newrelic_rpm'
+gem 'momentjs-rails'
 
 # generator for fake data
 gem 'faker'

@@ -20,10 +20,15 @@ var EventsIndex = React.createClass({
   },
 
   render: function() {
+
+    var timeFrames = this.state.eventsList.map(function(timeFrame, idx) {
+      return <EventsList key={idx} {...timeFrame} />
+    })
+
     return (
       <div className="events-index__container">
 
-        <EventsList events={this.state.eventsList}/>
+        {timeFrames}
 
         <div className="" >
           <div className="FILTER" >FILTER</div>

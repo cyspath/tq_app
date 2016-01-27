@@ -15,3 +15,5 @@ json.extract!(
 )
 
 json.set! :start_date, event.date.strftime("%b %d, %Y")
+json.set! :group_name, event.group.name
+json.set! :member_count, event.members.count

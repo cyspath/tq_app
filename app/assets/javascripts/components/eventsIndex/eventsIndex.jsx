@@ -2,7 +2,7 @@ var EventsIndex = React.createClass({
 
   getInitialState: function() {
     return {
-      eventsList: EventStore._events
+      eventsList: EventStore._allEvents
     };
   },
 
@@ -16,8 +16,7 @@ var EventsIndex = React.createClass({
   },
 
   _onChange: function() {
-    debugger
-    this.setState({ eventsList: EventStore._events });
+    this.setState({ eventsList: EventStore._allEvents });
   },
 
   render: function() {

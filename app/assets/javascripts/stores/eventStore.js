@@ -1,9 +1,9 @@
 var EventStore = new _.extend({}, EventEmitter.prototype, {
 
-  _events: [],
+  _allEvents: [],
 
   getEvents: function(events) {
-    this._events = events
+    this._allEvents = events
   },
 
   addChangeListener: function(callback) {

@@ -11,7 +11,7 @@ json.extract!(
   :owner_id,
   :group_id,
   :created_at,
-  :datetime
+  :datetime_num
 )
 
 json.set! :start_date, event.date.strftime("%b %d, %Y")

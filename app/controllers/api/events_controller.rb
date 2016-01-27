@@ -15,17 +15,12 @@ class Api::EventsController < ApplicationController
 
   def create
     # NEED TO GENERATE DATETIME FROM DATE AND START_TIME
-    datetime = generate_datetime(params[:date], params[:start_time])
-    @event = Event.new(event_params.merge(datetime: datetime, owner_id: current_user.id))
+    @event = Event.new(event_params.merge(owner_id: current_user.id))
     if @event.save
       render json: @event
     else
       render json: @event.errors.full_messages, status: 422
     end
-  end
-
-  def generate_datetime(date, time)
-    date
   end
 
   def update
@@ -52,7 +47,8 @@ class Api::EventsController < ApplicationController
       :location_name,
       :location_address,
       :description,
-      :group_id
+      :group_id,
+      :datetime_num
     )
   end
 

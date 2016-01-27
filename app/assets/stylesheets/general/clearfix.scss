@@ -6,12 +6,14 @@ div {
 }
 
 a {
-  color: $blue-link;
-  text-decoration: inherit;
+  text-decoration: none;
+  color:inherit;
 }
 
 a:hover {
-  color: $blue-link-hover;
+  color:inherit;
+  cursor: hand;
+  cursor: pointer;
 }
 
 .clearfix:after {

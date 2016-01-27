@@ -1,32 +1,26 @@
 var Event = React.createClass({
 
   render: function() {
-    var link = "/events/" + this.props.id
+    var eventLink = "/events/" + this.props.id
+    var groupLink = "/groups/" + this.props.group_id
     return (
-      <Link to={link}>
+      <div className="events-index__item-container">
 
-        <div className="events-index__item-container">
-
-          <div className="events-index__container-inner-left" >
-            {this.props.start_time}{this.props.date}
-          </div>
-
-          <div className="events-index__container-inner-right" >
-            <div>
-              {this.props.group_name}
-            </div>
-            <div>
-              {this.props.name}
-            </div>
-            <div>
-              {this.props.member_count}
-            </div>
-          </div>
-
-
+        <div className="events-index__container-inner-left" >
+          {this.props.start_time_formatted}{this.props.date}
         </div>
 
-      </Link>
+        <div className="events-index__container-inner-right" >
+          <Link to={groupLink}><div>{this.props.group_name}</div></Link>
+          <Link to={eventLink}><div>{this.props.name}</div></Link>
+
+          <div>
+            {this.props.member_count} 人会去
+          </div>
+        </div>
+
+
+      </div>
     )
   }
 });

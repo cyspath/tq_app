@@ -7,16 +7,21 @@ var Event = React.createClass({
       <div className="events-index__item-container">
 
         <div className="events-index__container-inner-left" >
-          {this.props.start_time_formatted}{this.props.date}
+          <Link to={eventLink}>
+            <div className="left" >
+              {this.props.start_time_formatted.slice(0, this.props.start_time_formatted.length - 2)}
+            </div>
+            <div className="right" >
+              {this.props.start_time_formatted.slice(this.props.start_time_formatted.length - 2)}
+            </div>
+          </Link>
         </div>
 
         <div className="events-index__container-inner-right" >
-          <Link to={groupLink}><div>{this.props.group_name}</div></Link>
-          <Link to={eventLink}><div>{this.props.name}</div></Link>
+          <Link to={groupLink}><div className="top" >{this.props.group_name}</div></Link>
+          <Link to={eventLink}><div className="mid" >{this.props.name}</div></Link>
 
-          <div>
-            {this.props.member_count} 人会去
-          </div>
+          <div className="bottom" >{this.props.member_count} 个同趣者</div>
         </div>
 
 

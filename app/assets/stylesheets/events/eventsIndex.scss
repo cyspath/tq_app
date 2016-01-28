@@ -1,13 +1,66 @@
 .events-index__container {
   @include content-container;
   overflow: visible;
-  .events-index__container-inner {
+}
 
+.events-index__container-inner {
+  width: 670px;
+}
+
+
+.events-index__time-frame__date {
+  color: #aaa;
+  font-family: $kaiti;
+  text-shadow: #fff 1px 1px 0;
+  font-size: 20px;
+  margin: 18px 0 5px;;
+}
+.events-index__time-frame__events {
+  border: 1px solid $grey-3;
+  border-radius: 3px;
+  overflow: inherit;
+  .events-index__item-container:last-child {
+    border-bottom: none;
   }
 }
 
 .events-index__item-container {
   background-color: $white;
   width: 670px;
-  margin: 10px auto;
+  min-height: 100px;
+  font-size: 13px;
+  line-height: 1.2;
+  border-bottom: 1px solid $grey-3;
+  color: $grey-5;
+}
+
+.events-index__container-inner-left {
+  float: left;
+  padding: 15px 0 15px 15px;
+  width: 100px;
+  .left {
+    float: left;
+    font-size: 15px;
+    margin-right: 3px;
+  }
+  .right {
+    float: left;
+    font-size: 10px;
+    text-decoration: underline;
+  }
+}
+
+.events-index__container-inner-right {
+  float: left;
+  padding: 15px 0 15px 15px;
+  width: 80%;
+
+  .top {
+    margin-bottom: 7px;
+  }
+  .mid {
+    color: $grey-10;
+    margin-bottom: 7px;
+    font-size: 20px;
+  }
 }

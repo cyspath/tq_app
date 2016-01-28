@@ -31,29 +31,6 @@ class Event < ActiveRecord::Base
     result
   end
 
-  # def member_count
-  #   @member_count = members.size
-  # end
-
-  # def self.upcoming_events_by_date
-  #   result = []
-  #   current_date = ""
-  #   upcoming_events.each do |event|
-  #     if event.date != current_date
-  #       current_date = event.date
-  #       result.push({ date: current_date, events: [event] })
-  #     elsif event.date == current_date
-  #       result.last[:events].push(event)
-  #     end
-  #   end
-  #   result
-  #   [[upcoming_events[0], upcoming_events[1]], [upcoming_events[2]]]
-  # end
-
-  # def self.upcoming_events_by_date
-  #   upcoming_events.group_by(&:date)
-  # end
-
   def start_time_formatted
     Time.at(start_time).utc.strftime("%I:%M%p")
   end

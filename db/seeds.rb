@@ -1,8 +1,16 @@
 # User.create(email: "mike@gmail.com", username: "小李子"， password: "foobar")
 
+User.create!(
+username: 'AlphaQ',
+password: 'Cyspathl1',
+email: 'mzl@berkeley.edu',
+phone: Faker::PhoneNumber.cell_phone,
+encrypted_password: "$2a$10$Knzp29UFXM4Z2g3UEac3T.mRveqEG18T7.ft25HhVLFJaVig27guC"
+)
 20.times do
   User.create!(
     username: Faker::Internet.user_name,
+    password: 'Cyspathl1',
     email: Faker::Internet.email,
     phone: Faker::PhoneNumber.cell_phone,
     encrypted_password: "$2a$10$Knzp29UFXM4Z2g3UEac3T.mRveqEG18T7.ft25HhVLFJaVig27guC"

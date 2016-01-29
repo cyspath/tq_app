@@ -5,7 +5,14 @@ var EventsList = React.createClass({
     })
     return (
       <div className="events-index__container-inner" >
-        { events }
+
+        <div className="events-index__time-frame__date">
+          {parseDateCN(this.props.date)}
+        </div>
+
+        <div className="events-index__time-frame__events" >
+          { events }
+        </div>
       </div>
     )
   }

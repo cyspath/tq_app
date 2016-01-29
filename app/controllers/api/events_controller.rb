@@ -4,7 +4,10 @@ require 'date'
 class Api::EventsController < ApplicationController
 
   def index
-    @events = Event.find_by_sql("SELECT * FROM Events LIMIT 40")
+    # @events = Event.upcoming_events
+    # render 'index'
+    @events_by_date = Event.upcoming_events_by_date
+    # render json: @events_by_date
     render 'index'
   end
 

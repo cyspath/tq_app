@@ -20,14 +20,20 @@ var EventsIndex = React.createClass({
   },
 
   render: function() {
+
+    var timeFrames = this.state.eventsList.map(function(timeFrame, idx) {
+      return <EventsList key={idx} {...timeFrame} />
+    })
+
     return (
       <div className="events-index__container">
+        <div className="events-index__container-left" >
+          {timeFrames}
+        </div>
 
-        <EventsList events={this.state.eventsList}/>
-
-        <div className="" >
-          <div className="FILTER" >FILTER</div>
-          <div className="CALENDAR" >CALENDAR</div>
+        <div className="events-index__container-right" >
+          <div className="temp-box FILTER" >FILTER</div>
+          <div className="temp-box CALENDAR" >CALENDAR</div>
         </div>
 
       </div>

@@ -1,3 +1,3 @@
-json.array! @events do |event|
-  json.partial! 'event', event: event
+json.array! @events_by_date do |item|
+  json.partial! 'collection', item: item
 end

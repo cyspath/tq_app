@@ -27,12 +27,13 @@ var EventsIndex = React.createClass({
 
     return (
       <div className="events-index__container">
+        <div className="events-index__container-left" >
+          {timeFrames}
+        </div>
 
-        {timeFrames}
-
-        <div className="" >
-          <div className="FILTER" >FILTER</div>
-          <div className="CALENDAR" >CALENDAR</div>
+        <div className="events-index__container-right" >
+          <div className="temp-box FILTER" >FILTER</div>
+          <div className="temp-box CALENDAR" >CALENDAR</div>
         </div>
 
       </div>

@@ -3,8 +3,21 @@
   overflow: visible;
 }
 
+.events-index__container-left {
+  float: left;
+}
+
+
+.events-index__container-right {
+  padding-left: 15px;
+}
+
+
 .events-index__container-inner {
   width: 670px;
+  @include bp__max-960 {
+    margin-left: 15px;
+  };
 }
 
 
@@ -16,9 +29,7 @@
   margin: 18px 0 5px;;
 }
 .events-index__time-frame__events {
-  border: 1px solid $grey-3;
-  border-radius: 3px;
-  overflow: inherit;
+  @include white-box-grey-border;
   .events-index__item-container:last-child {
     border-bottom: none;
   }

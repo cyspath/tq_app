@@ -12,3 +12,25 @@
   -webkit-transition: text-shadow 0.3s; /* Safari and Chrome */
   -o-transition: text-shadow 0.3s; /* Opera */
 }
+
+
+@mixin white-box-grey-border {
+  border: 1px solid $grey-3;
+  border-radius: 3px;
+  overflow: inherit;
+  background-color: white;
+}
+
+
+
+@mixin bp__max-960 {
+  @media only screen and (max-width: 960px) {
+    @content;
+  }
+}
+
+// @mixin bp__700-min {
+//   @media only screen and (min-width: 700px) {
+//     @content;
+//   }
+// }

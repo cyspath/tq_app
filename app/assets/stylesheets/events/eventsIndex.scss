@@ -3,6 +3,12 @@
   overflow: visible;
 }
 
+.events-index__container-top {
+  position: fixed;
+  z-index: 10;
+  background-color: $grey-2;
+}
+
 .events-index__container-left {
   float: left;
 }

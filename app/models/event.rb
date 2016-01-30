@@ -1,8 +1,6 @@
 class Event < ActiveRecord::Base
   validates :name, :founder, :group, :date, presence: true
 
-  attr_accessor :member_count
-
   has_many :event_members
   has_many :members, through: :event_members, source: :user
 

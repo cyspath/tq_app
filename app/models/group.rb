@@ -8,9 +8,9 @@ class Group < ActiveRecord::Base
 
   belongs_to :founder, foreign_key: :owner_id, class_name: User
 
+  has_many :images, as: :imageable
   # has_many :comments, as: :commentable
   #
-  # has_many :images, as: :imageable
 
   has_many :events
 

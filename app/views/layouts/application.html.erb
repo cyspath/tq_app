@@ -6,12 +6,41 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <script src="//widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+
+  <script type="text/javascript" charset="utf-8">
+    window.CLOUDINARY_OPTIONS = {
+      cloud_name: "<%= ENV['CLOUD_NAME'] %>",
+      upload_preset: "<%= ENV['UPLOAD_PRESET'] %>",
+      cropping: 'server',
+      cropping_aspect_ratio: 1,
+      gravity: 'custom',
+      theme: 'white',
+      // multiple: false,
+      cropping_show_dimensions: true,
+      max_file_size: 6000000,
+      button_caption: "上传图片"
+    };
+  </script>
+
+
 </head>
 <body>
+  <a href="#" id="upload_widget_opener">Upload multiple images</a>
 
+  <!-- <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p> -->
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#upload_widget_opener').click(function() {
+
+        cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, result) {
+          debugger
+        })
+      })
+    })
+  </script>
 
 
   <%= yield %>

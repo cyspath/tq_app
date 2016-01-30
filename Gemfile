@@ -8,6 +8,11 @@ gem 'lodash-rails'
 gem 'newrelic_rpm'
 gem 'momentjs-rails'
 
+# image storage
+gem 'cloudinary'
+# to store cloudinary keys
+gem 'figaro', '~> 0.7'
+
 # generator for fake data
 gem 'faker'
 

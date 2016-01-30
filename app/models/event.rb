@@ -8,6 +8,9 @@ class Event < ActiveRecord::Base
 
   belongs_to :group
 
+  has_many :images, as: :imageable
+
+
   def self.upcoming_events
     # events = self.find_by_sql(
     #   "SELECT * FROM Events WHERE date >= current_date ORDER BY date, start_time ASC LIMIT 200"

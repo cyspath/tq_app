@@ -27,8 +27,10 @@ var EventsIndex = React.createClass({
 
     return (
       <div className="events-index__container">
-        <div id="date-changer" className="events-index__container-top" >
-          TIME
+        <div id="date-changer__container" className="events-index__container-top" >
+          <div id="date-changer">
+            TIME
+          </div>
         </div>
 
         <div className="events-index__container-left" >

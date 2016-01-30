@@ -9,6 +9,7 @@ var App = React.createClass({
   render: function() {
     return (
       <div className="main" >
+        <NewGroupForm />
         <RouteHandler {...this.props}/>
       </div>
     );

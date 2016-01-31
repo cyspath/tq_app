@@ -8,6 +8,8 @@ gem 'lodash-rails'
 gem 'newrelic_rpm'
 gem 'momentjs-rails'
 
+gem 'font-awesome-sass', '~> 4.5.0'
+
 # image storage
 gem 'cloudinary'
 # to store cloudinary keys

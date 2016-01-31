@@ -22,3 +22,15 @@ CLOUD_NAME: "cloud name goes here"
 CLOUD_API_KEY: "api key goes here"
 CLOUD_API_SECRET: "api secret goes here"
 UPLOAD_PRESET: "upload preset goes here"
+
+
+#### font awesome (icons)
+<i className="fa fa-github"></i>
+https://fortawesome.github.io/Font-Awesome/icons/
+
+#### postgres db commands
+select pg_terminate_backend(pid) from pg_stat_activity where datname='tq_app_development';
+
+$ rake db:drop
+$ rake db:create
+$ rake db:migrate --trace

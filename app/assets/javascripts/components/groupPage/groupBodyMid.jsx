@@ -1,5 +1,8 @@
 var GroupBodyMid = React.createClass({
-
+  contextTypes: {
+    groupId: React.PropTypes.number.isRequired
+  },
+  
   render: function() {
     return (
       <div className="group-body-mid__container">

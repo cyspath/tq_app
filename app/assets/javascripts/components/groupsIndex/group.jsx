@@ -1,9 +1,9 @@
 var Group = React.createClass({
 
   render: function() {
-    var link = "/groups/" + this.props.id
+    // var link = "/groups/" + this.props.id
     return (
-      <Link to={link}>
+      <Link to="groupShow" params={{ groupId: this.props.id }}>
 
         <div className="groups-index__item-container">
           <img src={this.props.avatar} />

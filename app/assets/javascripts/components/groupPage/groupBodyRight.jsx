@@ -1,5 +1,8 @@
 var GroupBodyRight = React.createClass({
-
+  contextTypes: {
+    groupId: React.PropTypes.number.isRequired
+  },
+  
   render: function() {
     return (
       <div className="group-body-right__container">

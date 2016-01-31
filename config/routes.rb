@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :groups
     resources :events
     resources :user, only: [:index]
+    resources :images, only: [:create, :destroy]
   end
 
 

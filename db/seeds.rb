@@ -1,8 +1,16 @@
 # User.create(email: "mike@gmail.com", username: "小李子"， password: "foobar")
 
-20.times do
+User.create!(
+username: 'AlphaQ',
+password: 'Cyspathl1',
+email: 'mzl@berkeley.edu',
+phone: Faker::PhoneNumber.cell_phone,
+encrypted_password: "$2a$10$Knzp29UFXM4Z2g3UEac3T.mRveqEG18T7.ft25HhVLFJaVig27guC"
+)
+500.times do
   User.create!(
     username: Faker::Internet.user_name,
+    password: 'Cyspathl1',
     email: Faker::Internet.email,
     phone: Faker::PhoneNumber.cell_phone,
     encrypted_password: "$2a$10$Knzp29UFXM4Z2g3UEac3T.mRveqEG18T7.ft25HhVLFJaVig27guC"
@@ -61,4 +69,12 @@ while i <= 100
     owner_id: 2
   )
   i += 1
+end
+
+500.times do
+  EventMember.create!(event_id: rand(100) + 1, user_id: rand(500) + 1)
+end
+
+500.times do
+  GroupMember.create!(group_id: rand(10) + 1, user_id: rand(500) + 1)
 end

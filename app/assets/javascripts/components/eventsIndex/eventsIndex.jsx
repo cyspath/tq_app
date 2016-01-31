@@ -22,11 +22,17 @@ var EventsIndex = React.createClass({
   render: function() {
 
     var timeFrames = this.state.eventsList.map(function(timeFrame, idx) {
-      return <EventsList key={idx} {...timeFrame} />
+      return <EventsList key={idx} uniqueId={idx} {...timeFrame} />
     })
 
     return (
       <div className="events-index__container">
+        <div id="date-changer__container" className="events-index__container-top" >
+          <div id="date-changer">
+            TIME
+          </div>
+        </div>
+
         <div className="events-index__container-left" >
           {timeFrames}
         </div>

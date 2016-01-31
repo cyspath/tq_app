@@ -1,6 +1,11 @@
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
 @import "base/*";
 @import "general/*";
 @import "navbar/*";
+@import "content/*";
 @import 'groups/*';
 @import 'events/*';
 @import "modules/*";
+@import "forms/*";

@@ -22,7 +22,6 @@ var GroupsIndex = React.createClass({
   render: function() {
     return (
       <div className="groups-index__container">
-        <NewGroupForm />
         <GroupsList groups={this.state.groupsList}/>
         <Link to="/profile">User profile</Link>
       </div>

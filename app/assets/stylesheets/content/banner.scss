@@ -1,0 +1,49 @@
+.content-banner__container {
+  @include white-box-grey-border;
+  width: 100%;
+  height: 196px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.content-banner__upper {
+  height: 150px;
+  background-color: $red-banner;
+  background-image: -webkit-gradient(radial,50% 0,0,50% 0,429,color-stop(0%,transparent),color-stop(100%,rgba(0,0,0,.15)));
+  background-image: -webkit-radial-gradient(center top,farthest-corner circle,transparent 0,rgba(0,0,0,.15) 100%);
+  background-image: -moz-radial-gradient(center top,farthest-corner circle,transparent 0,rgba(0,0,0,.15) 100%);
+  background-image: -ms-radial-gradient(center top,farthest-corner circle,transparent 0,rgba(0,0,0,.15) 100%);
+  background-image: -o-radial-gradient(center top,farthest-corner circle,transparent 0,rgba(0,0,0,.15) 100%);
+  background-image: radial-gradient(farthest-corner circle at center top,transparent 0,rgba(0,0,0,.15) 100%);
+  border-bottom: 8px solid rgba(255,255,255,.25);
+}
+
+.content-banner__upper-title {
+  text-align: center;
+  font-family: $kaiti;
+  font-size: 55px;
+  line-height: 2.5em;
+  color: $white;
+  letter-spacing: 7px;
+}
+
+.content-banner__lower-item {
+  float: left;
+  background-color: $white;
+  padding: 7px 10px;
+  border-radius: 3px;
+  text-align: center;
+  margin: 7px 0 0 5px;
+  color: $grey-5;
+}
+
+.content-banner__lower-item:hover, .content-banner__lower-item.active {
+  background-color: $red-banner;
+  color: $grey-2;
+  cursor: pointer;
+  cursor: hand;
+}
+
+.content-banner__lower {
+  height: 20%;
+}

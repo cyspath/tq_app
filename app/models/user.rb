@@ -14,12 +14,12 @@ class User < ActiveRecord::Base
   has_many :owned_groups, foreign_key: :owner_id, class_name: Group
   has_many :owned_events, foreign_key: :owner_id, class_name: Event
 
+  has_many :images, as: :imageable
   # has_many :comments, as: :commentable
   #
   # has_many :ratings, as: :rateable
   # has_many :submitted_ratings, foreign_key: :voter_id, class_name: Rating
   #
-  # has_many :images, as: :imageable
   # has_many :authored_comments, foreign_key: :owner_id, class_name: Comment
 
 

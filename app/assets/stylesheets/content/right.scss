@@ -1,0 +1,6 @@
+.content-body-right__container {
+  @include white-box-grey-border;
+  float: right;
+  width: 200px;
+  min-height: 500px;
+}

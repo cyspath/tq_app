@@ -1,0 +1,7 @@
+.content-body-mid__container {
+  @include white-box-grey-border;
+  float: left;
+  width: 100%;
+  max-width: 540px;
+  min-height: 500px;
+}

@@ -1,9 +1,9 @@
 var Group = React.createClass({
 
   render: function() {
-    var link = "/groups/" + this.props.id
+    // var link = "/groups/" + this.props.id
     return (
-      <Link to={link}>
+      <Link to="groupShow" params={{ groupId: this.props.id }}>
 
         <div className="groups-index__item-container">
           <img src={this.props.avatar} />
@@ -13,7 +13,7 @@ var Group = React.createClass({
             <div className="overlay__text-container" >
               <div className="large-text">{this.props.name}</div>
               <div className="small-text" >
-                我们是 {Math.floor((Math.random() * 2000) + 1)} 个同兴趣者
+                我们是 {this.props.member_count} 个同兴趣者
               </div>
             </div>
 

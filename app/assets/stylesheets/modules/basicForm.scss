@@ -4,14 +4,11 @@ form {
   top: 50%;
   transform: translateY(-50%);
 
-  border: 1px $grey-7 solid;
-
   margin-left:auto;
   margin-right:auto;
 
   max-width: 500px;
   background: $grey-2;
-  border-radius: 20px;
 
   font: 12px Arial, Helvetica, sans-serif;
   color: #666;
@@ -26,7 +23,6 @@ form .form__lower {
     padding: 10px 10px 10px 20px;
     display: block;
     background: $red;
-    border-bottom: 1px solid $grey-7;
     margin-top: 20px;
 }
 form .form__upper>span {

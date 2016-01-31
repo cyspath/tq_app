@@ -18,6 +18,14 @@ var GroupActions = new _.extend({}, {
       })
   },
 
+  getGroupDetail: function(groupId) {
+    Api.get('/api/groups/' + groupId).then(function(group) {
+      AppDispatcher.dispatch({
+        actionType: Constants.GET_GROUP_DETAIL,
+        group: group
+      })
+    }.bind(this))
+  }
   // upvoteGroup: function(comment) {
   //   Api
   //     .put(

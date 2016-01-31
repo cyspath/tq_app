@@ -1,0 +1,7 @@
+.content-body-left__container {
+  @include white-box-grey-border;
+  float: left;
+  width: 200px;
+  min-height: 500px;
+  margin-right: 10px;
+}

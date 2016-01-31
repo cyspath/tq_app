@@ -16,13 +16,13 @@ class Group < ActiveRecord::Base
 
   def upcoming_events
     today = DateTime.now
-    events.select {|e| e.datetime >= today }
-          .sort { |a, b| a.datetime <=> b.datetime }
+    events.select {|e| e.date >= today }
+          .sort { |a, b| a.date <=> b.date }
   end
 
   def past_events
     today = DateTime.now
-    events.select {|e| e.datetime < today }
-          .sort { |a, b| a.datetime <=> b.datetime }
+    events.select {|e| e.date < today }
+          .sort { |a, b| b.date <=> a.date }
   end
 end

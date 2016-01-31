@@ -6,7 +6,7 @@ var GroupBody = React.createClass({
 
   render: function() {
     return (
-      <div className="group-body__container">
+      <div className="content-body__container">
         <GroupBodyLeft />
         <GroupBodyMid />
         <GroupBodyRight />

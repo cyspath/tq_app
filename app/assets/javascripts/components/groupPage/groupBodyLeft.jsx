@@ -6,25 +6,25 @@ var GroupBodyLeft = React.createClass({
 
   render: function() {
     return (
-      <div className="group-body-left__container">
+      <div className="content-body-left__container">
 
-        <div className="group-body-left__avatar" >
+        <div className="content-body-left__avatar" >
           <Image imageableType="Group" imageableId={this.context.groupId} />
         </div>
 
-        <div className="group-body-left__info" >
+        <div className="content-body-left__info" >
 
         </div>
 
-        <div className="group-body-left__counts" >
+        <div className="content-body-left__counts" >
 
         </div>
 
-        <div className="group-body-left__organizers" >
+        <div className="content-body-left__organizers" >
 
         </div>
 
-        <div className="group-body-left__tags" >
+        <div className="content-body-left__tags" >
 
         </div>
 

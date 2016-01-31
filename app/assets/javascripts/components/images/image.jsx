@@ -1,17 +1,10 @@
 var Image = React.createClass({
   getInitialState: function() {
     return {
-      url: this.props.url
-
+      url: 'http://www.imge.com/australia/img/imge.png'
     };
   },
-  // t.string   "url_original"
-  // t.string   "url_cropped"
-  // t.string   "url_225x225"
-  // t.string   "url_50x50"
-  // t.string   "url_30x30"
-  // t.integer  "imageable_id"
-  // t.string   "imageable_type"
+
   openWidget: function(e) {
     e.preventDefault();
     cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, result) {

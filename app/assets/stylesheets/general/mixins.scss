@@ -1,5 +1,5 @@
 @mixin content-container {
-  max-width: $content-width;
+  width: $content-width;
   margin-left: auto;
   margin-right: auto;
 }
@@ -25,7 +25,10 @@
   background-color: white;
 }
 
-
+@mixin hand-cursor {
+  cursor: hand;
+  cursor: pointer;
+}
 
 @mixin bp__max-960 {
   @media only screen and (max-width: 960px) {

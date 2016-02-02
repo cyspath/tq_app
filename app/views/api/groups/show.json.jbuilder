@@ -16,3 +16,5 @@ json.set! :past_events, @group.past_events
 members = @group.members
 json.set! :members, members.take(10)
 json.set! :members_count, members.size
+
+json.set! :images, @group.images

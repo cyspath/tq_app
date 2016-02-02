@@ -1,6 +1,26 @@
 var GroupsList = React.createClass({
+
+  getInitialState: function() {
+    return {
+      groupsList: GroupStore._groups
+    };
+  },
+
+  componentDidMount: function() {
+    GroupActions.getGroups();
+    GroupStore.addChangeListener(this._onChange)
+  },
+
+  componentWillUnmount: function() {
+    GroupStore.removeChangeListener(this._onChange);
+  },
+
+  _onChange: function() {
+    this.setState({ groupsList: GroupStore._groups });
+  },
+
   render: function() {
-    var groups = this.props.groups.map(function(group) {
+    var groups = this.state.groupsList.map(function(group) {
       return <Group key={group.id} {...group} />
     })
     return (

@@ -1,7 +1,7 @@
 var Image = React.createClass({
   getInitialState: function() {
     return {
-      url: 'http://www.imge.com/australia/img/imge.png'
+      url: this.props.url
     };
   },
 
@@ -19,7 +19,12 @@ var Image = React.createClass({
           imageable_type: this.props.imageableType,
           imageable_id: this.props.imageableId
         }
-        debugger
+
+        Api.post('/api/images', params)
+          .then(function(image) {
+            this.setState({ url: image.url_225x225 });
+          }.bind(this)
+          )
 
       }
     }.bind(this))
@@ -47,7 +52,7 @@ var Image = React.createClass({
       <div className="image__container" >
         <img src={this.state.url}></img>
         <div className="icon__container" >
-          <i className="fa fa-plus-circle" onClick={this.openWidget}></i>
+          <i className="fa fa-plus" onClick={this.openWidget}></i>
         </div>
       </div>
     )

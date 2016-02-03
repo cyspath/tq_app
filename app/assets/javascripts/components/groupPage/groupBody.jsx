@@ -5,6 +5,7 @@ var GroupBody = React.createClass({
   },
 
   render: function() {
+    console.log(this.props.group);
     return (
       <div className="content-body__container">
         <GroupBodyLeft group={this.props.group}/>

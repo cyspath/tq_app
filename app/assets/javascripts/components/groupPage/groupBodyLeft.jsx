@@ -62,7 +62,7 @@ var GroupBodyLeft = React.createClass({
               <img src={this.props.group.founder.avatar}></img>
             </div>
           </div>
-          <div className="btn-grey" ><i className="fa fa-envelope " >&nbsp;</i>联系我们</div>
+          <div className="btn btn-grey" ><i className="fa fa-envelope " >&nbsp;</i>联系我们</div>
         </div>
 
         <div className="content-body-left__tags" >

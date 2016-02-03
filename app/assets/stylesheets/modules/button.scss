@@ -8,7 +8,7 @@ button:hover {
   cursor: pointer;
 }
 
-.btn-grey {
+.btn {
   text-align: center;
   width: 100%;
   margin: 0 auto;
@@ -16,15 +16,35 @@ button:hover {
   display: block;
   border: none;
   border-radius: 3px;
-  background: $grey-2-5;
   padding: 10px;
   font-size: 15px;
-  color: $red-banner;
   letter-spacing: 2px;
 
   &:hover {
-    background: $grey-2;
     @include hand-cursor;
+  }
+}
+
+.btn-grey {
+  background: $grey-2-5;
+  color: $red-banner;
+
+  &:hover {
+    background: $grey-2;
     text-decoration: underline;
+  }
+}
+
+.btn-green {
+  padding: 6px 10px;
+  margin: 10px 0;
+  width: 115px;
+  text-align: left;
+  background: $grey-2;
+  font-family: $kaiti;
+  &:hover {
+    border: none;
+    background: $green-4;
+    color: $white;
   }
 }

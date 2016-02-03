@@ -26,7 +26,7 @@ var EventsIndex = React.createClass({
     })
 
     return (
-      <div className="events-index__container">
+      <div className="events-index">
         <div id="date-changer__container" className="events-index__container-top" >
           <div id="date-changer">
             TIME
@@ -35,11 +35,6 @@ var EventsIndex = React.createClass({
 
         <div className="events-index__container-left" >
           {timeFrames}
-        </div>
-
-        <div className="events-index__container-right" >
-          <div className="temp-box FILTER" >FILTER</div>
-          <div className="temp-box CALENDAR" >CALENDAR</div>
         </div>
 
       </div>

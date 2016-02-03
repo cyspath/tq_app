@@ -11,3 +11,7 @@ var dayCN = {
 var parseDateCN = function(date) {
   return(dayCN[moment(date).format('ddd')] + moment(date).format(' M') + "月" + moment(date).format('D') + "日")
 }
+
+var parseDateYearCN = function(date) {
+  return(moment(date).format('YYYY') + "年" + moment(date).format(' M') + "月" + moment(date).format('D') + "日")
+}

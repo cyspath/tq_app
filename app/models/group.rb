@@ -25,4 +25,9 @@ class Group < ActiveRecord::Base
     events.select {|e| e.date < today }
           .sort { |a, b| b.date <=> a.date }
   end
+
+  def most_recent_image
+    images.order("created_at").last
+  end
+
 end

@@ -13,7 +13,7 @@
   overflow: visible;
   height: 1px;
   display: block;
-  margin-top: -45px;
+  margin-top: -50px;
   margin-left: -10px;
   width: 980px;
   display: none;
@@ -40,19 +40,13 @@
   float: left;
 }
 
-
-.events-index__container-right {
-  padding-left: 15px;
-}
-
-
 .events-index__container-inner {
   width: 670px;
   @include bp__max-960 {
     margin-left: 15px;
+    margin-right: 15px;
   };
 }
-
 
 .events-index__time-frame__date {
   color: #aaa;

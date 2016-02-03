@@ -1,7 +1,7 @@
 class Api::GroupsController < ApplicationController
 
   def index
-    @groups = Group.find_by_sql("SELECT * FROM Groups LIMIT 40")
+    @groups = Group.limit(40).includes(:images, :members)
     # render json: Group.all
     render 'index'
   end

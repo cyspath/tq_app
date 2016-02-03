@@ -1,6 +1,10 @@
 .groups-index__container {
   @include content-container;
   overflow: visible;
+  @include bp__max-960 {
+    margin-left: 15px;
+    margin-right: 15px;
+  };
   .groups-index__container-inner {
     margin-left: -10px;
     margin-right: -10px;

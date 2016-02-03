@@ -53,7 +53,16 @@ var GroupBodyLeft = React.createClass({
         </div>
 
         <div className="content-body-left__organizers" >
-
+          <div className="info-item" >
+            <div className="left" >
+              <div className="left-top" >组织者:</div>
+              <div className="left-bottom" >{this.props.group.founder.username}</div>
+            </div>
+            <div className="right" >
+              <img src={this.props.group.founder.avatar}></img>
+            </div>
+          </div>
+          <div className="btn-grey" ><i className="fa fa-envelope " >&nbsp;</i>联系我们</div>
         </div>
 
         <div className="content-body-left__tags" >

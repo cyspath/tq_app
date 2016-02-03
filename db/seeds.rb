@@ -2,6 +2,7 @@
 
 User.create!(
 username: 'AlphaQ',
+avatar: Faker::Avatar.image("my-own-slug", "50x50"),
 password: 'Cyspathl1',
 email: 'mzl@berkeley.edu',
 phone: Faker::PhoneNumber.cell_phone,
@@ -10,6 +11,7 @@ encrypted_password: "$2a$10$Knzp29UFXM4Z2g3UEac3T.mRveqEG18T7.ft25HhVLFJaVig27gu
 500.times do
   User.create!(
     username: Faker::Internet.user_name,
+    avatar: Faker::Avatar.image("my-own-slug", "50x50"),
     password: 'Cyspathl1',
     email: Faker::Internet.email,
     phone: Faker::PhoneNumber.cell_phone,

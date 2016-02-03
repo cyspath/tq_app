@@ -7,3 +7,24 @@ button:hover {
   cursor: hand;
   cursor: pointer;
 }
+
+.btn-grey {
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  display: block;
+  border: none;
+  border-radius: 3px;
+  background: $grey-2-5;
+  padding: 10px;
+  font-size: 15px;
+  color: $red-banner;
+  letter-spacing: 2px;
+
+  &:hover {
+    background: $grey-2;
+    @include hand-cursor;
+    text-decoration: underline;
+  }
+}

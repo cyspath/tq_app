@@ -18,3 +18,4 @@ json.set! :members, members.take(10)
 json.set! :members_count, members.size
 
 json.set! :images, @group.images
+json.set! :founder, @group.founder

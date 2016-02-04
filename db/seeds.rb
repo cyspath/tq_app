@@ -2,8 +2,8 @@
 
 User.create!(
 username: 'AlphaQ',
-avatar: Faker::Avatar.image("my-own-slug", "50x50"),
-password: 'Cyspathl1',
+avatar: "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/ee/ee4fb033e82b95586de1675fb5b05265bd72662b_full.jpg",
+password: 'foobar',
 email: 'mzl@berkeley.edu',
 phone: Faker::PhoneNumber.cell_phone,
 encrypted_password: "$2a$10$Knzp29UFXM4Z2g3UEac3T.mRveqEG18T7.ft25HhVLFJaVig27guC"
@@ -11,7 +11,7 @@ encrypted_password: "$2a$10$Knzp29UFXM4Z2g3UEac3T.mRveqEG18T7.ft25HhVLFJaVig27gu
 500.times do
   User.create!(
     username: Faker::Internet.user_name,
-    avatar: Faker::Avatar.image("my-own-slug", "50x50"),
+    avatar: Faker::Avatar.image,
     password: 'Cyspathl1',
     email: Faker::Internet.email,
     phone: Faker::PhoneNumber.cell_phone,
@@ -163,9 +163,17 @@ while i <= 100
 end
 
 500.times do
-  EventMember.create!(event_id: rand(100) + 1, user_id: rand(500) + 1)
+  event_id = rand(100) + 1
+  user_id = rand(500) + 1
+  if EventMember.where(event_id: event_id, user_id: user_id).length <= 1
+    EventMember.create!(event_id: event_id, user_id: user_id)
+  end
 end
 
 500.times do
-  GroupMember.create!(group_id: rand(10) + 1, user_id: rand(500) + 1)
+  group_id = rand(10) + 1
+  user_id = rand(500) + 1
+  if GroupMember.where(group_id: group_id, user_id: user_id).length <= 1
+    GroupMember.create!(group_id: group_id, user_id: user_id)
+  end
 end

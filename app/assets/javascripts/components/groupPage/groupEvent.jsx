@@ -1,8 +1,10 @@
 var GroupEvent = React.createClass({
 
   render: function() {
-    var userImages = this.props.members.slice(0, 11).map(function(user) {
-      return <img key={user.id} src={user.avatar} />
+    var i = 0
+    var userImages = this.props.members.slice(0, 10).map(function(user) {
+      i += 1
+      return <img key={i} src={user.avatar} />
     })
     var eventLink = "/events/" + this.props.id
     return (

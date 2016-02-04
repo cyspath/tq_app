@@ -8,6 +8,14 @@
   z-index: 10;
 }
 
+.navbar__logo-section, .navbar__search-group-section, .navbar__create-group-section {
+  float: left;
+}
+
+.user-status, .navbar__user-section {
+  float: right;
+}
+
 .navbar__content {
   margin: 0 auto;
   max-width: $content-width;
@@ -19,7 +27,6 @@
 
   .navbar__logo {
     height: 50px;
-    float: left;
     border-radius: 5px;
     border: 1px solid #FF9496;
     width: 102px;
@@ -32,7 +39,6 @@
   }
 
   .navbar__action-btn {
-    float: left;
     height: 58px;
     margin: 3px;
     border-radius: 5px;
@@ -67,10 +73,15 @@
     }
   }
 
-  .navbar__user-container {
-    float: right;
-    margin-top: 15px;
-    text-align: right;
+  .user-avatar {
+    margin-top: 13px;
+    border-radius: 50%;
+    border: 1px solid gray;
+    width: 35px;
+    height: 35px;
+    img {
+      width: auto;
+      height: 100%;
+    }
   }
-
 }

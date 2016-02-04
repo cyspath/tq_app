@@ -11,10 +11,13 @@
   }
 }
 
+.groups-index__item-container-wrapper {
+  float: left;
+}
+
 .groups-index__item-container {
   width: 225px;
   height: 180px;
-  float: left;
 
   border-top: 1px solid #ddd;
   border-left: 1px solid #ddd;

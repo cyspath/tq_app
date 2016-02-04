@@ -1,5 +1,6 @@
 ### Heroku
 http://tongqu.herokuapp.com/
+$ heroku logs --tail
 
 ### production.rb (environment)
 `config.assets.compile = true`

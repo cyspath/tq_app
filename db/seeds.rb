@@ -9,9 +9,15 @@ phone: Faker::PhoneNumber.cell_phone,
 encrypted_password: "$2a$10$Knzp29UFXM4Z2g3UEac3T.mRveqEG18T7.ft25HhVLFJaVig27guC"
 )
 500.times do
+  n = rand(4)
+  if n < 1
+    user_avatar = nil
+  else
+    user_avatar = Faker::Avatar.image
+  end
   User.create!(
     username: Faker::Internet.user_name,
-    avatar: Faker::Avatar.image,
+    avatar: user_avatar,
     password: 'Cyspathl1',
     email: Faker::Internet.email,
     phone: Faker::PhoneNumber.cell_phone,

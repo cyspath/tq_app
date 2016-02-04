@@ -32,15 +32,17 @@
     <a href="#/profile" class="navbar__user-section">
       <div class="navbar__user-container">
         <div class="user-avatar">
-          <img src=<%= current_user.avatar %> alt="" />
+          <% if user_signed_in? %>
+            <img src=<%= current_user.avatar %> alt="" />
+          <% end %>
         </div>
       </div>
     </a>
 
     <div class="user-status">
       <% if user_signed_in? %>
-        <!-- <%= link_to "资料", "/profile" %>
-        <%= link_to '退出', destroy_user_session_path, method: 'DELETE' %> -->
+        <!-- <%= link_to "资料", "/profile" %> -->
+        <!-- <%= link_to '退出', destroy_user_session_path, method: 'DELETE' %> -->
       <% else %>
         <%= link_to '登录', new_user_session_path %>
         <%= link_to '注册', new_user_registration_path %>

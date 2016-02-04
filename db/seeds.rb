@@ -23,10 +23,16 @@ group_names = ["星巴克聊天族", "单身宅人聚乐部", "每周我要KTV",
 
 i = 0
 while i < group_names.length
+
+  arr = "环路和高速路都实现了不靠人工干预的完全自动驾驶全世界只有不足十台科学潜艇能够到达海面".split("")
+  r = rand(100) + 20
+  description = ""
+  r.times {description += arr.sample}
+
   Group.create!(
     name: group_names[i],
     avatar: "https://cdn.tutsplus.com/photo/uploads/legacy/762_animalRU/" + (rand(50) + 1).to_s + ".jpg",
-    description: Faker::Lorem.paragraph,
+    description: description,
     location_id: rand(10),
     owner_id: rand(3) + 1,
     created_at: Faker::Time.between(DateTime.now - 20, DateTime.now)
@@ -132,10 +138,15 @@ while i <= 100
   date = Date.today + rand(-3..15)
   time = start_times.sample
 
-  arr = "环路和高速路都实现了不靠人工干预的完全自动驾驶".split("")
+  arr = "环路和高速路都实现了不靠人工干预的完全自动驾驶全世界只有不足十台科学潜艇能够到达海面".split("")
   r = rand(15) + 5
   event_name = ""
   r.times {event_name += arr.sample}
+
+  arr = "环路和高速路都实现了不靠人工干预的完全自动驾驶全世界只有不足十台科学潜艇能够到达海面".split("")
+  r = rand(100) + 20
+  description = ""
+  r.times {description += arr.sample}
 
   Event.create!(
     name: event_name,
@@ -144,7 +155,7 @@ while i <= 100
     end_time: time + 3600,
     location_name: Faker::Company.bs,
     location_address: Faker::Address.street_address,
-    description: "关于百度无人驾驶车目前的技术水平，李彦宏用“创造了三个中国之‘最’予以概括：第一是路况最复杂，在城市道路、环路和高速路都实现了不靠人工干预 的完全自动驾驶；第二是动作最全面，包括超车、高速汇入、下高速、掉头等等；第三是对环境理解的精度最高，百度自己的定位能够达到10厘米的精度，大大高 于GPS定位3-5米的精度。正如习近平在世界互联网大会开幕式致辞中所说，当前世界经济复苏艰难曲折，中国经济也面临一定下行压力，而解决问题的关键在于坚持创新驱动发展，开 拓发展的新境界。在无人驾驶车展台前，国家互联网信息办公室主任鲁炜也问到，百度的无人驾驶是否达到了世界领先？对此，李彦宏给出肯定的回答。",
+    description: description,
     group_id: rand(5)+1,
     owner_id: 2
   )

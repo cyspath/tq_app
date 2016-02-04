@@ -1,13 +1,15 @@
 # User.create(email: "mike@gmail.com", username: "小李子"， password: "foobar")
 
 User.create!(
-username: 'AlphaQ',
+username: "小李子",
 avatar: "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/ee/ee4fb033e82b95586de1675fb5b05265bd72662b_full.jpg",
 password: 'foobar',
 email: 'mzl@berkeley.edu',
 phone: Faker::PhoneNumber.cell_phone,
 encrypted_password: "$2a$10$Knzp29UFXM4Z2g3UEac3T.mRveqEG18T7.ft25HhVLFJaVig27guC"
 )
+usernames = ["贝茨", "不能错的决定", "执笔", "寂寞不是罪", "好先森", "凉橙", "嘿咻嘿咻", "微光",
+    "宠沵", "k-17款爷", "画子入戏", "小花", "曲奇的娇气", "光和影子", "玫瑰", "叶落~", "海边飘逸"]
 500.times do
   n = rand(4)
   if n < 1
@@ -16,7 +18,7 @@ encrypted_password: "$2a$10$Knzp29UFXM4Z2g3UEac3T.mRveqEG18T7.ft25HhVLFJaVig27gu
     user_avatar = Faker::Avatar.image
   end
   User.create!(
-    username: Faker::Internet.user_name,
+    username: usernames.sample,
     avatar: user_avatar,
     password: 'Cyspathl1',
     email: Faker::Internet.email,
@@ -47,83 +49,85 @@ while i < group_names.length
 end
 
   Image.create!(
-  url_original: "http://res.cloudinary.com/cyspath/image/upload/v1454382324/xvuvssp17n9ujgoby6qi.jpg",
-  url_cropped: "",
-  url_225x225: "http://res.cloudinary.com/cyspath/image/upload/x_62,y_0,w_184,h_184,c_crop/w_225,h_225,c_fill/xvuvssp17n9ujgoby6qi.jpg",
-  url_50x50: "http://res.cloudinary.com/cyspath/image/upload/x_62,y_0,w_184,h_184,c_crop/w_50,h_50,c_fill/xvuvssp17n9ujgoby6qi.jpg",
-  url_30x30: "http://res.cloudinary.com/cyspath/image/upload/x_62,y_0,w_184,h_184,c_crop/w_30,h_30,c_fill/xvuvssp17n9ujgoby6qi.jpg",
-  imageable_id: 1,
-  imageable_type: "Group"
+    url_original: "http://res.cloudinary.com/cyspath/image/upload/v1454382324/xvuvssp17n9ujgoby6qi.jpg",
+    url_cropped: "",
+    url_225x225: "http://res.cloudinary.com/cyspath/image/upload/x_62,y_0,w_184,h_184,c_crop/w_225,h_225,c_fill/xvuvssp17n9ujgoby6qi.jpg",
+    url_50x50: "http://res.cloudinary.com/cyspath/image/upload/x_62,y_0,w_184,h_184,c_crop/w_50,h_50,c_fill/xvuvssp17n9ujgoby6qi.jpg",
+    url_30x30: "http://res.cloudinary.com/cyspath/image/upload/x_62,y_0,w_184,h_184,c_crop/w_30,h_30,c_fill/xvuvssp17n9ujgoby6qi.jpg",
+    imageable_id: 1,
+    imageable_type: "Group"
   )
 
   Image.create!(
-  url_original:
-  "http://res.cloudinary.com/cyspath/image/upload/v1454394943/cmxc2ladljf6a1jydg2q.gif",
- url_cropped: "",
- url_225x225:
-  "http://res.cloudinary.com/cyspath/image/upload/x_144,y_16,w_288,h_288,c_crop/w_225,h_225,c_fill/cmxc2ladljf6a1jydg2q.gif",
- url_50x50:
-  "http://res.cloudinary.com/cyspath/image/upload/x_144,y_16,w_288,h_288,c_crop/w_50,h_50,c_fill/cmxc2ladljf6a1jydg2q.gif",
- url_30x30:
-  "http://res.cloudinary.com/cyspath/image/upload/x_144,y_16,w_288,h_288,c_crop/w_30,h_30,c_fill/cmxc2ladljf6a1jydg2q.gif",
- imageable_id: 2,
- imageable_type: "Group")
+    url_original:
+    "http://res.cloudinary.com/cyspath/image/upload/v1454394943/cmxc2ladljf6a1jydg2q.gif",
+    url_cropped: "",
+    url_225x225:
+    "http://res.cloudinary.com/cyspath/image/upload/x_144,y_16,w_288,h_288,c_crop/w_225,h_225,c_fill/cmxc2ladljf6a1jydg2q.gif",
+    url_50x50:
+    "http://res.cloudinary.com/cyspath/image/upload/x_144,y_16,w_288,h_288,c_crop/w_50,h_50,c_fill/cmxc2ladljf6a1jydg2q.gif",
+    url_30x30:
+    "http://res.cloudinary.com/cyspath/image/upload/x_144,y_16,w_288,h_288,c_crop/w_30,h_30,c_fill/cmxc2ladljf6a1jydg2q.gif",
+    imageable_id: 2,
+    imageable_type: "Group"
+  )
 
  Image.create!(
- url_original:
-  "http://res.cloudinary.com/cyspath/image/upload/v1454384282/cpagwmp5ujuo2alcryl3.jpg",
- url_cropped: "",
- url_225x225:
-  "http://res.cloudinary.com/cyspath/image/upload/x_18,y_9,w_170,h_170,c_crop/w_225,h_225,c_fill/cpagwmp5ujuo2alcryl3.jpg",
- url_50x50:
-  "http://res.cloudinary.com/cyspath/image/upload/x_18,y_9,w_170,h_170,c_crop/w_50,h_50,c_fill/cpagwmp5ujuo2alcryl3.jpg",
- url_30x30:
-  "http://res.cloudinary.com/cyspath/image/upload/x_18,y_9,w_170,h_170,c_crop/w_30,h_30,c_fill/cpagwmp5ujuo2alcryl3.jpg",
- imageable_id: 3,
- imageable_type: "Group"
+   url_original:
+    "http://res.cloudinary.com/cyspath/image/upload/v1454384282/cpagwmp5ujuo2alcryl3.jpg",
+   url_cropped: "",
+   url_225x225:
+    "http://res.cloudinary.com/cyspath/image/upload/x_18,y_9,w_170,h_170,c_crop/w_225,h_225,c_fill/cpagwmp5ujuo2alcryl3.jpg",
+   url_50x50:
+    "http://res.cloudinary.com/cyspath/image/upload/x_18,y_9,w_170,h_170,c_crop/w_50,h_50,c_fill/cpagwmp5ujuo2alcryl3.jpg",
+   url_30x30:
+    "http://res.cloudinary.com/cyspath/image/upload/x_18,y_9,w_170,h_170,c_crop/w_30,h_30,c_fill/cpagwmp5ujuo2alcryl3.jpg",
+   imageable_id: 3,
+   imageable_type: "Group"
  )
 
  Image.create(
- url_original:
-  "http://res.cloudinary.com/cyspath/image/upload/v1454394020/kpdrnspbjynjq44deiix.jpg",
- url_cropped: "",
- url_225x225:
-  "http://res.cloudinary.com/cyspath/image/upload/x_10,y_35,w_181,h_181,c_crop/w_225,h_225,c_fill/kpdrnspbjynjq44deiix.jpg",
- url_50x50:
-  "http://res.cloudinary.com/cyspath/image/upload/x_10,y_35,w_181,h_181,c_crop/w_50,h_50,c_fill/kpdrnspbjynjq44deiix.jpg",
- url_30x30:
-  "http://res.cloudinary.com/cyspath/image/upload/x_10,y_35,w_181,h_181,c_crop/w_30,h_30,c_fill/kpdrnspbjynjq44deiix.jpg",
- imageable_id: 4,
- imageable_type: "Group"
+   url_original:
+    "http://res.cloudinary.com/cyspath/image/upload/v1454394020/kpdrnspbjynjq44deiix.jpg",
+   url_cropped: "",
+   url_225x225:
+    "http://res.cloudinary.com/cyspath/image/upload/x_10,y_35,w_181,h_181,c_crop/w_225,h_225,c_fill/kpdrnspbjynjq44deiix.jpg",
+   url_50x50:
+    "http://res.cloudinary.com/cyspath/image/upload/x_10,y_35,w_181,h_181,c_crop/w_50,h_50,c_fill/kpdrnspbjynjq44deiix.jpg",
+   url_30x30:
+    "http://res.cloudinary.com/cyspath/image/upload/x_10,y_35,w_181,h_181,c_crop/w_30,h_30,c_fill/kpdrnspbjynjq44deiix.jpg",
+   imageable_id: 4,
+   imageable_type: "Group"
  )
 
  Image.create!(
- url_original:
-  "http://res.cloudinary.com/cyspath/image/upload/v1454394082/n1j2vtz6ytru5gk8xvws.jpg",
- url_cropped: "",
- url_225x225:
-  "http://res.cloudinary.com/cyspath/image/upload/x_120,y_20,w_360,h_360,c_crop/w_225,h_225,c_fill/n1j2vtz6ytru5gk8xvws.jpg",
- url_50x50:
-  "http://res.cloudinary.com/cyspath/image/upload/x_120,y_20,w_360,h_360,c_crop/w_50,h_50,c_fill/n1j2vtz6ytru5gk8xvws.jpg",
- url_30x30:
-  "http://res.cloudinary.com/cyspath/image/upload/x_120,y_20,w_360,h_360,c_crop/w_30,h_30,c_fill/n1j2vtz6ytru5gk8xvws.jpg",
- imageable_id: 6,
- imageable_type: "Group"
+   url_original:
+    "http://res.cloudinary.com/cyspath/image/upload/v1454394082/n1j2vtz6ytru5gk8xvws.jpg",
+   url_cropped: "",
+   url_225x225:
+    "http://res.cloudinary.com/cyspath/image/upload/x_120,y_20,w_360,h_360,c_crop/w_225,h_225,c_fill/n1j2vtz6ytru5gk8xvws.jpg",
+   url_50x50:
+    "http://res.cloudinary.com/cyspath/image/upload/x_120,y_20,w_360,h_360,c_crop/w_50,h_50,c_fill/n1j2vtz6ytru5gk8xvws.jpg",
+   url_30x30:
+    "http://res.cloudinary.com/cyspath/image/upload/x_120,y_20,w_360,h_360,c_crop/w_30,h_30,c_fill/n1j2vtz6ytru5gk8xvws.jpg",
+   imageable_id: 6,
+   imageable_type: "Group"
  )
 
  Image.create!(
- url_original:
-  "http://res.cloudinary.com/cyspath/image/upload/v1454394693/kldv6atxrut4kqhbyohp.jpg",
- url_cropped: "",
- url_225x225:
-  "http://res.cloudinary.com/cyspath/image/upload/x_297,y_43,w_776,h_776,c_crop/w_225,h_225,c_fill/kldv6atxrut4kqhbyohp.jpg",
- url_50x50:
-  "http://res.cloudinary.com/cyspath/image/upload/x_297,y_43,w_776,h_776,c_crop/w_50,h_50,c_fill/kldv6atxrut4kqhbyohp.jpg",
- url_30x30:
-  "http://res.cloudinary.com/cyspath/image/upload/x_297,y_43,w_776,h_776,c_crop/w_30,h_30,c_fill/kldv6atxrut4kqhbyohp.jpg",
- imageable_id: 5,
- imageable_type: "Group"
+   url_original:
+    "http://res.cloudinary.com/cyspath/image/upload/v1454394693/kldv6atxrut4kqhbyohp.jpg",
+   url_cropped: "",
+   url_225x225:
+    "http://res.cloudinary.com/cyspath/image/upload/x_297,y_43,w_776,h_776,c_crop/w_225,h_225,c_fill/kldv6atxrut4kqhbyohp.jpg",
+   url_50x50:
+    "http://res.cloudinary.com/cyspath/image/upload/x_297,y_43,w_776,h_776,c_crop/w_50,h_50,c_fill/kldv6atxrut4kqhbyohp.jpg",
+   url_30x30:
+    "http://res.cloudinary.com/cyspath/image/upload/x_297,y_43,w_776,h_776,c_crop/w_30,h_30,c_fill/kldv6atxrut4kqhbyohp.jpg",
+   imageable_id: 5,
+   imageable_type: "Group"
  )
+
 i = 1
 while i <= 20
   GroupMember.create!(

@@ -1,4 +1,5 @@
 .content-page__container {
+  font-family: $heiti;
   @include content-container;
   overflow: visible;
   .content-page__container-inner {

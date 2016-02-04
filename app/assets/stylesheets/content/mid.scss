@@ -5,3 +5,58 @@
   max-width: 540px;
   min-height: 500px;
 }
+
+.grey-background {
+  width: 94%;
+  margin: 0 auto;
+  height: 50px;
+  background-color: $grey-2-5;
+  position: relative;
+  top: 35px;
+}
+
+.content-body-mid__events-action-tabs {
+
+  .place-holder {
+    float: left;
+    height: 35px;
+    border-bottom: 1px solid $grey-3;
+  }
+
+  .holder-1 {
+    width: 30px;
+  }
+
+  .holder-2 {
+    width: 10px;
+  }
+
+  .holder-3 {
+    width: 198px;
+  }
+
+  .tab {
+    background-color: $grey-1;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    padding: 10px;
+    text-align: center;
+    height: 35px;
+    width: 150px;
+    float: left;
+    border-top: 1px solid $grey-3;
+    border-left: 1px solid $grey-3;
+    border-right: 1px solid $grey-3;
+    border-bottom: 1px solid $grey-3;
+    &:hover {
+      background-color: $white;
+      @include hand-cursor;
+    }
+  }
+
+  .tab.front {
+    border-bottom: none;
+    background-color: $white;
+  }
+
+}

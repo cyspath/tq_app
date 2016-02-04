@@ -148,13 +148,16 @@ while i <= 100
   description = ""
   r.times {description += arr.sample}
 
+  location = ["中山公园", "栈桥南沙滩", "市南区博物馆", "河南路图书馆", "佳世客商场", "星巴克咖啡厅"].sample
+  address = ("海景天中花市北里".split("").shuffle.take(rand(3)+4)).join("") + "路" + rand(100).to_s + "号楼" + rand(10).to_s + "单元" + rand(100).to_s + "室"
+
   Event.create!(
     name: event_name,
     date: date,
     start_time: time,
     end_time: time + 3600,
-    location_name: Faker::Company.bs,
-    location_address: Faker::Address.street_address,
+    location_name: location,
+    location_address: address,
     description: description,
     group_id: rand(5)+1,
     owner_id: 2

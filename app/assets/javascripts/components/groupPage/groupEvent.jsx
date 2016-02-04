@@ -6,6 +6,12 @@ var GroupEvent = React.createClass({
       i += 1
       return <img key={i} src={user.avatar} />
     })
+
+    if (this.props.description.length > 88) {
+      var description = this.props.description.slice(0, 85) + "..."
+    } else {
+      var description = this.props.description
+    }
     var eventLink = "/events/" + this.props.id
     return (
       <div className="group-events-index__item-container">
@@ -27,10 +33,10 @@ var GroupEvent = React.createClass({
               {userImages}
             </div>
             <p className="description">
-              {this.props.description}
+              {description}
             </p>
             <div className="hosted-by" >
-              主办: {this.props.founder.username}
+              <span className="text-darken text-small" >主办: </span> <span>{this.props.founder.username}</span>
             </div>
           </div>
 
@@ -45,7 +51,8 @@ var GroupEvent = React.createClass({
               我想去
             </a>
             <p className="num-going" >
-              {this.props.member_count}
+              <span className="text-darken text-small" >{this.props.member_count}&nbsp;</span>
+              <span className="text-small" >人会参加</span>
             </p>
           </div>
 

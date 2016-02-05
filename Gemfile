@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+# ruby "2.2.4"
 
 gem 'devise'
 gem 'react-rails', '~> 1.4.0'
@@ -17,6 +18,8 @@ gem 'figaro', '~> 0.7'
 
 # generator for fake data
 gem 'faker'
+# generator for identicon
+gem 'ruby_identicon'
 
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 # gem 'sprockets'

@@ -1,6 +1,13 @@
 .content-page__container {
+  font-family: $heiti;
   @include content-container;
   overflow: visible;
   .content-page__container-inner {
   }
+}
+
+.content-body__container {
+  // dynamic color?
+  // color: $blue-text;
+  color: $blue-banner;
 }

@@ -13,7 +13,7 @@ var Group = React.createClass({
     // var link = "/groups/" + this.props.id
     var image = this.mostRecentImage()
     return (
-      <Link to="groupShow" params={{ groupId: this.props.id }}>
+      <Link to="groupShow" params={{ groupId: this.props.id }} className="groups-index__item-container-wrapper" >
 
         <div className="groups-index__item-container">
           <img src={image} />

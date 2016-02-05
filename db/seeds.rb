@@ -8,9 +8,10 @@ email: 'mzl@berkeley.edu',
 phone: Faker::PhoneNumber.cell_phone,
 encrypted_password: "$2a$10$Knzp29UFXM4Z2g3UEac3T.mRveqEG18T7.ft25HhVLFJaVig27guC"
 )
-usernames = ["贝茨", "不能错的决定", "执笔", "寂寞不是罪", "好先森", "凉橙", "嘿咻嘿咻", "微光",
-    "宠沵", "k-17款爷", "画子入戏", "小花", "曲奇的娇气", "光和影子", "玫瑰", "叶落~", "海边飘逸"]
+
 500.times do
+  username = ["贝茨", "不能错的决定", "执笔", "寂寞不是罪", "好先森", "凉橙", "嘿咻嘿咻", "微光",
+      "宠沵", "k-17款爷", "画子入戏", "小花", "曲奇的娇气", "光和影子", "玫瑰", "叶落~", "海边飘逸"].sample
   n = rand(4)
   if n < 1
     user_avatar = nil
@@ -18,7 +19,7 @@ usernames = ["贝茨", "不能错的决定", "执笔", "寂寞不是罪", "好�
     user_avatar = Faker::Avatar.image
   end
   User.create!(
-    username: usernames.sample,
+    username: username,
     avatar: user_avatar,
     password: 'Cyspathl1',
     email: Faker::Internet.email,
@@ -54,7 +55,7 @@ end
     url_225x225: "http://res.cloudinary.com/cyspath/image/upload/x_62,y_0,w_184,h_184,c_crop/w_225,h_225,c_fill/xvuvssp17n9ujgoby6qi.jpg",
     url_50x50: "http://res.cloudinary.com/cyspath/image/upload/x_62,y_0,w_184,h_184,c_crop/w_50,h_50,c_fill/xvuvssp17n9ujgoby6qi.jpg",
     url_30x30: "http://res.cloudinary.com/cyspath/image/upload/x_62,y_0,w_184,h_184,c_crop/w_30,h_30,c_fill/xvuvssp17n9ujgoby6qi.jpg",
-    imageable_id: 1,
+    imageable_id: 2,
     imageable_type: "Group"
   )
 
@@ -68,7 +69,7 @@ end
     "http://res.cloudinary.com/cyspath/image/upload/x_144,y_16,w_288,h_288,c_crop/w_50,h_50,c_fill/cmxc2ladljf6a1jydg2q.gif",
     url_30x30:
     "http://res.cloudinary.com/cyspath/image/upload/x_144,y_16,w_288,h_288,c_crop/w_30,h_30,c_fill/cmxc2ladljf6a1jydg2q.gif",
-    imageable_id: 2,
+    imageable_id: 1,
     imageable_type: "Group"
   )
 

@@ -4,7 +4,12 @@ var GroupEvent = React.createClass({
     var i = 0
     var userImages = this.props.members.slice(0, 10).map(function(user) {
       i += 1
-      return <img key={i} src={user.avatar} />
+      if (user.avatar != null) {
+        var url = user.avatar
+      } else {
+        var url = 'data:image/png;base64,' + user.identicon
+      }
+      return <img key={i} src={url} />
     })
 
     if (this.props.description.length > 88) {

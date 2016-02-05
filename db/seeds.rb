@@ -12,17 +12,17 @@ encrypted_password: "$2a$10$Knzp29UFXM4Z2g3UEac3T.mRveqEG18T7.ft25HhVLFJaVig27gu
 500.times do
   username = ["贝茨", "不能错的决定", "执笔", "寂寞不是罪", "好先森", "凉橙", "嘿咻嘿咻", "微光",
       "宠沵", "k-17款爷", "画子入戏", "小花", "曲奇的娇气", "光和影子", "玫瑰", "叶落~", "海边飘逸"].sample
-  n = rand(4)
+  n = rand(5)
   if n < 1
-    user_avatar = nil
-  else
     user_avatar = Faker::Avatar.image
   end
+
   User.create!(
     username: username,
     avatar: user_avatar,
     password: 'Cyspathl1',
     email: Faker::Internet.email,
+    identicon: Image.generate_identicon,
     phone: Faker::PhoneNumber.cell_phone,
     encrypted_password: "$2a$10$Knzp29UFXM4Z2g3UEac3T.mRveqEG18T7.ft25HhVLFJaVig27guC"
   )

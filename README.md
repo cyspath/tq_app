@@ -1,3 +1,13 @@
+## Features
+
+### Identicon
+Upon user sign up, a default identicon is generated (randomly choosing a number from 10^16). User avatar will be this identicon unless they upload(set) their avatar.
+
+To generate a random identicon:
+`Image.generate_identicon`
+
+## Technical
+
 ### Heroku
 http://tongqu.herokuapp.com/
 $ heroku logs --tail

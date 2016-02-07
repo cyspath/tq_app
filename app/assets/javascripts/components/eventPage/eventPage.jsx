@@ -13,7 +13,7 @@ var EventPage = React.createClass({
 
   getChildContext: function() {
     return {
-      eventId: this.state.eventId,
+      eventId: this.state.eventId
     }
   },
 
@@ -37,7 +37,7 @@ var EventPage = React.createClass({
         return (
           <div key={event.id} className="content-page__container-inner" >
             <GroupBanner name={event.group_name}/>
-            <EventBody event={event}/>
+            <EventBody group={event.group} event={event}/>
           </div>
         )
       }

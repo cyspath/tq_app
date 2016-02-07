@@ -5,11 +5,9 @@ var EventBody = React.createClass({
   },
 
   render: function() {
-    console.log(this.props.event);
-    debugger
     return (
       <div className="content-body__container">
-        <GroupBodyLeft event={this.props.event.group}/>
+        <GroupBodyLeft group={this.props.group} event={this.props.event.group}/>
         <EventBodyRight event={this.props.event}/>
       </div>
     )

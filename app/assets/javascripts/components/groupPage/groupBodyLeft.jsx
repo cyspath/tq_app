@@ -1,9 +1,5 @@
 var GroupBodyLeft = React.createClass({
 
-  // contextTypes: {
-  //   groupId: React.PropTypes.number.isRequired
-  // },
-
   mostRecentImage: function() {
     var image
     var date
@@ -20,6 +16,7 @@ var GroupBodyLeft = React.createClass({
   },
 
   render: function() {
+    console.log(this.props.group);
     var founderImageUrl = identiconOrAvatarUrl(this.props.group.founder)
     var image = this.mostRecentImage()
     return (
@@ -43,12 +40,12 @@ var GroupBodyLeft = React.createClass({
 
           <div className="info-item" >
             <div className="left" >未来的活动</div>
-            <div className="right" >{this.props.group.upcoming_events.length}</div>
+            <div className="right" >{this.props.group.upcoming_events_count}</div>
           </div>
 
           <div className="info-item" >
             <div className="left" >过去的活动</div>
-            <div className="right" >{this.props.group.past_events.length}</div>
+            <div className="right" >{this.props.group.past_events_count}</div>
           </div>
 
         </div>

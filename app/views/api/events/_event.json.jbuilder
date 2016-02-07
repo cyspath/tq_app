@@ -20,10 +20,13 @@ json.extract!(
 json.set! :start_date, event.date.strftime("%b %d, %Y")
 json.set! :member_count, event.members.size
 json.set! :founder, event.founder
-json.set! :group, event.group
-
-
 
 if display_members
   json.set! :members, event.members
+end
+
+if display_group
+  json.group do
+    json.partial! 'api/groups/group', group: event.group, display_events: false, display_events_count: true
+  end
 end

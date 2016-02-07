@@ -21,3 +21,11 @@ if (!Array.prototype.every)
     return true;
   };
 }
+
+var identiconOrAvatarUrl = function(user) {
+  if (user.avatar != null) {
+    return user.avatar
+  } else {
+    return 'data:image/png;base64,' + user.identicon
+  }
+}

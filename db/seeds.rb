@@ -43,7 +43,7 @@ while i < group_names.length
     avatar: "https://cdn.tutsplus.com/photo/uploads/legacy/762_animalRU/" + (rand(50) + 1).to_s + ".jpg",
     description: description,
     location_id: rand(10),
-    owner_id: rand(3) + 1,
+    owner_id: rand(10) + 1,
     created_at: Faker::Time.between(DateTime.now - 20, DateTime.now)
   )
   i += 1
@@ -155,7 +155,7 @@ while i <= 100
   r.times {event_name += arr.sample}
 
   arr = "环路和高速路都实现了不靠人工干预的完全自动驾驶全世界只有不足十台科学潜艇能够到达海面".split("")
-  r = rand(100) + 20
+  r = rand(150) + 5
   description = ""
   r.times {description += arr.sample}
 
@@ -171,7 +171,7 @@ while i <= 100
     location_address: address,
     description: description,
     group_id: rand(5)+1,
-    owner_id: 2
+    owner_id: rand(5) + 1
   )
   i += 1
 end

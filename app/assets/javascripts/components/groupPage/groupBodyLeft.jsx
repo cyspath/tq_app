@@ -1,8 +1,8 @@
 var GroupBodyLeft = React.createClass({
 
-  contextTypes: {
-    groupId: React.PropTypes.number.isRequired
-  },
+  // contextTypes: {
+  //   groupId: React.PropTypes.number.isRequired
+  // },
 
   mostRecentImage: function() {
     var image
@@ -20,12 +20,13 @@ var GroupBodyLeft = React.createClass({
   },
 
   render: function() {
+    var founderImageUrl = identiconOrAvatarUrl(this.props.group.founder)
     var image = this.mostRecentImage()
     return (
       <div className="content-body-left__container">
 
         <div className="content-body-left__avatar" >
-          <Image groupId={this.context.groupId} url={image} imageableType="Group" imageableId={this.context.groupId} />
+          <Image groupId={this.props.group.id} url={image} imageableType="Group" imageableId={this.props.group.id} />
         </div>
 
         <div className="content-body-left__info" >
@@ -59,7 +60,7 @@ var GroupBodyLeft = React.createClass({
               <div className="left-bottom" >{this.props.group.founder.username}</div>
             </div>
             <div className="right" >
-              <img src={this.props.group.founder.avatar}></img>
+              <img src={founderImageUrl}></img>
             </div>
           </div>
           <div className="btn btn-grey" ><i className="fa fa-envelope " >&nbsp;</i>联系我们</div>

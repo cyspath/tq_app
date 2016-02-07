@@ -3,16 +3,17 @@ var Event = React.createClass({
   render: function() {
     var eventLink = "/events/" + this.props.id
     var groupLink = "/groups/" + this.props.group_id
+    var time = parseAMPM(this.props.start_time_formatted)
     return (
       <div className="events-index__item-container">
 
         <div className="events-index__container-inner-left" >
           <Link to={eventLink}>
             <div className="left" >
-              {this.props.start_time_formatted.slice(0, this.props.start_time_formatted.length - 2)}
+              {time.slice(0, time.length - 2)}
             </div>
             <div className="right" >
-              {this.props.start_time_formatted.slice(this.props.start_time_formatted.length - 2)}
+              {time.slice(time.length - 2)}
             </div>
           </Link>
         </div>

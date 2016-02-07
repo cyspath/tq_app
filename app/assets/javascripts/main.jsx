@@ -21,10 +21,11 @@ this.AppRoutes = (
 
     <Route name="groups" path='/groups' handler={GroupsIndex}></Route>
 
-      <Route name='groupShow' path='/groups/:groupId' handler={GroupPage} ></Route>
+    <Route name='groupShow' path='/groups/:groupId' handler={GroupPage} ></Route>
 
     <Route name="events" path='/events' handler={EventsIndexPage}></Route>
 
+    <Route name='eventShow' path='/events/:eventId' handler={EventPage} ></Route>
 
     <Route name="profile" path='/profile' handler={User} />
 

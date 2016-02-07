@@ -1,0 +1,10 @@
+.toggle__more-info {
+  display: inline;
+  font-size: 11px;
+  margin-left: 3px;
+  color: $grey-5;
+  text-decoration: underline;
+  &:hover {
+    @include hand-cursor;
+  }
+}

@@ -8,6 +8,7 @@ var Constants = {
   GET_GROUP_DETAIL: 'groups.get_detail',
 
   GET_EVENTS: 'events.get_events',
+  GET_EVENT_DETAIL: 'events.get_detail',
 
 
 

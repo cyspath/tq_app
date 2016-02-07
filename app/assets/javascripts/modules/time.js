@@ -15,3 +15,11 @@ var parseDateCN = function(date) {
 var parseDateYearCN = function(date) {
   return(moment(date).format('YYYY') + "年" + moment(date).format(' M') + "月" + moment(date).format('D') + "日")
 }
+
+var parseAMPM = function(t) {
+  if (t.slice(t.length - 2) === "AM") {
+    return t.slice(0, t.length - 2) + "上午"
+  } else {
+    return t.slice(0, t.length - 2) + "下午"
+  }
+}

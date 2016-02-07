@@ -1,23 +1,50 @@
 var GroupEvent = React.createClass({
 
+  getInitialState: function() {
+    if (this.props.description.length > 62) {
+      var description = this.props.description.slice(0, 62) + "..."
+    } else {
+      var description = this.props.description
+    }
+    return {
+      description: description
+    };
+  },
+
+  getDescription: function() {
+    if (this.props.description.length > 62) {
+      return (
+        <div>
+          {this.state.description}
+          <div className="toggle__more-info" onClick={this.toggleDescription}>
+            更多
+          </div>
+        </div>
+      )
+    } else {
+      return (
+        <div>{this.state.description}</div>
+      )
+    }
+  },
+
+  toggleDescription: function(e) {
+    $(e.target).hide()
+    this.setState({ description: this.props.description });
+  },
+
   render: function() {
     var i = 0
     var userImages = this.props.members.slice(0, 10).map(function(user) {
       i += 1
-      if (user.avatar != null) {
-        var url = user.avatar
-      } else {
-        var url = 'data:image/png;base64,' + user.identicon
-      }
+      var url = identiconOrAvatarUrl(user)
       return <img key={i} src={url} />
     })
 
-    if (this.props.description.length > 88) {
-      var description = this.props.description.slice(0, 85) + "..."
-    } else {
-      var description = this.props.description
-    }
+    var currentDescription = this.getDescription()
+
     var eventLink = "/events/" + this.props.id
+
     return (
       <div className="group-events-index__item-container">
 
@@ -37,9 +64,9 @@ var GroupEvent = React.createClass({
             <div className="users-strip" >
               {userImages}
             </div>
-            <p className="description">
-              {description}
-            </p>
+            <div className="description">
+              {currentDescription}
+            </div>
             <div className="hosted-by" >
               <span className="text-darken text-small" >主办: </span> <span>{this.props.founder.username}</span>
             </div>
@@ -50,7 +77,7 @@ var GroupEvent = React.createClass({
               {parseDateCN(this.props.date)}
             </p>
             <p className="time" >
-              {this.props.start_time_formatted}
+              {parseAMPM(this.props.start_time_formatted)}
             </p>
             <a className="btn btn-green" >
               我想去

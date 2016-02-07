@@ -20,6 +20,8 @@ json.extract!(
 json.set! :start_date, event.date.strftime("%b %d, %Y")
 json.set! :member_count, event.members.size
 json.set! :founder, event.founder
+json.set! :group, event.group
+
 
 
 if display_members

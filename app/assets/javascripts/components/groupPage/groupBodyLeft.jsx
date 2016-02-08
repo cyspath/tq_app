@@ -15,10 +15,17 @@ var GroupBodyLeft = React.createClass({
     return image
   },
 
+  avatar: function() {
+    if (this.props.group.avatar == undefined) {
+      return this.mostRecentImage()
+    } else {
+      return this.props.group.avatar
+    }
+  },
+
   render: function() {
-    console.log(this.props.group);
     var founderImageUrl = identiconOrAvatarUrl(this.props.group.founder)
-    var image = this.mostRecentImage()
+    var image = this.avatar()
     return (
       <div className="content-body-left__container">
 

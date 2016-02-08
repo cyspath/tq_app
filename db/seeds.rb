@@ -1,5 +1,3 @@
-# User.create(email: "mike@gmail.com", username: "小李子"， password: "foobar")
-
 User.create!(
 username: "小李子",
 avatar: "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/ee/ee4fb033e82b95586de1675fb5b05265bd72662b_full.jpg",

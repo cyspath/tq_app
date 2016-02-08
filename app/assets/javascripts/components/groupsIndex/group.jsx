@@ -1,17 +1,30 @@
 var Group = React.createClass({
 
   mostRecentImage: function() {
-    var image = this.props.most_recent_image
-    if (image) {
-      return image.url_225x225
+    var image
+    var date
+    this.props.images.forEach(function(el) {
+      if (date === undefined) {
+        date = el.created_at
+        image = el.url_225x225
+      } else if (el.created_at > date ) {
+        date = el.created_at
+        image = el.url_225x225
+      }
+    })
+    return image
+  },
+
+  avatar: function() {
+    if (this.props.avatar == undefined) {
+      return this.mostRecentImage()
     } else {
-      return ""
+      return this.props.avatar
     }
   },
 
   render: function() {
-    // var link = "/groups/" + this.props.id
-    var image = this.mostRecentImage()
+    var image = this.avatar()
     return (
       <Link to="groupShow" params={{ groupId: this.props.id }} className="groups-index__item-container-wrapper" >
 
@@ -23,7 +36,7 @@ var Group = React.createClass({
             <div className="overlay__text-container" >
               <div className="large-text">{this.props.name}</div>
               <div className="small-text" >
-                我们是 {this.props.member_count} 个同兴趣者
+                我们是 {this.props.members_count} 个同兴趣者
               </div>
             </div>
 

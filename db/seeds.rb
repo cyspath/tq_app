@@ -174,11 +174,15 @@ while i <= 100
   i += 1
 end
 
-500.times do
+800.times do
   event_id = rand(100) + 1
   user_id = rand(500) + 1
   if EventMember.where(event_id: event_id, user_id: user_id).length <= 1
-    EventMember.create!(event_id: event_id, user_id: user_id)
+    if rand(5) < 1 # 1/5 goers will not go
+      EventMember.create!(event_id: event_id, user_id: user_id, going: false)
+    else
+      EventMember.create!(event_id: event_id, user_id: user_id)
+    end
   end
 end
 

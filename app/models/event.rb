@@ -1,15 +1,16 @@
 class Event < ActiveRecord::Base
   validates :name, :founder, :group, :date, presence: true
 
-  has_many :event_members
+  has_many :event_members, -> { where going: true }, class_name: EventMember
+  has_many :bailed_event_members, -> { where going: false }, class_name: EventMember
   has_many :members, through: :event_members, source: :user
+  has_many :bailed_members, through: :bailed_event_members, source: :user
 
   belongs_to :founder, foreign_key: :owner_id, class_name: User
 
   belongs_to :group
 
   has_many :images, as: :imageable
-
 
   def self.upcoming_events
     # events = self.find_by_sql(

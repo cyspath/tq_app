@@ -23,6 +23,7 @@ json.set! :founder, event.founder
 
 if display_members
   json.set! :members, event.members
+  json.set! :bailed_members, event.bailed_members
 end
 
 if display_group

@@ -8,6 +8,7 @@ gem 'react-router-rails', '~>0.13.3.2'
 gem 'lodash-rails'
 gem 'newrelic_rpm'
 gem 'momentjs-rails'
+gem 'will_paginate', '~> 3.0.7'
 
 gem 'font-awesome-sass', '~> 4.5.0'
 

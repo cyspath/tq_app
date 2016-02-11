@@ -12,26 +12,26 @@ class Event < ActiveRecord::Base
 
   has_many :images, as: :imageable
 
-  def self.upcoming_events
-    # events = self.find_by_sql(
-    #   "SELECT * FROM Events WHERE date >= current_date ORDER BY date, start_time ASC LIMIT 200"
-    # )
-    events = Event.where("date >= ?", Time.now).order(:date, :start_time).limit(200).includes(:members, :group)
-  end
-
-  def self.upcoming_events_by_date
-    result = []
-    current_date = ""
-    upcoming_events.each do |event|
-      if event.date != current_date
-        current_date = event.date
-        result.push({ date: current_date, events: [event] })
-      elsif event.date == current_date
-        result.last[:events].push(event)
-      end
-    end
-    result
-  end
+  # def self.upcoming_events
+  #   # events = self.find_by_sql(
+  #   #   "SELECT * FROM Events WHERE date >= current_date ORDER BY date, start_time ASC LIMIT 200"
+  #   # )
+  #   events = Event.where("date >= ?", Time.now).order(:date, :start_time).includes(:members, :group).paginate(:page => params[:page], :per_page => 20)
+  # end
+  #
+  # def self.upcoming_events_by_date
+  #   result = []
+  #   current_date = ""
+  #   upcoming_events.each do |event|
+  #     if event.date != current_date
+  #       current_date = event.date
+  #       result.push({ date: current_date, events: [event] })
+  #     elsif event.date == current_date
+  #       result.last[:events].push(event)
+  #     end
+  #   end
+  #   result
+  # end
 
   def start_time_formatted
     Time.at(start_time).utc.strftime("%I:%M%p")

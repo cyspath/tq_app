@@ -3,7 +3,7 @@ var EventStore = new _.extend({}, EventEmitter.prototype, {
   _allEvents: [],
 
   getEvents: function(events) {
-    this._allEvents = events
+    this._allEvents = this._allEvents.concat(events)
   },
 
   addChangeListener: function(callback) {

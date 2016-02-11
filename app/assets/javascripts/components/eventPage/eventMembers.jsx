@@ -38,11 +38,18 @@ var EventMembers = React.createClass({
         </div>
       )
     })
+
     if (notGoing.length > 0) {
       return(
         <div className="events-members__list border-top" >
-          <h1><div>{notGoing.length}</div><div className="superscript" >个人不去</div></h1>
-          {notGoing}
+          <h1>
+            <div>{notGoing.length}</div>
+            <div className="superscript" >个人不去</div>
+            <div className="toggle__more-not-going" onClick={this.toggleNotGoing}>展开</div>
+          </h1>
+          <div className="not-going hide" >
+            {notGoing}
+          </div>
         </div>
       )
     } else {
@@ -50,6 +57,10 @@ var EventMembers = React.createClass({
         <div className="events-members__list" ></div>
       )
     }
+  },
+
+  toggleNotGoing: function() {
+    $('.not-going').toggleClass('hide')
   },
 
   render: function() {

@@ -6,9 +6,29 @@ class Api::EventsController < ApplicationController
   def index
     # @events = Event.upcoming_events
     # render 'index'
-    @events_by_date = Event.upcoming_events_by_date
+    @events_by_date = upcoming_events_by_date(
+                        Event.where("date >= ?", Time.now)
+                             .order(:date, :start_time)
+                             .includes(:members, :group)
+                             .paginate(:page => params[:page], :per_page => 10)
+                      )
+
     # render json: @events_by_date
     render 'index'
+  end
+
+  def upcoming_events_by_date(upcoming_events)
+    result = []
+    current_date = ""
+    upcoming_events.each do |event|
+      if event.date != current_date
+        current_date = event.date
+        result.push({ date: current_date, events: [event] })
+      elsif event.date == current_date
+        result.last[:events].push(event)
+      end
+    end
+    result
   end
 
   def show

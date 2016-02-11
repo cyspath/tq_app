@@ -24,6 +24,7 @@ var GroupBodyLeft = React.createClass({
   },
 
   render: function() {
+    var founderLink = "/users/" + this.props.group.founder.id
     var founderImageUrl = identiconOrAvatarUrl(this.props.group.founder)
     var image = this.avatar()
     return (
@@ -61,10 +62,10 @@ var GroupBodyLeft = React.createClass({
           <div className="info-item" >
             <div className="left" >
               <div className="left-top" >组织者:</div>
-              <div className="left-bottom" >{this.props.group.founder.username}</div>
+              <Link to={founderLink}><div className="left-bottom" >{this.props.group.founder.username}</div></Link>
             </div>
             <div className="right" >
-              <img src={founderImageUrl}></img>
+              <Link to={founderLink}><img src={founderImageUrl} /></Link>
             </div>
           </div>
           <div className="btn btn-grey" ><i className="fa fa-envelope " >&nbsp;</i>联系我们</div>

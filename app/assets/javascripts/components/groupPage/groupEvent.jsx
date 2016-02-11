@@ -38,7 +38,10 @@ var GroupEvent = React.createClass({
     var userImages = this.props.members.slice(0, 10).map(function(user) {
       i += 1
       var url = identiconOrAvatarUrl(user)
-      return <img key={i} src={url} />
+      var userLink = "/users/" + user.id
+      return(
+        <Link to={userLink} key={i}><img src={url} /></Link>
+      )
     })
 
     var currentDescription = this.getDescription()

@@ -8,7 +8,7 @@ var EventBody = React.createClass({
     return (
       <div className="content-body__container">
         <GroupBodyLeft group={this.props.group} event={this.props.event.group}/>
-        <EventBodyRight event={this.props.event}/>
+        <EventBodyMain event={this.props.event}/>
       </div>
     )
   }

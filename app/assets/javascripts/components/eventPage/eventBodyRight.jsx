@@ -1,4 +1,4 @@
-var EventBodyRight = React.createClass({
+var EventBodyMain = React.createClass({
 
   render: function() {
     return (

@@ -1,0 +1,60 @@
+.content-body-main__right__container {
+  float: right;
+  width: 205px;
+  min-height: 500px;
+  border-left: 1px solid $grey-3;
+
+  .events-members__list {
+    padding: 0 15px;
+
+    h1 {
+      font-size: 30px;
+      padding: 15px 0;
+      color: $grey-7;
+      font-family: $kaiti;
+      overflow: auto;
+
+      div {
+        float: left;
+      }
+      .superscript {
+        margin-left: 2px;
+        font-size: 25px;
+      }
+      .toggle__more-not-going {
+        display: inline;
+        font-size: 16px;
+        margin: 7px 0 0 5px;
+        color: $blue-text;
+        text-decoration: underline;
+        &:hover {
+          @include hand-cursor;
+        }
+      }
+    }
+    .event-member__container {
+      border-top: 1px solid $grey-2-5;
+      padding: 15px 0;
+
+      .user-avatar {
+        float: left;
+        width: 50px;
+        height: 50px;
+        border: 1px solid $grey-2-5;
+      }
+
+      .user-name {
+        margin-left: 15px;
+        float: left;
+        width: 105px;
+        height: 50px;
+        line-height: 1.5;
+      }
+
+    }
+  }
+
+  .events-members__list.border-top {
+    border-top: 1px solid $grey-3;
+  }
+}

@@ -2,12 +2,13 @@ var EventsIndex = React.createClass({
 
   getInitialState: function() {
     return {
+      page: 1,
       eventsList: EventStore._allEvents
     };
   },
 
   componentDidMount: function() {
-    EventActions.getEvents();
+    this.getMore()
     EventStore.addChangeListener(this._onChange)
   },
 
@@ -19,10 +20,14 @@ var EventsIndex = React.createClass({
     this.setState({ eventsList: EventStore._allEvents });
   },
 
-  render: function() {
+  getMore: function() {
+    this.setState({ page: this.state.page + 1 });
+    EventActions.getEvents("/?page=" + this.state.page);
+  },
 
+  render: function() {
     var timeFrames = this.state.eventsList.map(function(timeFrame, idx) {
-      return <EventsList key={idx} uniqueId={idx} {...timeFrame} />
+      return <EventsList key={idx} {...timeFrame} />
     })
 
     return (
@@ -35,8 +40,8 @@ var EventsIndex = React.createClass({
 
         <div className="events-index__container-left" >
           {timeFrames}
+          <button className="load-more" onClick={this.getMore}>Get more</button>
         </div>
-
       </div>
     )
   }

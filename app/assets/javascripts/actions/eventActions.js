@@ -1,12 +1,19 @@
 var EventActions = new _.extend({}, {
 
-  getEvents: function() {
-    Api.get('/api/events').then(function(events) {
-      AppDispatcher.dispatch({
-        actionType: Constants.GET_EVENTS,
-        events: events
-      })
-    }.bind(this))
+  getEvents: function(url) {
+    //   Api.get('/api/events').then(function(events) {
+    //     AppDispatcher.dispatch({
+    //       actionType: Constants.GET_EVENTS,
+    //       events: events
+    //     })
+    //   }.bind(this))
+      $.getJSON('/api/events' + url).then(function(events) {
+        AppDispatcher.dispatch({
+          actionType: Constants.GET_EVENTS,
+          events: events
+        })
+      }.bind(this))
+    // }
   },
 
   getEventDetail: function(eventId) {

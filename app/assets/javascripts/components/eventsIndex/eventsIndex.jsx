@@ -20,7 +20,7 @@ var EventsIndex = React.createClass({
   },
 
   handleScroll: function(event) {
-    if (this.state.atPageBottom === false && $(window).scrollTop() > $(document).height() - $(window).height() - 10) {
+    if (this.state.atPageBottom === false && $(window).scrollTop() > $(document).height() - $(window).height() - 30) {
       this.setState({ atPageBottom: true });
       this.setState({ page: this.state.page + 1 });
       this.getMore()

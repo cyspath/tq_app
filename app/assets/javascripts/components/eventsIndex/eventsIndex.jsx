@@ -3,26 +3,42 @@ var EventsIndex = React.createClass({
   getInitialState: function() {
     return {
       page: 1,
+      atPageBottom: false,
       eventsList: EventStore._allEvents
     };
   },
 
   componentDidMount: function() {
+    window.addEventListener("scroll", this.handleScroll)
     this.getMore()
     EventStore.addChangeListener(this._onChange)
   },
 
   componentWillUnmount: function() {
+    window.removeEventListener("scroll", this.handleScroll);
     EventStore.removeChangeListener(this._onChange);
   },
 
+  handleScroll: function(event) {
+    if (this.state.atPageBottom === false && $(window).scrollTop() > $(document).height() - $(window).height() - 10) {
+      this.setState({ atPageBottom: true });
+      this.setState({ page: this.state.page + 1 });
+      this.getMore()
+    } else if (this.state.atPageBottom === true && $(window).scrollTop() < $(document).height() - $(window).height() - 100) {
+      this.setState({ atPageBottom: false });
+    }
+  },
+
   _onChange: function() {
+    $('#event-index__grey-spinner').addClass('hide')
     this.setState({ eventsList: EventStore._allEvents });
   },
 
   getMore: function() {
-    this.setState({ page: this.state.page + 1 });
-    EventActions.getEvents("/?page=" + this.state.page);
+    if (EventStore._doneFetching === false) {
+      $('#event-index__grey-spinner').removeClass('hide')
+      EventActions.getEvents("/?page=" + this.state.page);
+    }
   },
 
   render: function() {
@@ -40,7 +56,7 @@ var EventsIndex = React.createClass({
 
         <div className="events-index__container-left" >
           {timeFrames}
-          <button className="load-more" onClick={this.getMore}>Get more</button>
+          <div id="event-index__grey-spinner" className="hide"  ></div>
         </div>
       </div>
     )

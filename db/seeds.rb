@@ -143,7 +143,7 @@ start_times = [
 57600]
 
 i = 1
-while i <= 100
+while i <= 300
   date = Date.today + rand(-3..15)
   time = start_times.sample
 
@@ -175,7 +175,7 @@ while i <= 100
 end
 
 800.times do
-  event_id = rand(100) + 1
+  event_id = rand(150) + 1
   user_id = rand(500) + 1
   if EventMember.where(event_id: event_id, user_id: user_id).length <= 1
     if rand(5) < 1 # 1/5 goers will not go

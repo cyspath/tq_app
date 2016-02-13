@@ -15,6 +15,7 @@ var GroupDetailStore = new _.extend({}, EventEmitter.prototype, {
       return groupDetail.id == groupId
     })
     if (detail.length > 0) {
+      window.hideSpinner()
       return detail[0]
     } else {
       GroupActions.getGroupDetail(groupId)

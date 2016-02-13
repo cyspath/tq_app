@@ -4,3 +4,22 @@
   height: 100px;
   margin: 0 auto;
 }
+
+.spinner__container-outer {
+  position: absolute;
+  margin-top: 100px;
+  width: 100%;
+}
+
+.spinner__container-inner {
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.eggs-spinner {
+  background: image-url("jumping-eggs.gif") no-repeat scroll center center;
+  width: 100px;
+  height: 100px;
+  margin: auto auto;
+  border-radius: 50%;
+}

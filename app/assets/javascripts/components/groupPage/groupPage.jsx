@@ -18,6 +18,7 @@ var GroupPage = React.createClass({
   },
 
   componentDidMount: function() {
+    window.showSpinner()
     GroupDetailStore.getOrFetchGroupDetail(this.state.groupId);
     GroupDetailStore.addChangeListener(this._onChange)
   },
@@ -27,6 +28,7 @@ var GroupPage = React.createClass({
   },
 
   _onChange: function() {
+    window.hideSpinner()
     this.setState({ groupDetails: GroupDetailStore._groupDetails });
   },
 

@@ -7,6 +7,7 @@ var GroupsList = React.createClass({
   },
 
   componentDidMount: function() {
+    window.showSpinner()
     GroupActions.getGroups();
     GroupStore.addChangeListener(this._onChange)
   },
@@ -16,6 +17,7 @@ var GroupsList = React.createClass({
   },
 
   _onChange: function() {
+    window.hideSpinner()
     this.setState({ groupsList: GroupStore._groups });
   },
 

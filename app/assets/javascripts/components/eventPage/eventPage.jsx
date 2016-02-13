@@ -18,6 +18,7 @@ var EventPage = React.createClass({
   },
 
   componentDidMount: function() {
+    window.showSpinner()
     EventDetailStore.getOrFetchEventDetail(this.state.eventId);
     EventDetailStore.addChangeListener(this._onChange)
   },
@@ -27,6 +28,7 @@ var EventPage = React.createClass({
   },
 
   _onChange: function() {
+    window.hideSpinner()
     this.setState({ eventDetails: EventDetailStore._eventDetails });
   },
 

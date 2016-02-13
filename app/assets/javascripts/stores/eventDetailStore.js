@@ -15,6 +15,7 @@ var EventDetailStore = new _.extend({}, EventEmitter.prototype, {
       return eventDetail.id == eventId
     })
     if (detail.length > 0) {
+      window.hideSpinner()
       return detail[0]
     } else {
       EventActions.getEventDetail(eventId)

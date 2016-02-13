@@ -38,7 +38,7 @@ var EventsIndex = React.createClass({
 
   getMore: function() {
     if (EventStore._doneFetching === false) {
-      $('#event-index__grey-spinner').removeClass('hide')
+      if (this.state.page != 1) { $('#event-index__grey-spinner').removeClass('hide') }
       EventActions.getEvents("/?page=" + this.state.page);
     }
   },

@@ -1,5 +1,8 @@
 ## Features
 
+### Pagination
+using will_paginate gem, ajax calls, loading spinner, and triggers at reaching bottom of page to create infinite scroll effect on events index page.
+
 ### Identicon
 Upon user sign up, a default identicon is generated (randomly choosing a number from 10^16). User avatar will be this identicon unless they upload(set) their avatar.
 

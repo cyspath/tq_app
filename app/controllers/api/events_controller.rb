@@ -10,7 +10,7 @@ class Api::EventsController < ApplicationController
                         Event.where("date >= ?", Time.now)
                              .order(:date, :start_time)
                              .includes(:members, :group)
-                             .paginate(:page => params[:page], :per_page => 10)
+                             .paginate(:page => params[:page], :per_page => 20)
                       )
 
     # render json: @events_by_date

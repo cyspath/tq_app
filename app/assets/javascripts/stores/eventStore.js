@@ -1,8 +1,12 @@
 var EventStore = new _.extend({}, EventEmitter.prototype, {
 
   _allEvents: [],
+  _doneFetching: false,
 
   getEvents: function(events) {
+    if (events.length === 0) {
+      this._doneFetching = true
+    }
     this._allEvents = this._allEvents.concat(events)
   },
 

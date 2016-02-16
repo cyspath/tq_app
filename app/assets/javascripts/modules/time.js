@@ -23,3 +23,11 @@ var parseAMPM = function(t) {
     return t.slice(0, t.length - 2) + "下午"
   }
 }
+
+var parseAMPMReverse = function(t) {
+  if (t.slice(t.length - 2) === "AM") {
+    return "上午" + t.slice(0, t.length - 2)
+  } else {
+    return "下午" + t.slice(0, t.length - 2)
+  }
+}

@@ -61,7 +61,7 @@ var GroupBodyLeft = React.createClass({
         <div className="content-body-left__organizers" >
           <div className="info-item" >
             <div className="left" >
-              <div className="left-top" >组织者:</div>
+              <div className="left-top" >同趣群主:</div>
               <Link to={founderLink}><div className="left-bottom" >{this.props.group.founder.username}</div></Link>
             </div>
             <div className="right" >

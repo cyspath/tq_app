@@ -38,7 +38,7 @@ while i < group_names.length
 
   Group.create!(
     name: group_names[i],
-    avatar: "https://cdn.tutsplus.com/photo/uploads/legacy/762_animalRU/" + (rand(50) + 1).to_s + ".jpg",
+    avatar: "https://cdn.tutsplus.com/photo/uploads/legacy/762_animalRU/" + (rand(25) + 1).to_s + ".jpg",
     description: description,
     location_id: rand(10),
     owner_id: rand(10) + 1,
@@ -153,14 +153,17 @@ while i <= 300
   r.times {event_name += arr.sample}
 
   arr = "环路和高速路都实现了不靠人工干预的完全自动驾驶全世界只有不足十台科学潜艇能够到达海面".split("")
-  r = rand(150) + 5
+  r = rand(700) + 3
   description = ""
   r.times {description += arr.sample}
 
   location = ["中山公园", "栈桥南沙滩", "市南区博物馆", "河南路图书馆", "佳世客商场", "星巴克咖啡厅"].sample
   address = ("海景天中花市北里".split("").shuffle.take(rand(3)+4)).join("") + "路" + rand(100).to_s + "号楼" + rand(10).to_s + "单元" + rand(100).to_s + "室"
 
+  rand(3) == 0 ? (avatar = "https://cdn.tutsplus.com/photo/uploads/legacy/762_animalRU/" + (rand(25) + 26).to_s + ".jpg") : avatar = nil
+
   Event.create!(
+    avatar: avatar,
     name: event_name,
     date: date,
     start_time: time,

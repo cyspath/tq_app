@@ -1,7 +1,7 @@
 .content-body-main__container {
   @include white-box-grey-border;
   width: 750px;
-  min-height: 500px;
   background-color: $white;
   float: right;
+  display: table-row;
 }

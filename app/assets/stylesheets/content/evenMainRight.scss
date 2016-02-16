@@ -1,7 +1,8 @@
 .content-body-main__right__container {
-  float: right;
-  width: 205px;
+  display: table-cell;
+  width: 27%;
   min-height: 500px;
+  vertical-align:top;
   border-left: 1px solid $grey-3;
 
   .events-members__list {

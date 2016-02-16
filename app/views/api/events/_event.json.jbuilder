@@ -2,6 +2,7 @@ json.extract!(
   event,
   :id,
   :name,
+  :avatar,
   :date,
   :start_time,
   :end_time,

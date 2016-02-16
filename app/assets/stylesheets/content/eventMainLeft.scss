@@ -1,0 +1,60 @@
+.content-body-main__left__container {
+  display: table-cell;
+  vertical-align:top;
+  width: 72%;
+  min-height: 500px;
+  background-color: $white;
+  color: $grey-7;
+
+  .event-info {
+    padding: 18px;
+
+    .name {
+      font-size: 35px;
+      margin-bottom: 10px;
+      font-family: $kaiti;
+    }
+
+    .date-time, .location {
+      padding: 18px 0;
+      border-bottom: 1px solid $grey-2;
+      .left {
+        color: #555555;
+        font-size: 20px;
+        padding: 6px 0 0 2px;
+        text-align: center;
+        width: 35px;
+        height: 35px;
+        border-radius: 10%;
+        background: #dddddd;
+        float: left;
+      }
+      .right {
+        margin-left: 15px;
+        float: left;
+        .right-upper {
+          font-size: 20px;
+        }
+        .right-lower {
+          color: $grey-5;
+          margin-top: 10px;
+          letter-spacing: 2px;
+          font-family: $songti;
+        }
+      }
+    }
+
+    .event-avatar {
+      width: 100%;
+      padding-top: 18px;
+    }
+
+    .description {
+      margin-top: 18px;
+      font-size: 14px;
+      line-height: 22px;
+      font-family: $songti;
+    }
+
+  }
+}

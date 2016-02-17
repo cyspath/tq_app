@@ -1,51 +1,42 @@
 var UserPage = React.createClass({
 
-  // getInitialState: function() {
-  //   return {
-  //     userId : parseInt(this.props.params.userId),
-  //     userDetails: UserDetailStore._userDetails
-  //   };
-  // },
-  //
-  // childContextTypes: {
-  //   userId: React.PropTypes.number.isRequired
-  // },
-  //
-  // getChildContext: function() {
-  //   return {
-  //     userId: this.state.userId
-  //   }
-  // },
-  //
-  // componentDidMount: function() {
-  //   UserDetailStore.getOrFetchUserDetail(this.state.userId);
-  //   UserDetailStore.addChangeListener(this._onChange)
-  // },
-  //
-  // componentWillUnmount: function() {
-  //   UserDetailStore.removeChangeListener(this._onChange);
-  // },
-  //
-  // _onChange: function() {
-  //   this.setState({ userDetails: UserDetailStore._userDetails });
-  // },
+  getInitialState: function() {
+    return {
+      userId : parseInt(this.props.params.userId),
+      user: UserStore._user
+    };
+  },
+
+  childContextTypes: {
+    userId: React.PropTypes.number.isRequired
+  },
+
+  getChildContext: function() {
+    return {
+      userId: this.state.userId
+    }
+  },
+
+  componentDidMount: function() {
+    window.showSpinner()
+    UserStore.addChangeListener(this._onChange)
+    UserActions.getUser(this.state.userId)
+  },
+
+  componentWillUnmount: function() {
+    UserStore.removeChangeListener(this._onChange);
+  },
+
+  _onChange: function() {
+    window.hideSpinner()
+    this.setState({ user: UserStore._user });
+  },
 
   render: function() {
-    // // find the user in all user details and render that user if found
-    // var currentUser = this.state.userDetails.map(function(user) {
-    //   if (user.id == this.state.userId) {
-    //     return (
-    //       <div key={user.id} className="content-page__container-inner" >
-    //         <GroupBanner name={user.group_name}/>
-    //         <UserBody group={user.group} user={user}/>
-    //       </div>
-    //     )
-    //   }
-    // }.bind(this))
-
+    console.log(this.state.user);
     return (
       <div className="content-page__container">
-        in progress
+        <UserInfo user={this.state.user} />
       </div>
     )
   }

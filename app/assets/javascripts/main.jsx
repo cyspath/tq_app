@@ -27,7 +27,7 @@ this.AppRoutes = (
 
     <Route name='eventShow' path='/events/:eventId' handler={EventPage} ></Route>
 
-    <Route name='userShow' path='/users/:userId' handler={UserPage} ></Route>
+    <Route name='userShow' path='/user/:userId' handler={UserPage} ></Route>
 
     <Route name="profile" path='/profile' handler={User} />
 

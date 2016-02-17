@@ -29,7 +29,7 @@
       </div>
     </a>
 
-    <a href="#/profile" class="navbar__user-section">
+    <a href="#/user/<%= current_user.id %>" class="navbar__user-section">
       <div class="navbar__user-container">
         <div class="user-avatar">
           <% if user_signed_in? %>

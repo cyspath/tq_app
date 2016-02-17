@@ -1,0 +1,27 @@
+.user-page__container {
+  @include white-box-grey-border;
+  margin-top: 20px;
+}
+
+.user-page__left {
+  float: left;
+  width: 70%;
+  min-height: 500px;
+  padding: 0 18px 0 0;
+
+  .username {
+    font-size: 40px;
+    padding: 18px 18px 28px 18px;
+    border-bottom: 1px solid $grey-2;
+    margin-bottom: 10px;
+  }
+
+}
+
+.user-page__right {
+  float: left;
+  width: 30%;
+  background: $grey-2;
+  min-height: 500px;
+
+}

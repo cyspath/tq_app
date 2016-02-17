@@ -4,7 +4,11 @@ avatar: "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/ee
 password: 'foobar',
 email: 'mzl@berkeley.edu',
 phone: Faker::PhoneNumber.cell_phone,
-encrypted_password: "$2a$10$Knzp29UFXM4Z2g3UEac3T.mRveqEG18T7.ft25HhVLFJaVig27guC"
+encrypted_password: "$2a$10$Knzp29UFXM4Z2g3UEac3T.mRveqEG18T7.ft25HhVLFJaVig27guC",
+location: '美国加州',
+location_id: 1,
+home_town: '青岛',
+bio: "在作自我介绍和回答其他问题时，眼睛千万不要东张西望，四处游离，显得漫不经心的样子，这会给人做事随便、注意力不集中的感觉。眼睛最好要多注视面试考官，但也不能长久注视目不转睛。再就是尽量少加一些手的辅助动作，因为这毕竟不是在作讲演，保持一种得体的姿态也是很重要的。注意掌握时间，如果面试考官规定了时间，一定要注意时间的掌握，既不能超时太长，也不能过于简短。但如果没有规定时间，尽量1分钟内完成回答。"
 )
 
 500.times do
@@ -136,11 +140,7 @@ while i <= 20
   i += 1
 end
 
-start_times = [
-28800,
-36000,
-50400,
-57600]
+start_times = [400, 430, 500, 530, 600, 630, 700, 730, 800, 830, 900, 930, 1000, 1030, 1100, 1130, 1200, 1230, 1300, 1330, 1400, 1430, 1500, 1530, 1600, 1630, 1700, 1730, 1800, 1830, 2000, 2030, 2100, 2130]
 
 i = 1
 while i <= 300
@@ -167,7 +167,7 @@ while i <= 300
     name: event_name,
     date: date,
     start_time: time,
-    end_time: time + 3600,
+    end_time: time + [70, 100, 170, 200, 400].sample,
     location_name: location,
     location_address: address,
     description: description,

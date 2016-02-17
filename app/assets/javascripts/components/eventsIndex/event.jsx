@@ -3,7 +3,7 @@ var Event = React.createClass({
   render: function() {
     var eventLink = "/events/" + this.props.id
     var groupLink = "/groups/" + this.props.group_id
-    var time = parseAMPM(this.props.start_time_formatted)
+    var time = moment(this.props.start_time, "hmm").format("hh:mma")
     return (
       <div className="events-index__item-container">
 

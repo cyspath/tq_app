@@ -38,7 +38,7 @@ var GroupBodyLeft = React.createClass({
 
           <div className="info-item" >
             <div className="location" >山东 - 青岛</div>
-            <div className="start-date" >{parseDateYearCN(this.props.group.created_at)}成立</div>
+            <div className="start-date" >{moment(this.props.group.created_at).format('YYYY年MMMD日')}成立</div>
           </div>
 
           <div className="info-item" >

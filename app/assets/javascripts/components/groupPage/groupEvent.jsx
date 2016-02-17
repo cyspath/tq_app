@@ -77,10 +77,10 @@ var GroupEvent = React.createClass({
 
           <div className="right" >
             <p className="date" >
-              {parseDateCN(this.props.date)}
+              {moment(this.props.date).format("dddd MMMDo")}
             </p>
             <p className="time" >
-              {parseAMPM(this.props.start_time_formatted)}
+              { moment(this.props.start_time, "hmm").format("a hh:mm")}
             </p>
             <a className="btn btn-green" >
               我想去

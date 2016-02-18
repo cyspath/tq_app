@@ -24,7 +24,7 @@ var GroupBodyLeft = React.createClass({
   },
 
   render: function() {
-    var founderLink = "/users/" + this.props.group.founder.id
+    var founderLink = "/user/" + this.props.group.founder.id
     var founderImageUrl = identiconOrAvatarUrl(this.props.group.founder)
     var image = this.avatar()
     return (

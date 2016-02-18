@@ -3,7 +3,7 @@ var EventMembers = React.createClass({
   going: function() {
     var going = this.props.going.map(function(user) {
       var url = identiconOrAvatarUrl(user)
-      var userLink = "/users/" + user.id
+      var userLink = "/user/" + user.id
       return(
         <div key={user.id} className="event-member__container" >
           <Link to={userLink}><img className="user-avatar" src={url} /></Link>
@@ -30,7 +30,7 @@ var EventMembers = React.createClass({
   notGoing: function() {
     var notGoing = this.props.notGoing.map(function(user) {
       var url = identiconOrAvatarUrl(user)
-      var userLink = "/users/" + user.id
+      var userLink = "/user/" + user.id
       return(
         <div key={user.id} className="event-member__container" >
           <Link to={userLink}><img className="user-avatar" src={url} /></Link>

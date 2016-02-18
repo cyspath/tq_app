@@ -9,6 +9,7 @@ var App = React.createClass({
   render: function() {
     return (
       <div className="main" >
+        <Navbar />
         <NewGroupForm />
         <RouteHandler {...this.props}/>
       </div>
@@ -23,7 +24,7 @@ this.AppRoutes = (
 
     <Route name='groupShow' path='/groups/:groupId' handler={GroupPage} ></Route>
 
-    <Route name="events" path='/events' handler={EventsIndexPage}></Route>
+    <Route name="events" path='/' handler={EventsIndexPage}></Route>
 
     <Route name='eventShow' path='/events/:eventId' handler={EventPage} ></Route>
 

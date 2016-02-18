@@ -9,6 +9,13 @@
   min-height: 500px;
   padding: 0 18px 0 0;
 
+  .label {
+    font-family: $heiti;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 18px;
+  }
+
   .username {
     font-size: 40px;
     padding: 18px 18px 28px 18px;
@@ -16,12 +23,56 @@
     margin-bottom: 10px;
   }
 
+  .info {
+    padding: 18px 18px 28px 18px;
+    border-bottom: 1px solid $grey-2;
+    margin-bottom: 10px;
+
+    .top {
+      .location, .member-since {
+        float: left;
+        width: 25%;
+      }
+    }
+
+    .bottom {
+      margin-top: 25px;
+    }
+  }
+
 }
 
 .user-page__right {
   float: left;
   width: 30%;
-  background: $grey-2;
+  background: $white;
   min-height: 500px;
+  padding: 18px;
+
+  .user-page__avatar-container {
+    width: 250px;
+    text-align: center;
+
+    img {
+      width: 95%;
+      margin: 10px 0 5px;
+      height: auto;
+    }
+
+    .img-wrap, {
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+      background-color: $grey-2-5;
+      padding-bottom: 5px;
+    }
+
+    .img-count {
+      background-color: $grey-2-5;
+      margin-top: 2px;
+      padding: 5px 0;
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px;
+    }
+  }
 
 }

@@ -4,7 +4,14 @@ Rails.application.routes.draw do
 
   get 'profile' => 'profile#index'
 
-  devise_for :users
+  devise_for :users, controllers: {
+        sessions: 'users/sessions'
+      }
+
+  devise_scope :user do
+    get 'current_user' => "users/sessions#current_user"
+  end
+
 
   namespace :api, defaults: { format: :json } do
     resources :groups

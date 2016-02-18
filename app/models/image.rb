@@ -8,8 +8,8 @@ class Image < ActiveRecord::Base
     RubyIdenticon.create_base64(
       "identicons are great!",
       grid_size: 9,
-      square_size: 3,
-      border_size: 8,
+      square_size: 15,
+      border_size: 40,
       key: (1000000000000000 + rand(1000000000000000)).to_s,
       background_color: 0xF9F9F9F9
     )

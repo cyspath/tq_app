@@ -20,17 +20,18 @@ var App = React.createClass({
 this.AppRoutes = (
   <Route path='/' handler={App} >
 
-    <Route name="groups" path='/groups' handler={GroupsIndex}></Route>
+    <DefaultRoute name="events" handler={EventsIndexPage} />
 
-    <Route name='groupShow' path='/groups/:groupId' handler={GroupPage} ></Route>
+    <Route name='eventDetail' path='/events/:eventId' handler={EventPage} />
 
-    <Route name="events" path='/' handler={EventsIndexPage}></Route>
+    <Route name="groups" path='/groups' handler={GroupsIndex}>
+      <Route name='groupDetail' path='/groups/:groupId' handler={GroupPage} ></Route>
+    </Route>
 
-    <Route name='eventShow' path='/events/:eventId' handler={EventPage} ></Route>
 
-    <Route name='userShow' path='/user/:userId' handler={UserPage} ></Route>
-
-    <Route name="profile" path='/profile' handler={User} />
+    <Route name='users' path='/users/' handler={UsersPage} >
+      <Route name='userDetail' path='/users/:userId' handler={UserPage} />
+    </Route>
 
   </Route>
 );

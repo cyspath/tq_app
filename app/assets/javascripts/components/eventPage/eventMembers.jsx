@@ -3,11 +3,10 @@ var EventMembers = React.createClass({
   going: function() {
     var going = this.props.going.map(function(user) {
       var url = identiconOrAvatarUrl(user)
-      var userLink = "/user/" + user.id
       return(
         <div key={user.id} className="event-member__container" >
-          <Link to={userLink}><img className="user-avatar" src={url} /></Link>
-          <Link to={userLink}><div className="user-name" >{user.username}</div></Link>
+          <Link to="userDetail" params={{ userId: user.id }}><img className="user-avatar" src={url} /></Link>
+          <Link to="userDetail" params={{ userId: user.id }}>{user.username}</div></Link>
         </div>
       )
     })
@@ -30,11 +29,10 @@ var EventMembers = React.createClass({
   notGoing: function() {
     var notGoing = this.props.notGoing.map(function(user) {
       var url = identiconOrAvatarUrl(user)
-      var userLink = "/user/" + user.id
       return(
         <div key={user.id} className="event-member__container" >
-          <Link to={userLink}><img className="user-avatar" src={url} /></Link>
-          <Link to={userLink}><div className="user-name" >{user.username}</div></Link>
+          <Link to="userDetail" params={{ userId: user.id }}><img className="user-avatar" src={url} /></Link>
+          <Link to="userDetail" params={{ userId: user.id }}><div className="user-name" >{user.username}</div></Link>
         </div>
       )
     })

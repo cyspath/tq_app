@@ -13,6 +13,7 @@ var Navbar = React.createClass({
       url: "/current_user",
       success: function(resp) {
         this.setState({ currentUser: resp });
+        window.currentUser = resp
       }.bind(this),
       error: function(resp){
         console.log(resp)
@@ -27,6 +28,7 @@ var Navbar = React.createClass({
       success: function() {
         window.location='#/'
         this.setState({ currentUser: null });
+        window.currentUser = null
       }.bind(this),
       error: function(resp){
         console.log(resp)
@@ -38,9 +40,11 @@ var Navbar = React.createClass({
     if (this.state.currentUser != null) {
       return (
         <div>
-          <div className="user-avatar">
-            <img src={this.state.currentUser.avatar} />
-          </div>
+          <Link to="userDetail" params={{ userId: this.state.currentUser.id }}>
+            <div className="user-avatar">
+              <img src={this.state.currentUser.avatar} />
+            </div>
+          </Link>
           <a onClick={this.signOut}>Sign Out</a>
         </div>
       )

@@ -4,7 +4,6 @@ var GroupsIndex = React.createClass({
     return (
       <div className="groups-index__container">
         <GroupsList />
-        <Link to="/profile">User profile</Link>
       </div>
     )
   }

@@ -38,21 +38,17 @@ var GroupEvent = React.createClass({
     var userImages = this.props.members.slice(0, 10).map(function(user) {
       i += 1
       var url = identiconOrAvatarUrl(user)
-      var userLink = "/user/" + user.id
       return(
-        <Link to={userLink} key={i}><img src={url} /></Link>
+        <Link to="userDetail" params={{ userId: user.id }} key={i}><img src={url} /></Link>
       )
     })
 
     var currentDescription = this.getDescription()
-
-    var eventLink = "/events/" + this.props.id
-
     return (
       <div className="group-events-index__item-container">
 
         <div className="top" >
-          <Link to={eventLink}>{this.props.name}</Link>
+          <Link to="eventDetail" params={{ eventId: this.props.id }}>{this.props.name}</Link>
         </div>
 
         <div className="body" >
@@ -97,20 +93,3 @@ var GroupEvent = React.createClass({
     )
   }
 });
-// <div className="events-index__container-inner-left" >
-//   <Link to={eventLink}>
-//     <div className="left" >
-//       {this.props.start_time_formatted.slice(0, this.props.start_time_formatted.length - 2)}
-//     </div>
-//     <div className="right" >
-//       {this.props.start_time_formatted.slice(this.props.start_time_formatted.length - 2)}
-//     </div>
-//   </Link>
-// </div>
-//
-// <div className="events-index__container-inner-right" >
-//   <Link to={groupLink}><div className="top" >{this.props.group_name}</div></Link>
-//   <Link to={eventLink}><div className="mid" >{this.props.name}</div></Link>
-//
-//   <div className="bottom" >{this.props.member_count} 个同趣者</div>
-// </div>

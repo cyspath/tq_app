@@ -1,4 +1,4 @@
-var UserPage = React.createClass({
+var UsersPage = React.createClass({
 
   getInitialState: function() {
     console.log(this.props.params.userId);
@@ -37,7 +37,7 @@ var UserPage = React.createClass({
     console.log(this.state.user);
     return (
       <div className="content-page__container">
-        <UserInfo user={this.state.user} />
+        <UserPage user={this.state.user} />
       </div>
     )
   }

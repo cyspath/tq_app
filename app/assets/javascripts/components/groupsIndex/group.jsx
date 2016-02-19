@@ -26,7 +26,7 @@ var Group = React.createClass({
   render: function() {
     var image = this.avatar()
     return (
-      <Link to="groupShow" params={{ groupId: this.props.id }} className="groups-index__item-container-wrapper" >
+      <Link to="groupDetail" params={{ groupId: this.props.id }} className="groups-index__item-container-wrapper" >
 
         <div className="groups-index__item-container">
           <img src={image} />

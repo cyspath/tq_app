@@ -1,14 +1,12 @@
 var Event = React.createClass({
 
   render: function() {
-    var eventLink = "/events/" + this.props.id
-    var groupLink = "/groups/" + this.props.group_id
     var time = moment(this.props.start_time, "hmm").format("hh:mma")
     return (
       <div className="events-index__item-container">
 
         <div className="events-index__container-inner-left" >
-          <Link to={eventLink}>
+          <Link to="eventDetail" params={{eventId: this.props.id}}>
             <div className="left" >
               {time.slice(0, time.length - 2)}
             </div>
@@ -19,8 +17,8 @@ var Event = React.createClass({
         </div>
 
         <div className="events-index__container-inner-right" >
-          <Link to={groupLink}><div className="top" >{this.props.group_name}</div></Link>
-          <Link to={eventLink}><div className="mid" >{this.props.name}</div></Link>
+          <Link to="groupDetail" params={{groupId: this.props.group_id}}><div className="top" >{this.props.group_name}</div></Link>
+          <Link to="eventDetail" params={{eventId: this.props.id}}><div className="mid" >{this.props.name}</div></Link>
 
           <div className="bottom" >{this.props.member_count} 个同趣者</div>
         </div>

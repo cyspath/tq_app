@@ -8,6 +8,7 @@ encrypted_password: "$2a$10$Knzp29UFXM4Z2g3UEac3T.mRveqEG18T7.ft25HhVLFJaVig27gu
 location: '美国加州',
 location_id: 1,
 home_town: '青岛',
+identicon: Image.generate_identicon,
 bio: "在作自我介绍和回答其他问题时，眼睛千万不要东张西望，四处游离，显得漫不经心的样子，这会给人做事随便、注意力不集中的感觉。眼睛最好要多注视面试考官，但也不能长久注视目不转睛。再就是尽量少加一些手的辅助动作，因为这毕竟不是在作讲演，保持一种得体的姿态也是很重要的。注意掌握时间，如果面试考官规定了时间，一定要注意时间的掌握，既不能超时太长，也不能过于简短。但如果没有规定时间，尽量1分钟内完成回答。"
 )
 

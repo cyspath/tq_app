@@ -214,10 +214,10 @@ DEPENDENCIES
   binding_of_caller
   byebug
   cloudinary
-  devise
+  devise (= 3.5.5)
   faker
   figaro (~> 0.7)
-  flux-rails-assets
+  flux-rails-assets (= 2.1.0)
   font-awesome-sass (~> 4.5.0)
   jbuilder (~> 2.0)
   jquery-rails

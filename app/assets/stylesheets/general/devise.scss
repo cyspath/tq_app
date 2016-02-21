@@ -1,0 +1,8 @@
+.notice {
+  background-color: $mint;
+  text-align: center;
+  padding: 5px 0;
+}
+.notice:empty {
+  display: none;
+}

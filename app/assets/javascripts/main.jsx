@@ -18,7 +18,7 @@ var App = React.createClass({
 });
 
 this.AppRoutes = (
-  <Route path='/' handler={App} >
+  <Route path='/' handler={App}>
 
     <DefaultRoute name="events" handler={EventsIndexPage} />
 

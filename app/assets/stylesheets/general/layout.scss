@@ -1,7 +1,7 @@
 $content-width: 960px;
 
-.AppRoutes {
-  background-color: $grey-2;
+body [data-react-router-class~=AppRoutes] {
+  overflow: none;
 }
 
 body {

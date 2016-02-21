@@ -12,6 +12,11 @@
   float: left;
 }
 
+.navbar__logo-section {
+  @include bp__max-500 {
+    display: none;
+  }
+}
 .user-status, .navbar__user-section {
   float: right;
 }
@@ -42,14 +47,18 @@
 
   .navbar__action-btn {
     height: 58px;
-    margin: 3px;
+    margin: 3px 0;
     border-radius: 5px;
     -moz-transition: all .1s ease-in;
     -o-transition: all .1s ease-in;
     -webkit-transition: all .1s ease-in;
     transition: all .1s ease-in;
     padding: 0px 20px;
-    
+
+    @include bp__max-400 {
+      padding: 0px 10px;
+    }
+
     .large-text {
       color: $red;
       font-size: 30px;

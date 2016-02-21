@@ -37,7 +37,7 @@ var GroupBodyLeft = React.createClass({
         <div className="content-body-left__info" >
 
           <div className="info-item" >
-            <div className="location" >山东 - 青岛</div>
+            <div className="location" >{this.props.group.location_name}</div>
             <div className="start-date" >{moment(this.props.group.created_at).format('YYYY年MMMD日')}成立</div>
           </div>
 

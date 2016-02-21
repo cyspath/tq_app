@@ -41,11 +41,16 @@ while i < group_names.length
   description = ""
   r.times {description += arr.sample}
 
+  location_id = rand(3) + 1
+  location_names = ["山东青岛", "天津", "北京"]
+  location_name = location_names[location_id - 1]
+
   Group.create!(
     name: group_names[i],
     avatar: "https://cdn.tutsplus.com/photo/uploads/legacy/762_animalRU/" + (rand(25) + 1).to_s + ".jpg",
     description: description,
-    location_id: rand(10),
+    location_id: location_id,
+    location_name: location_name,
     owner_id: rand(10) + 1,
     created_at: Faker::Time.between(DateTime.now - 20, DateTime.now)
   )

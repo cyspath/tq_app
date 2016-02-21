@@ -6,7 +6,9 @@ json.(
   :created_at,
   :avatar,
   :location_id,
-  :owner_id
+  :location_name,
+  :owner_id,
+  :owner_name
 )
 
 json.set! :start_date, group.created_at.strftime("%b %d, %Y")

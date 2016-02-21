@@ -40,13 +40,19 @@ var Navbar = React.createClass({
     if (this.state.currentUser != null) {
       return (
         <div>
-          <Link className="user-avatar__container" to="userDetail" params={{ userId: this.state.currentUser.id }}>
+          <div className="user-avatar__container">
             <div className="user-avatar">
               <img src={this.state.currentUser.avatar} />
             </div>
             <i className="fa fa-caret-down navicon-caret" ></i>
             <i className="fa fa-navicon navicon-hamburger" ></i>
-          </Link>
+          </div>
+
+          <div className="navbar__dropdown" >
+            <Link  to="userDetail" params={{ userId: this.state.currentUser.id }}>我的资料</Link>
+            <a onClick={this.signOut}>退出</a>
+          </div>
+
         </div>
       )
     } else {
@@ -58,8 +64,6 @@ var Navbar = React.createClass({
       )
     }
   },
-
-  // <a onClick={this.signOut}>Sign Out</a>
 
   render: function() {
     var userSection = this.userSection()
@@ -97,17 +101,11 @@ var Navbar = React.createClass({
           </a>
 
           <div className="navbar__user-section">
-            <div className="navbar__user-container">
-              {userSection}
-            </div>
-          </div>
-
-          <div className="user-status">
-
-
+            {userSection}
           </div>
 
         </div>
+
       </nav>
     )
   }

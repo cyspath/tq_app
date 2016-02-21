@@ -43,6 +43,13 @@
   }
 }
 
+@mixin bp__min-500 {
+  @media only screen and (min-width: 500px) {
+    @content;
+  }
+}
+
+
 @mixin bp__max-400 {
   @media only screen and (max-width: 400px) {
     @content;

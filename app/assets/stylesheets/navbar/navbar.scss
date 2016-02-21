@@ -83,16 +83,52 @@
       color: white;
     }
   }
+}
+
+.navbar__user-section {
+
+  @include bp__max-500 {
+
+  }
+
+  .user-avatar__container {
+    display: inline-block;
+  }
 
   .user-avatar {
-    margin-top: 13px;
+    float: left;
+    margin-top: 10px;
     border-radius: 50%;
     border: 1px solid gray;
-    width: 35px;
-    height: 35px;
+    width: 45px;
+    height: 45px;
     img {
       width: auto;
       height: 100%;
+    }
+    @include bp__max-500 {
+      display: none;
+    }
+  }
+
+  .navicon-caret {
+    float: right;
+    color: $grey-4;
+    font-size: 20px;
+    margin: 23px 0 0 8px;
+    @include bp__max-500 {
+      display: none;
+    }
+  }
+
+  .navicon-hamburger {
+    display: none;
+    font-size: 37px;
+    opacity: 0.9;
+    margin-top: 15px;
+    color: $red-banner;
+    @include bp__max-500 {
+      display: block;
     }
   }
 }

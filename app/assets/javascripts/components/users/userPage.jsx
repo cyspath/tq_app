@@ -1,7 +1,6 @@
 var UserPage = React.createClass({
 
   getInitialState: function() {
-    console.log(this.props.params.userId);
     return {
       userId : parseInt(this.props.params.userId),
       user: UserStore._user
@@ -34,7 +33,6 @@ var UserPage = React.createClass({
   },
 
   render: function() {
-    console.log(this.state.user);
     return (
       <div className="content-page__container">
         <UserInfo user={this.state.user} />

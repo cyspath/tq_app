@@ -12,7 +12,7 @@ class Api::GroupsController < ApplicationController
   end
 
   def create
-    location_name = location(params[:group][:location_id].to_i)
+    location_name = Location.find_by_location_id(params[:group][:location_id].to_i)
     @group = Group.new(group_params.merge(owner_id: current_user.id, owner_name: current_user.username, location_name: location_name))
     if @group.save
       render json: @group

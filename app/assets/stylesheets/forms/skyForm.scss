@@ -1,8 +1,12 @@
+.form-wrapper {
+	display: table-cell;
+	vertical-align: middle;
+}
 
-/**/
-/* defaults */
-/**/
 .sky-form {
+	max-width: 500px;
+  margin: 0 auto;
+
 	outline: none;
 	box-shadow: 0 0 20px rgba(0,0,0,.3);
 	font: 13px/1.55 'Open Sans', Helvetica, Arial, sans-serif;

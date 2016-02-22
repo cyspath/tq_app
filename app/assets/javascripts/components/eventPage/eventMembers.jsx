@@ -6,7 +6,7 @@ var EventMembers = React.createClass({
       return(
         <div key={user.id} className="event-member__container" >
           <Link to="userDetail" params={{ userId: user.id }}><img className="user-avatar" src={url} /></Link>
-          <Link to="userDetail" params={{ userId: user.id }}>{user.username}</Link>
+          <Link to="userDetail" params={{ userId: user.id }}><div className="user-name" >{user.username}</div></Link>
         </div>
       )
     })

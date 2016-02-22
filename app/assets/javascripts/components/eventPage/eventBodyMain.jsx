@@ -16,7 +16,7 @@ var EventBodyMain = React.createClass({
             <div className="date-time" >
               <div className="left" ><i className="fa fa-calendar-o"></i></div>
               <div className="right" >
-                <div className="right-upper" >{moment(event.date).format("dddd - MMMDo")}</div>
+                <div className="right-upper" >{moment(event.date).format("dddd MMMDo")}</div>
                 <div className="right-lower">{moment(event.start_time, "hmm").format("ahh:mm")} 到 {moment(event.end_time, "hmm").format("ahh:mm")}</div>
               </div>
             </div>

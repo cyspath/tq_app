@@ -1,4 +1,5 @@
 @mixin content-container {
+  overflow: auto;
   width: $content-width;
   margin-left: auto;
   margin-right: auto;
@@ -22,7 +23,7 @@
 @mixin white-box-grey-border {
   border: 1px solid $grey-3;
   border-radius: 3px;
-  overflow: inherit;
+  overflow: auto;
   background-color: white;
 }
 
@@ -49,9 +50,9 @@
   }
 }
 
-
-@mixin bp__max-400 {
-  @media only screen and (max-width: 400px) {
+// iphone 6 plus width
+@mixin bp__max-420 {
+  @media only screen and (max-width: 420px) {
     @content;
   }
 }

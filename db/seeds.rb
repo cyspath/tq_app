@@ -173,7 +173,7 @@ while i <= 300
     name: event_name,
     date: date,
     start_time: time,
-    end_time: time + [70, 100, 170, 200, 400].sample,
+    end_time: time + [100, 100, 100, 200, 200, 400].sample,
     location_name: location,
     location_address: address,
     description: description,

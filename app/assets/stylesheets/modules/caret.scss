@@ -1,0 +1,21 @@
+.caret-up {
+    width: 0;
+    height: 0;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-bottom: 10px solid $grey-3;
+    position:relative;
+    top: 1px;
+}
+.caret-up:after{
+    content:'';
+    width: 0;
+    height: 0;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-bottom: 9px solid $white;
+    position:absolute;
+    top: 1px;
+    left: -9px;
+    z-index: 1;
+}

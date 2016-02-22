@@ -39,18 +39,13 @@ var Navbar = React.createClass({
   userSection: function() {
     if (this.state.currentUser != null) {
       return (
-        <div>
-          <div className="user-avatar__container">
+        <div className="navbar__user-section__inner" >
+          <div className="user-avatar__container" onClick={this.showDropdown}>
             <div className="user-avatar">
               <img src={this.state.currentUser.avatar} />
             </div>
             <i className="fa fa-caret-down navicon-caret" ></i>
             <i className="fa fa-navicon navicon-hamburger" ></i>
-          </div>
-
-          <div className="navbar__dropdown" >
-            <Link  to="userDetail" params={{ userId: this.state.currentUser.id }}>我的资料</Link>
-            <a onClick={this.signOut}>退出</a>
           </div>
 
         </div>
@@ -65,8 +60,31 @@ var Navbar = React.createClass({
     }
   },
 
+  dropdownSection: function() {
+    if (this.state.currentUser != null) {
+      return (
+        <div id="navbar__dropdown" className="hide"  >
+          <div className="caret-up" ></div>
+          <div className="dropdown__list" >
+            <Link to="userDetail" params={{ userId: this.state.currentUser.id }} className="dropdown__item" >
+              我的资料
+            </Link>
+            <a onClick={this.signOut} className="dropdown__item" >
+              退出
+            </a>
+          </div>
+        </div>
+      )
+    }
+  },
+
+  showDropdown: function() {
+    $('#navbar__dropdown').toggleClass('hide')
+  },
+
   render: function() {
     var userSection = this.userSection()
+    var dropdown = this.dropdownSection()
 
     return (
       <nav className="navbar__container">
@@ -103,9 +121,8 @@ var Navbar = React.createClass({
           <div className="navbar__user-section">
             {userSection}
           </div>
-
+          {dropdown}
         </div>
-
       </nav>
     )
   }

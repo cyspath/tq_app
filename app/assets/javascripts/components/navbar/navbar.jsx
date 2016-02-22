@@ -21,7 +21,12 @@ var Navbar = React.createClass({
     })
   },
 
-  signOut: function() {
+  stopPropagation: function(e) {
+    e.stopPropagation()
+  },
+
+  signOut: function(e) {
+    e.stopPropagation()
     $.ajax({
       type: 'delete',
       url: "/users/sign_out",
@@ -66,7 +71,7 @@ var Navbar = React.createClass({
         <div id="navbar__dropdown" className="hide"  >
           <div className="caret-up" ></div>
           <div className="dropdown__list" >
-            <Link to="userDetail" params={{ userId: this.state.currentUser.id }} className="dropdown__item" >
+            <Link onClick={this.stopPropagation} to="userDetail" params={{ userId: this.state.currentUser.id }} className="dropdown__item" >
               我的资料
             </Link>
             <a onClick={this.signOut} className="dropdown__item" >

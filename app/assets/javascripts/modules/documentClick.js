@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('body').on("click touchstart", function(e) {
+  $('html').on("click", function() {
     $('#navbar__dropdown').addClass('hide')
   })
 })

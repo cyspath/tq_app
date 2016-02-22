@@ -10,7 +10,6 @@ var NewGroupForm = React.createClass({
     GroupActions.addGroup(this.state);
     this.setState(this.defaultState);
     this.hideModal()
-    console.log(this.state);
   },
 
   onFieldChange: function(event) {

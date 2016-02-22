@@ -78,7 +78,8 @@ var Navbar = React.createClass({
     }
   },
 
-  showDropdown: function() {
+  showDropdown: function(e) {
+    e.stopPropagation()
     $('#navbar__dropdown').toggleClass('hide')
   },
 

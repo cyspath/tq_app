@@ -1,9 +1,13 @@
 @mixin content-container {
   overflow: auto;
-  width: $content-width;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 100px;
+  max-width: $content-width;
+  width: 100%;
+  @include bp__max-960 {
+    padding: 0 15px;
+  }
 }
 
 @mixin text-shadow__dark-medium {
@@ -34,6 +38,18 @@
 
 @mixin bp__max-960 {
   @media only screen and (max-width: 960px) {
+    @content;
+  }
+}
+
+@mixin bp__max-800 {
+  @media only screen and (max-width: 800px) {
+    @content;
+  }
+}
+
+@mixin bp__max-600 {
+  @media only screen and (max-width: 600px) {
     @content;
   }
 }

@@ -1,6 +1,9 @@
 .form-wrapper {
 	display: table-cell;
 	vertical-align: middle;
+	@include bp__max-500 {
+	  padding: 0 15px;
+	}
 }
 
 .sky-form {

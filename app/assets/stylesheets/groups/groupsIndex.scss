@@ -1,29 +1,38 @@
 .groups-index__container {
   @include content-container;
   overflow: visible;
-  @include bp__max-960 {
-    margin-left: 15px;
-    margin-right: 15px;
-  };
-  .groups-index__container-inner {
-    margin-left: -10px;
-    margin-right: -10px;
-  }
+  min-height: 500px;
+
 }
 
 .groups-index__item-container-wrapper {
-  float: left;
+  display: inline-block;
+  overflow: visible;
+  width: 25%;
+
+  @include bp__max-800 {
+    width: 33%;
+  }
+
+  @include bp__max-600 {
+    width: 50%;
+  }
+
+  @include bp__max-420 {
+    width: 100%;
+  }
+
 }
 
 .groups-index__item-container {
-  width: 225px;
-  height: 180px;
+  width: 96%;
 
+  height: 180px;
   border-top: 1px solid #ddd;
   border-left: 1px solid #ddd;
   border-right: 1px solid #ddd;
 
-  margin: 10px;
+  margin: 10px auto;
 
   overflow: hidden;
   position: relative;

@@ -6,7 +6,8 @@
 }
 
 .content-banner__upper {
-  height: 150px;
+  padding: 30px 15px;
+  font-size: 55px;
   background-color: $red-banner;
   background-image: -webkit-gradient(radial,50% 0,0,50% 0,429,color-stop(0%,transparent),color-stop(100%,rgba(0,0,0,.15)));
   background-image: -webkit-radial-gradient(center top,farthest-corner circle,transparent 0,rgba(0,0,0,.15) 100%);
@@ -15,13 +16,15 @@
   background-image: -o-radial-gradient(center top,farthest-corner circle,transparent 0,rgba(0,0,0,.15) 100%);
   background-image: radial-gradient(farthest-corner circle at center top,transparent 0,rgba(0,0,0,.15) 100%);
   border-bottom: 8px solid rgba(255,255,255,.25);
+  @include bp__max-500 {
+    padding: 15px;
+    font-size: 30px;
+  }
 }
 
 .content-banner__upper-title {
   text-align: center;
   font-family: $kaiti;
-  font-size: 55px;
-  line-height: 2.5em;
   color: $white;
   letter-spacing: 7px;
 }

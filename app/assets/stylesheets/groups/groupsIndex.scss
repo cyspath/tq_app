@@ -85,3 +85,12 @@
 .groups-index__item-container:hover {
   transform: scale(1.05);
 }
+
+.png__group-three {
+  background: image-url("group-three.png") no-repeat scroll center center;
+  width: 100%;
+  height: auto;
+  background-size: 100%;
+  opacity: 0.1;
+  min-height: 100%;
+}

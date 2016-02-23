@@ -1,32 +1,9 @@
 var GroupBodyLeft = React.createClass({
 
-  mostRecentImage: function() {
-    var image
-    var date
-    this.props.group.images.forEach(function(el) {
-      if (date === undefined) {
-        date = el.created_at
-        image = el.url_225x225
-      } else if (el.created_at > date ) {
-        date = el.created_at
-        image = el.url_225x225
-      }
-    })
-    return image
-  },
-
-  avatar: function() {
-    if (this.props.group.avatar == undefined) {
-      return this.mostRecentImage()
-    } else {
-      return this.props.group.avatar
-    }
-  },
-
   render: function() {
     var founderLink = "/users/" + this.props.group.founder.id
     var founderImageUrl = identiconOrAvatarUrl(this.props.group.founder)
-    var image = this.avatar()
+    var image = groupAvatarImage(this.props.group.avatar)
     return (
       <div className="content-body-left__container">
 

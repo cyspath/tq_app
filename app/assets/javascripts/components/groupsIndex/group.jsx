@@ -1,30 +1,7 @@
 var Group = React.createClass({
 
-  mostRecentImage: function() {
-    var image
-    var date
-    this.props.images.forEach(function(el) {
-      if (date === undefined) {
-        date = el.created_at
-        image = el.url_225x225
-      } else if (el.created_at > date ) {
-        date = el.created_at
-        image = el.url_225x225
-      }
-    })
-    return image
-  },
-
-  avatar: function() {
-    if (this.props.avatar == undefined) {
-      return this.mostRecentImage()
-    } else {
-      return this.props.avatar
-    }
-  },
-
   render: function() {
-    var image = this.avatar()
+    var image = groupAvatarImage(this.props.avatar)
     return (
       <Link to="groupDetail" params={{ groupId: this.props.id }} className="groups-index__item-container-wrapper" >
 

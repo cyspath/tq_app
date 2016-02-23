@@ -29,3 +29,11 @@ var identiconOrAvatarUrl = function(user) {
     return 'data:image/png;base64,' + user.identicon
   }
 }
+
+var groupAvatarImage = function(url) {
+  if (url == undefined) {
+    return "<%= asset_path( 'group-three.png' ) %>"
+  } else {
+    return url
+  }
+}

@@ -1,33 +1,75 @@
-<h2>Sign up</h2>
+<div class="form-wrapper__container background-image__blur">
+  <div class="form-wrapper" >
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:class => "sky-form"}) do |f| %>
+      <%= devise_error_messages! %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+			<header>
+        新成员注册
+        <div class="header__sub">让有共同兴趣的你，找到有共同兴趣的他们</div>
+      </header>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+			<fieldset>
+				<section>
+					<label class="input">
+						<i class="icon-append fa-user"></i>
+            <%= f.text_field :username, placeholder: "昵称", required: true, autofocus: true %>
+						<b class="tooltip tooltip-bottom-right">这个是公开的</b>
+					</label>
+				</section>
+
+				<section>
+					<label class="input">
+						<i class="icon-append fa-envelope"></i>
+            <%= f.email_field :email, placeholder: "邮箱", required: true %>
+						<b class="tooltip tooltip-bottom-right">用于登录</b>
+					</label>
+				</section>
+
+        <% if @minimum_password_length %>
+          <% length =  @minimum_password_length %>
+        <% end %>
+        <div class="row">
+          <section class="col col-6">
+            <label class="input">
+              <i class="icon-append fa-lock"></i>
+                <%= f.password_field :password, placeholder: "密码", autocomplete: "off" %>
+              <b class="tooltip tooltip-bottom-right">至少<%= length %>位数字，英文字母</b>
+            </label>
+          </section>
+          <section class="col col-6">
+            <label class="input">
+              <i class="icon-append fa-lock"></i>
+                <%= f.password_field :password_confirmation, placeholder: "密码确认", autocomplete: "off" %>
+              <b class="tooltip tooltip-bottom-right">两个密码必须一致</b>
+            </label>
+          </section>
+        </div>
+
+        <section>
+          <label class="select">
+            <select name="user[location_id]" required>
+              <option value="" selected disabled>城市</option>
+              <option value="1">山东青岛</option>
+              <option value="2">天津</option>
+              <option value="3">北京</option>
+            </select>
+            <i></i>
+          </label>
+        </section>
+
+				<!-- <section>
+					<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>I agree to the Terms of Service</label>
+					<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>I want to receive news and  special offers</label>
+
+				</section> -->
+			</fieldset>
+
+			<footer>
+        <div class="note float-left">已有账号，<%= link_to "直接登录", new_session_path(resource_name) %></div>
+
+				<button type="submit" class="button">立即注册</button>
+			</footer>
+
+		<% end %>
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-<!--
-  <div class="field">
-    <%= f.label :phone %><br />
-    <%= f.phone_field :phone %>
-  </div> -->
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

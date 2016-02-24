@@ -47,7 +47,7 @@ var Navbar = React.createClass({
         <div className="navbar__user-section__inner" >
           <div className="user-avatar__container" onClick={this.showDropdown}>
             <div className="user-avatar">
-              <img src={this.state.currentUser.avatar} />
+              <img src={identiconOrAvatarUrl(this.state.currentUser)} />
             </div>
             <i className="fa fa-caret-down navicon-caret" ></i>
             <i className="fa fa-navicon navicon-hamburger" ></i>

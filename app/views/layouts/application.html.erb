@@ -30,13 +30,16 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
-  <!-- <img src="data:image/png;base64, <%= Image.generate_identicon %>" alt="" /> -->
   <%= yield %>
 
   <script type="text/javascript">
     $(document).ready(function() {
       setTimeout(function() {
         $('.notice').slideUp()
+      }, 1500)
+
+      setTimeout(function() {
+        $('.alert').slideUp()
       }, 1500)
     })
   </script>

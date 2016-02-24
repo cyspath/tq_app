@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 # ruby "2.2.4"
 
 gem 'devise', '3.5.5'
+# gem 'rails-i18n', '~> 4.0.0' # For 4.0.x, language translation for rails
+
 gem 'react-rails', '~> 1.4.0'
 gem 'flux-rails-assets', '2.1.0'
 gem 'react-router-rails', '~>0.13.3.2'

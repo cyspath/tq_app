@@ -18,6 +18,19 @@
 #
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
+#
+# en:
+#   hello: "Hello world"
 
-en:
-  hello: "Hello world"
+
+
+zh-CN:
+  activerecord:
+    models:
+      user: "用户"
+    attributes:
+      user:
+        username: "昵称"
+        email: "邮箱"
+        phone: "手机"
+        password: "密码"

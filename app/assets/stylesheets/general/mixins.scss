@@ -42,8 +42,20 @@
   cursor: pointer;
 }
 
+@mixin bp__min-1200 {
+  @media only screen and (min-width: 1200px) {
+    @content;
+  }
+}
+
 @mixin bp__max-960 {
   @media only screen and (max-width: 960px) {
+    @content;
+  }
+}
+
+@mixin bp__min-960 {
+  @media only screen and (min-width: 960px) {
     @content;
   }
 }

@@ -61,8 +61,8 @@ var Navbar = React.createClass({
           <a href="/users/sign_in" className="session-btn" ><div className="btn btn-red__navbar" ></div></a>
           <a href="/users/sign_up" className="session-btn" ><div className="btn btn-white__navbar" >免费注册</div></a>
           <a href="/users/sign_in" className="session-btn icons" >
-            <i className="fa fa-sign-in"></i>/
             <i className="fa fa-user-plus"></i>
+            <i className="fa fa-sign-in"></i>
           </a>
         </div>
       )

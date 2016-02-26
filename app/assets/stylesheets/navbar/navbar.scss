@@ -93,6 +93,20 @@
     margin: 13px 0 0 10px;
   }
 
+  .session-btn.icons {
+    opacity: 0.8;
+    display: none;
+    @include bp__max-370 {
+      margin: 10px 0 0 0;
+      display: block;
+    }
+    i {
+      color: $red-banner;
+      display: inherit;;
+      font-size: 22px;
+    }
+  }
+
   .navbar__user-section__inner {
     position: relative;
   }

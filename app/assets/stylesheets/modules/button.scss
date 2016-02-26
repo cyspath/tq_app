@@ -45,7 +45,7 @@ button:hover {
       content: "登录／注册";
     }
   }
-  @include bp__max-420 {
+  @include bp__max-370 {
     display: none;
   }
 }

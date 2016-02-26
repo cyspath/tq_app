@@ -1,8 +1,12 @@
 .notice {
   color: $notice-text;
   background-color: $notice;
+  border-bottom: 1px solid $notice-text;
   text-align: center;
   padding: 5px 0;
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
 }
 .notice:empty {
   display: none;
@@ -12,8 +16,12 @@
 .alert {
   color: $alert-text;
   background-color: $alert;
+  border-bottom: 1px solid $alert-text;
   text-align: center;
   padding: 5px 0;
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
 }
 .alert:empty {
   display: none;

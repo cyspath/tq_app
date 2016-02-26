@@ -44,7 +44,7 @@ zh-CN:
       updated: "帐号资料更新成功。"
     sessions:
       signed_in: "登录成功"
-      signed_out: "退出成功"
+      signed_out: "" # "退出成功"
       already_signed_out: "已经退出成功"
     unlocks:
       send_instructions: "几分钟后，您将收到一封解锁帐号的邮件。"

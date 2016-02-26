@@ -1,3 +1,12 @@
+#error_explanation {
+	text-align: center;
+	background-color: $alert;
+	padding: 10px;
+	color: $alert-text;
+	margin-bottom: 20px;
+	border: 1px solid $alert-text;
+}
+
 .background-image__blur {
 	background: image-url("blur.jpg") no-repeat scroll center center;
 	background-size: cover;

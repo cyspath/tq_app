@@ -10,6 +10,23 @@
     position: absolute;
     width: 100%;
     z-index: 1;
+
+    &:after {
+      content: " ";
+      display: block;
+      height: 300px;
+      max-width: 960px;
+      left: 0;
+      margin-left: -200px;
+      margin-top: -200px;
+      background-repeat: no-repeat;
+      background-image: -webkit-gradient(radial,50% 50%,0,50% 50%,79,color-stop(0%,rgba(0,0,20,.35)),color-stop(100%,rgba(0,0,20,0)));
+      background-image: -webkit-radial-gradient(center center,closest-side,rgba(0,0,20,.35) 0,rgba(0,0,20,0) 100%);
+      background-image: -moz-radial-gradient(center center,closest-side,rgba(0,0,20,.35) 0,rgba(0,0,20,0) 100%);
+      background-image: -ms-radial-gradient(center center,closest-side,rgba(0,0,20,.35) 0,rgba(0,0,20,0) 100%);
+      background-image: -o-radial-gradient(center center,closest-side,rgba(0,0,20,.35) 0,rgba(0,0,20,0) 100%);
+      background-image: radial-gradient(closest-side at center center,rgba(0,0,20,.35) 0,rgba(0,0,20,0) 100%);
+    }
     .banner-main__description {
       padding: 20px 0;
       max-width: 960px;

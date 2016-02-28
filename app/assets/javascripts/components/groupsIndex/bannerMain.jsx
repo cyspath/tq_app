@@ -1,5 +1,10 @@
 var BannerMain = React.createClass({
-
+  getInitialState: function() {
+    return {
+      currentUser: window.currentUser
+    };
+  },
+  
   randomBannerUrl: function() {
     var urls = [
       "http://res.cloudinary.com/cyspath/image/upload/v1456454619/yyj_p4smo7.jpg",
@@ -8,7 +13,15 @@ var BannerMain = React.createClass({
     return(urls[Math.floor(Math.random()*urls.length)])
   },
 
-  publicView: function() {
+  showBanner: function() {
+    if (window.currentUser === undefined) {
+      return this.publicBanner()
+    } else {
+      return this.userBanner()
+    }
+  },
+
+  publicBanner: function() {
     var url = this.randomBannerUrl()
     return (
       <div className="banner-main__container" >
@@ -23,8 +36,17 @@ var BannerMain = React.createClass({
     )
   },
 
+  userBanner: function() {
+    var url = this.randomBannerUrl()
+    return (
+      <div className="banner-main__container" >
+      user view
+      </div>
+    )
+  },
+
   render: function() {
-    view = this.publicView()
+    view = this.showBanner()
     return (
       <div>
         {view}

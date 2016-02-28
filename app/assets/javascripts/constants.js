@@ -12,4 +12,5 @@ var Constants = {
 
   GET_USER_DETAIL: 'users.get_detail',
   GET_CURRENT_USER: 'user.get_current_user',
+  SIGN_OUT_CURRENT_USER: 'user.sign_out_current_user',
 }

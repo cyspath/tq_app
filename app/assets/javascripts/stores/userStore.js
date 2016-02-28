@@ -1,7 +1,7 @@
 var UserStore = new _.extend({}, EventEmitter.prototype, {
 
   _user: {},
-  _currentUser: {},
+  _currentUser: null,
 
   addUser: function(user) {
     this._user = user
@@ -9,6 +9,16 @@ var UserStore = new _.extend({}, EventEmitter.prototype, {
 
   addCurrentUser: function(currentUser) {
     this._currentUser = currentUser
+  },
+
+  hasCurrentUser: function() {
+    return(
+      this._currentUser != null && Object.keys(this._currentUser).length > 0
+    )
+  },
+
+  signOutCurrentUser: function() {
+    this._currentUser = null
   },
 
   addChangeListener: function(callback) {
@@ -37,6 +47,11 @@ AppDispatcher.register(function(payload) {
 
     case Constants.GET_CURRENT_USER:
       UserStore.addCurrentUser(payload.currentUser);
+      UserStore.emitChange();
+      break;
+
+    case Constants.SIGN_OUT_CURRENT_USER:
+      UserStore.signOutCurrentUser();
       UserStore.emitChange();
       break;
 

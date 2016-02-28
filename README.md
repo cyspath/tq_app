@@ -11,6 +11,9 @@ To generate a random identicon:
 
 ## Technical
 
+`UserStore.hasCurrentUser()` checks if there is a currentUser logged
+`UserStore._currentUser` gives the current user
+
 ### Heroku
 http://tongqu.herokuapp.com/
 $ heroku logs --tail

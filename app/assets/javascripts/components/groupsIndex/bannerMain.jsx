@@ -14,12 +14,10 @@ var BannerMain = React.createClass({
   },
 
   showBanner: function() {
-    if (window.currentUser === undefined) {
-      console.log("pub");
-      this.setState({ banner: this.publicBanner() });
-    } else {
-      console.log("user");
+    if (UserStore.hasCurrentUser()) {
       this.setState({ banner: this.userBanner() });
+    } else {
+      this.setState({ banner: this.publicBanner() });
     }
   },
 
@@ -48,6 +46,17 @@ var BannerMain = React.createClass({
   },
 
   componentDidMount: function() {
+    UserStore.addChangeListener(this._onChange)
+    if (UserStore.hasCurrentUser() === true ) {
+      this.setState({ banner: this.userBanner() });
+    }
+  },
+
+  componentWillUnmount: function() {
+    UserStore.removeChangeListener(this._onChange);
+  },
+
+  _onChange: function() {
     this.showBanner()
   },
 

@@ -16,6 +16,16 @@ var UserActions = new _.extend({}, {
         currentUser: currentUser
       })
     }.bind(this))
+  },
+
+  signOut: function() {
+    Api.delete("/users/sign_out").then(function() {
+      AppDispatcher.dispatch({
+        actionType: Constants.SIGN_OUT_CURRENT_USER,
+      })
+    }.bind(this))
   }
+
+
 
 });

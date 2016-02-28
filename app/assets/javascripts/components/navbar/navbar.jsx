@@ -1,24 +1,24 @@
 var Navbar = React.createClass({
 
   getInitialState: function() {
-    this.currentUser()
     return {
-      currentUser: null
+      currentUser: UserStore._currentUser
     };
   },
 
-  currentUser: function() {
-    // $.ajax({
-    //   type: 'get',
-    //   url: "/current_user",
-    //   success: function(resp) {
-    //     this.setState({ currentUser: resp });
-    //     window.currentUser = resp
-    //   }.bind(this),
-    //   error: function(resp){
-    //     console.log(resp)
-    //   }
-    // })
+  componentDidMount: function() {
+    if (UserStore.hasCurrentUser() === false) {
+      UserActions.getCurrentUser();
+    }
+    UserStore.addChangeListener(this._onChange)
+  },
+
+  componentWillUnmount: function() {
+    UserStore.removeChangeListener(this._onChange);
+  },
+
+  _onChange: function() {
+    this.setState({ currentUser: UserStore._currentUser });
   },
 
   stopPropagation: function(e) {
@@ -27,18 +27,7 @@ var Navbar = React.createClass({
 
   signOut: function(e) {
     e.stopPropagation()
-    $.ajax({
-      type: 'delete',
-      url: "/users/sign_out",
-      success: function() {
-        window.location='#/'
-        this.setState({ currentUser: null });
-        window.currentUser = null
-      }.bind(this),
-      error: function(resp){
-        console.log(resp)
-      }
-    })
+    UserActions.signOut()
   },
 
   userSection: function() {

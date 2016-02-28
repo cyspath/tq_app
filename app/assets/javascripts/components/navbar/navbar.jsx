@@ -8,17 +8,17 @@ var Navbar = React.createClass({
   },
 
   currentUser: function() {
-    $.ajax({
-      type: 'get',
-      url: "/current_user",
-      success: function(resp) {
-        this.setState({ currentUser: resp });
-        window.currentUser = resp
-      }.bind(this),
-      error: function(resp){
-        console.log(resp)
-      }
-    })
+    // $.ajax({
+    //   type: 'get',
+    //   url: "/current_user",
+    //   success: function(resp) {
+    //     this.setState({ currentUser: resp });
+    //     window.currentUser = resp
+    //   }.bind(this),
+    //   error: function(resp){
+    //     console.log(resp)
+    //   }
+    // })
   },
 
   stopPropagation: function(e) {

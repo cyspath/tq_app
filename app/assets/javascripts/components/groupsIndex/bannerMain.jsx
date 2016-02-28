@@ -1,10 +1,10 @@
 var BannerMain = React.createClass({
   getInitialState: function() {
     return {
-      currentUser: window.currentUser
+      banner: this.publicBanner()
     };
   },
-  
+
   randomBannerUrl: function() {
     var urls = [
       "http://res.cloudinary.com/cyspath/image/upload/v1456454619/yyj_p4smo7.jpg",
@@ -15,9 +15,11 @@ var BannerMain = React.createClass({
 
   showBanner: function() {
     if (window.currentUser === undefined) {
-      return this.publicBanner()
+      console.log("pub");
+      this.setState({ banner: this.publicBanner() });
     } else {
-      return this.userBanner()
+      console.log("user");
+      this.setState({ banner: this.userBanner() });
     }
   },
 
@@ -28,7 +30,7 @@ var BannerMain = React.createClass({
         <div className="banner-main__description_container" >
           <div className="banner-main__description" >
             <div className="large-text" >同趣网是</div>
-            <div className="small-text" >同城人们一起分享知识，维持爱好，参与活动...</div>
+            <div className="small-text" >同城人们一起分享知识，激发爱好，参与活动...</div>
           </div>
         </div>
         <img src={url} className="banner-main__img" />
@@ -45,11 +47,14 @@ var BannerMain = React.createClass({
     )
   },
 
+  componentDidMount: function() {
+    this.showBanner()
+  },
+
   render: function() {
-    view = this.showBanner()
     return (
       <div>
-        {view}
+        {this.state.banner}
       </div>
     )
   }

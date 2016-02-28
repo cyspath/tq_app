@@ -11,5 +11,5 @@ var Constants = {
   GET_EVENT_DETAIL: 'events.get_detail',
 
   GET_USER_DETAIL: 'users.get_detail',
-
+  GET_CURRENT_USER: 'user.get_current_user',
 }

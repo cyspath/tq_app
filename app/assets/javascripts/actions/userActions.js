@@ -7,6 +7,15 @@ var UserActions = new _.extend({}, {
         user: user
       })
     }.bind(this))
+  },
+
+  getCurrentUser: function(userId) {
+    Api.get("/current_user").then(function(currentUser) {
+      AppDispatcher.dispatch({
+        actionType: Constants.GET_CURRENT_USER,
+        currentUser: currentUser
+      })
+    }.bind(this))
   }
 
 });

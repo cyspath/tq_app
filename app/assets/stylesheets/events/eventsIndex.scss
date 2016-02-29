@@ -3,7 +3,7 @@
   overflow: visible;
 }
 
-.events-index__container-top {
+#date-changer__container.events-index__container-top {
   position: fixed;
   z-index: 10;
   background-color: $grey-2;
@@ -13,12 +13,13 @@
   overflow: visible;
   height: 1px;
   display: block;
-  margin-top: -70px;
-  margin-left: -10px;
+  left: 0;
+  right: 0;
+  margin: -50px auto 0;
   max-width: 980px;
   display: none;
   @include bp__max-960 {
-    margin-left: -25px;
+    margin-left: -10px;
   }
 }
 

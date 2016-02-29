@@ -27,14 +27,14 @@ button:hover {
 
 .btn-red__navbar {
   font-size: 16px;
-  padding: 10px 25px;
+  padding: 10px;
   background: $red-banner;
   color: $white;
   &:hover {
     background: $red-banner-dark;
   }
   &:before {
-    content: "登录";
+    content: "免费注册";
   }
   @include bp__max-600 {
     padding: 10px;

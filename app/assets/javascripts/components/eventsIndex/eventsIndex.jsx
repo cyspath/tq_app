@@ -50,12 +50,6 @@ var EventsIndex = React.createClass({
 
     return (
       <div className="events-index">
-        <div id="date-changer__container" className="events-index__container-top" >
-          <div id="date-changer">
-            TIME
-          </div>
-        </div>
-
         <div className="events-index__container-left" >
           {timeFrames}
           <div id="event-index__grey-spinner" className="hide"  ></div>

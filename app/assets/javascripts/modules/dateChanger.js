@@ -3,7 +3,7 @@ $(document).ready(function() {
   $(window).on("scroll", function() {
     $('.events-index__container-inner').each(function(idx, val) {
 
-      if ($('#date-changer__container').offset().top < 80) {
+      if ($('#date-changer__container').offset().top < (200 + 80)) {
         $('#date-changer__container').hide()
       }
 

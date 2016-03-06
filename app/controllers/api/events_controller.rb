@@ -21,6 +21,7 @@ class Api::EventsController < ApplicationController
     result = []
     current_date = ""
     upcoming_events.each do |event|
+      next unless event.group.location_id == current_user.location_id
       if event.date != current_date
         current_date = event.date
         result.push({ date: current_date, events: [event] })

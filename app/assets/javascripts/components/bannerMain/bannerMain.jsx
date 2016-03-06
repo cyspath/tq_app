@@ -38,9 +38,29 @@ var BannerMain = React.createClass({
 
   userBanner: function() {
     var url = this.randomBannerUrl()
+    var user = UserStore._currentUser
+    var userEvents = user.upcoming_events
+    var nextEvent = user.next_event
+    var nextEventGroup = user.next_event_group
+
+    debugger
     return (
       <div className="banner-main__container" >
-      user view
+        <div className="banner-main__dashboard" >
+          <div className="dashboard__content" >
+            <div className="left" >
+              <div className="header" >您的下一个活动</div>
+              <div className="content" >
+                <div className="date" ><div className="date-month" >{moment(nextEvent.date).format("MMMM")}</div><div className="date-day" >{moment(nextEvent.date).format("D")}</div></div>
+                <div className="text" ><div className="group-name" >{nextEventGroup.name}</div><div className="event-name" >{nextEvent.name}</div><div className="event-time" >{moment(nextEvent.date).format("dddd, MMMDo ") + moment(nextEvent.start_time, "hmm").format("ahh:mm")}</div></div>
+              </div>
+            </div>
+            <div className="right" >
+              <div className="item" ><div>{userEvents.length} 个您群里将来的活动</div></div>
+              <div className="item" ><div>{user.nearby_events} 个将来的同城活动</div></div>
+            </div>
+          </div>
+        </div>
       </div>
     )
   },

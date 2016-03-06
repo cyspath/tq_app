@@ -22,6 +22,9 @@ class User < ActiveRecord::Base
   #
   # has_many :authored_comments, foreign_key: :owner_id, class_name: Comment
 
+  def nearby_events
+    Event.where("date >= ?", Time.now).select {|e| e.group.location_id == self.location_id}
+  end
 
   def display_name
     username.presence || email.presence || "Guest"
@@ -29,14 +32,14 @@ class User < ActiveRecord::Base
 
   def upcoming_events
     today = DateTime.now
-    events.select {|e| e.datetime >= today }
-          .sort { |a, b| a.datetime <=> b.datetime }
+    events.select {|e| e.date >= today }
+          .sort { |a, b| a.date <=> b.date }
   end
 
   def past_events
     today = DateTime.now
-    events.select {|e| e.datetime < today }
-          .sort { |a, b| a.datetime <=> b.datetime }
+    events.select {|e| e.date < today }
+          .sort { |a, b| b.date <=> a.date }
   end
 
 end

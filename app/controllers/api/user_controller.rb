@@ -10,4 +10,9 @@ class Api::UserController < ApplicationController
     render 'show'
   end
 
+  def current_user_detail
+    @user = current_user
+    render 'current_user_detail'
+  end
+
 end

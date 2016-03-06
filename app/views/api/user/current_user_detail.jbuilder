@@ -1,5 +1,5 @@
 json.(
-  user,
+  @user,
   :id,
   :username,
   # :email,
@@ -17,6 +17,8 @@ json.(
   :home_town,
   :bio
 )
-# 
-# json.set! :upcoming_events, user.upcoming_events
-# json.set! :nearby_events, user.nearby_events.size
+
+json.set! :upcoming_events, @user.upcoming_events
+json.set! :next_event, @user.upcoming_events.first
+json.set! :next_event_group, @user.upcoming_events.first.group
+json.set! :nearby_events, @user.nearby_events.size

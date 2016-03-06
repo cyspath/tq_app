@@ -10,7 +10,6 @@ To generate a random identicon:
 `Image.generate_identicon`
 
 ## Technical
-
 `UserStore.hasCurrentUser()` checks if there is a currentUser logged
 `UserStore._currentUser` gives the current user
 

@@ -3,7 +3,7 @@
   overflow: hidden;
   @include bp__min-1200 {
     position: relative;
-    height: 350px;
+    max-height: 350px;
   }
 
   .banner-main__description_container {

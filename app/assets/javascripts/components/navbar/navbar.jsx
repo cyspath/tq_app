@@ -1,15 +1,19 @@
 var Navbar = React.createClass({
 
   getInitialState: function() {
-    return {
-      currentUser: UserStore._currentUser
-    };
+    if (UserStore.hasCurrentUser() === false) {
+      UserActions.getCurrentUser();
+      return {
+        currentUser: null
+      }
+    } else {
+      return {
+        currentUser: UserStore._currentUser
+      };
+    }
   },
 
   componentDidMount: function() {
-    if (UserStore.hasCurrentUser() === false) {
-      UserActions.getCurrentUser();
-    }
     UserStore.addChangeListener(this._onChange)
   },
 
@@ -31,7 +35,7 @@ var Navbar = React.createClass({
   },
 
   userSection: function() {
-    if (this.state.currentUser != null) {
+    if (UserStore.hasCurrentUser()) {
       return (
         <div className="navbar__user-section__inner" >
           <div className="user-avatar__container" onClick={this.showDropdown}>
@@ -59,7 +63,7 @@ var Navbar = React.createClass({
   },
 
   dropdownSection: function() {
-    if (this.state.currentUser != null) {
+    if (UserStore.hasCurrentUser()) {
       return (
         <div id="navbar__dropdown" className="hide"  >
           <div className="caret-up" ></div>

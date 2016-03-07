@@ -12,7 +12,11 @@ class Api::UserController < ApplicationController
 
   def current_user_detail
     @user = current_user
-    render 'current_user_detail'
+    if @user.nil?
+      render json: true
+    else
+      render 'current_user_detail'
+    end
   end
 
 end

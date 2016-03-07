@@ -42,8 +42,6 @@ var BannerMain = React.createClass({
     var userEvents = user.upcoming_events
     var nextEvent = user.next_event
     var nextEventGroup = user.next_event_group
-
-    debugger
     return (
       <div className="banner-main__container" >
         <div className="banner-main__dashboard" >

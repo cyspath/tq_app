@@ -12,6 +12,7 @@
     .dashboard__content {
       margin: 0 auto;
       max-width: 960px;
+      width: 100%;
       display: table;
       @include bp__max-800 {
         display: block;

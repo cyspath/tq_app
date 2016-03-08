@@ -59,11 +59,11 @@ var BannerMain = React.createClass({
         <div className="content" >
           <div className="header" >您的下一个活动</div>
           <div className="next-event__content" >
-            <div className="next-event__left__date" ><div className="date-month" >{moment(nextEvent.date).format("MMMM")}</div><div className="date-day" >{moment(nextEvent.date).format("D")}</div></div>
+            <div className="next-event__left__date" ><div className="date-month" ></div><div className="date-day" ></div></div>
             <div className="next-event__right__text" >
-              <div className="group-name" >{nextEventGroup.name}</div>
-              <div className="event-name" >{nextEvent.name}</div>
-              <div className="event-time" ><span className="first-span" >{moment(nextEvent.date).format("dddd, MMMDo ")}</span><span>{moment(nextEvent.start_time, "hmm").format("a hh:mm")}</span></div>
+              <div className="group-name" ></div>
+              <div className="event-name" ></div>
+              <div className="event-time" ></div>
             </div>
           </div>
         </div>

@@ -1,5 +1,6 @@
 .banner-main__container {
   max-height: 350px;
+  min-height: 200px;
   overflow: hidden;
   @include bp__min-1200 {
     position: relative;

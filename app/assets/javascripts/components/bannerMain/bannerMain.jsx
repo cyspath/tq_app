@@ -55,15 +55,15 @@ var BannerMain = React.createClass({
                   <div className="next-event__right__text" >
                     <div className="group-name" >{nextEventGroup.name}</div>
                     <div className="event-name" >{nextEvent.name}</div>
-                    <div className="event-time" >{moment(nextEvent.date).format("dddd, MMMDo ") + moment(nextEvent.start_time, "hmm").format("ahh:mm")}</div>
+                    <div className="event-time" ><span className="first-span" >{moment(nextEvent.date).format("dddd, MMMDo ")}</span><span>{moment(nextEvent.start_time, "hmm").format("a hh:mm")}</span></div>
                   </div>
                 </div>
               </div>
             </div>
 
             <div className="right" >
-              <div className="item" ><div>{userEvents.length} 个您群里将来的活动</div></div>
-              <div className="item" ><div>{user.nearby_events} 个将来的同城活动</div></div>
+              <div className="item" ><div className="count" >{userEvents.length}</div> 个您群里将来的活动</div>
+              <div className="item" ><div className="count" >{user.nearby_events}</div> 个将来的同城活动</div>
             </div>
 
           </div>

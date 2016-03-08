@@ -36,33 +36,56 @@ var BannerMain = React.createClass({
     )
   },
 
+  bannerLeftContent: function(user) {
+    if (user.upcoming_events.length > 0) {
+      var userEvents = user.upcoming_events
+      var nextEvent = userEvents[0]
+      var nextEventGroup = user.next_event_group
+      return (
+        <div className="content" >
+          <div className="header" >您的下一个活动</div>
+          <div className="next-event__content" >
+            <div className="next-event__left__date" ><div className="date-month" >{moment(nextEvent.date).format("MMMM")}</div><div className="date-day" >{moment(nextEvent.date).format("D")}</div></div>
+            <div className="next-event__right__text" >
+              <div className="group-name" >{nextEventGroup.name}</div>
+              <div className="event-name" >{nextEvent.name}</div>
+              <div className="event-time" ><span className="first-span" >{moment(nextEvent.date).format("dddd, MMMDo ")}</span><span>{moment(nextEvent.start_time, "hmm").format("a hh:mm")}</span></div>
+            </div>
+          </div>
+        </div>
+      )
+    } else {
+      return (
+        <div className="content" >
+          <div className="header" >您的下一个活动</div>
+          <div className="next-event__content" >
+            <div className="next-event__left__date" ><div className="date-month" >{moment(nextEvent.date).format("MMMM")}</div><div className="date-day" >{moment(nextEvent.date).format("D")}</div></div>
+            <div className="next-event__right__text" >
+              <div className="group-name" >{nextEventGroup.name}</div>
+              <div className="event-name" >{nextEvent.name}</div>
+              <div className="event-time" ><span className="first-span" >{moment(nextEvent.date).format("dddd, MMMDo ")}</span><span>{moment(nextEvent.start_time, "hmm").format("a hh:mm")}</span></div>
+            </div>
+          </div>
+        </div>
+      )
+    }
+  },
+
   userBanner: function() {
     var url = this.randomBannerUrl()
     var user = UserStore._currentUser
-    var userEvents = user.upcoming_events
-    var nextEvent = user.next_event
-    var nextEventGroup = user.next_event_group
+    var content = this.bannerLeftContent(user)
     return (
       <div className="banner-main__container" >
         <div className="banner-main__dashboard" >
           <div className="dashboard__content" >
 
             <div className="left" >
-              <div className="content" >
-                <div className="header" >您的下一个活动</div>
-                <div className="next-event__content" >
-                  <div className="next-event__left__date" ><div className="date-month" >{moment(nextEvent.date).format("MMMM")}</div><div className="date-day" >{moment(nextEvent.date).format("D")}</div></div>
-                  <div className="next-event__right__text" >
-                    <div className="group-name" >{nextEventGroup.name}</div>
-                    <div className="event-name" >{nextEvent.name}</div>
-                    <div className="event-time" ><span className="first-span" >{moment(nextEvent.date).format("dddd, MMMDo ")}</span><span>{moment(nextEvent.start_time, "hmm").format("a hh:mm")}</span></div>
-                  </div>
-                </div>
-              </div>
+              {content}
             </div>
 
             <div className="right" >
-              <div className="item" ><div className="count" >{userEvents.length}</div> 个您群里将来的活动</div>
+              <div className="item" ><div className="count" >{user.upcoming_events.length}</div> 个您群里将来的活动</div>
               <div className="item" ><div className="count" >{user.nearby_events}</div> 个将来的同城活动</div>
             </div>
 

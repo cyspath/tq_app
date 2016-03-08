@@ -1,19 +1,15 @@
 var Navbar = React.createClass({
 
   getInitialState: function() {
-    if (UserStore.hasCurrentUser() === false) {
-      UserActions.getCurrentUser();
-      return {
-        currentUser: null
-      }
-    } else {
-      return {
-        currentUser: UserStore._currentUser
-      };
+    return {
+      currentUser: null
     }
   },
 
   componentDidMount: function() {
+    if (UserStore.hasCurrentUser() === false) {
+      UserActions.getCurrentUser();
+    }
     UserStore.addChangeListener(this._onChange)
   },
 

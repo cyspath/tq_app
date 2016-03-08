@@ -19,6 +19,7 @@ json.(
 )
 
 json.set! :upcoming_events, @user.upcoming_events
-json.set! :next_event, @user.upcoming_events.first
-json.set! :next_event_group, @user.upcoming_events.first.group
 json.set! :nearby_events, @user.nearby_events.size
+if @user.upcoming_events.length > 0
+  json.set! :next_event_group, @user.upcoming_events.first.group
+end

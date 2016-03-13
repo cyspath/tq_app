@@ -57,15 +57,8 @@ var BannerMain = React.createClass({
     } else {
       return (
         <div className="content" >
-          <div className="header" >您的下一个活动</div>
-          <div className="next-event__content" >
-            <div className="next-event__left__date" ><div className="date-month" ></div><div className="date-day" ></div></div>
-            <div className="next-event__right__text" >
-              <div className="group-name" ></div>
-              <div className="event-name" ></div>
-              <div className="event-time" ></div>
-            </div>
-          </div>
+          <div className="title" >{user.username}您好，</div>
+          <div className="message" >欢迎加入同趣网，您目前还未参与任何群体。请您先参考以下的群体与活动。</div>
         </div>
       )
     }

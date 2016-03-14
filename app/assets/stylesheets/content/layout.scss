@@ -1,6 +1,6 @@
 .content-page__container {
   font-family: $heiti;
-  overflow: auto;
+  overflow: hidden;
   @include content-container;
 }
 

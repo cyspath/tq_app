@@ -56,7 +56,8 @@
   .info-item {
     border-bottom: 1px $grey-2-5 solid;
     padding: 10px 0;
-
+    overflow: hidden;
+    
     .left {
       float: left;
     }

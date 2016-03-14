@@ -1,5 +1,6 @@
 .content-banner__container {
   @include white-box-grey-border;
+  overflow: hidden;
   width: 100%;
   margin-top: 15px;
   margin-bottom: 15px;
@@ -48,4 +49,5 @@
 
 .content-banner__lower {
   padding: 10px;
+  overflow: auto;
 }

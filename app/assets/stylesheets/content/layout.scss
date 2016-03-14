@@ -1,7 +1,7 @@
 .content-page__container {
   font-family: $heiti;
+  overflow: auto;
   @include content-container;
-  overflow: visible;
 }
 
 .content-body__container {

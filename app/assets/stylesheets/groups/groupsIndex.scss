@@ -75,7 +75,6 @@
 
 .groups-index__item-container-wrapper {
   display: inline-block;
-  overflow: visible;
   width: 25%;
 
   @include bp__max-800 {
@@ -108,8 +107,6 @@
   -webkit-box-shadow: 0 10px 6px -6px #777;
    -moz-box-shadow: 0 10px 6px -6px #777;
         box-shadow: 0 10px 6px -6px #777;
-
-  transition: all .2s ease-in-out;
 
   .overlay {
     width: 100%;
@@ -150,11 +147,6 @@
     bottom: 0px;
     left: 0px;
   }
-}
-
-
-.groups-index__item-container:hover {
-  transform: scale(1.05);
 }
 
 .png__group-three {

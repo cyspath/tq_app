@@ -58,7 +58,7 @@ var BannerMain = React.createClass({
       return (
         <div className="content" >
           <div className="title" >{user.username}您好，</div>
-          <div className="message" >欢迎加入同趣网，您目前还未参与任何群体。请您先参考以下的群体与活动。</div>
+          <div className="message" >欢迎加入同趣网，您目前还未参与任何群体。请先参考一下下面的的群体与活动。</div>
         </div>
       )
     }

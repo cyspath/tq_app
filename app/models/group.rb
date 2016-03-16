@@ -16,14 +16,16 @@ class Group < ActiveRecord::Base
 
   def upcoming_events
     today = DateTime.now
-    events.select {|e| e.date >= today }
-          .sort { |a, b| a.date <=> b.date }
+    # events.select {|e| e.date >= today }
+    Event.where("group_id = ? AND date >= ? ", id, today).order("date ASC").includes(:founder, :members, :bailed_members)
+          # .sort { |a, b| a.date <=> b.date }
   end
 
   def past_events
     today = DateTime.now
-    events.select {|e| e.date < today }
-          .sort { |a, b| b.date <=> a.date }
+    # events.select {|e| e.date < today }
+    Event.where("group_id = ? AND date < ?", id, today).order("date DESC").includes(:founder, :members, :bailed_members)
+          # .sort { |a, b| b.date <=> a.date }
   end
 
   def most_recent_image

@@ -29,10 +29,7 @@ var GroupActions = new _.extend({}, {
 
   joinGroup: function(groupId) {
     Api.post('/api/group_members', { group_id: groupId}).then(function(group) {
-      // AppDispatcher.dispatch({
-      //   actionType: Constants.ADD_GROUP,
-      //   group: group
-      // });
+      UserActions.getCurrentUser()
     })
   }
   // upvoteGroup: function(comment) {

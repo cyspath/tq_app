@@ -14,7 +14,7 @@ json.(
 json.set! :start_date, group.created_at.strftime("%b %d, %Y")
 
 members = group.members
-json.set! :members, members.take(10)
+json.set! :members, members
 json.set! :members_count, members.size
 
 json.set! :images, group.images

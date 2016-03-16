@@ -188,9 +188,9 @@ end
   user_id = rand(500) + 1
   if EventMember.where(event_id: event_id, user_id: user_id).length <= 1
     if rand(5) < 1 # 1/5 goers will not go
-      EventMember.create!(event_id: event_id, user_id: user_id, going: false)
+      EventMember.create(event_id: event_id, user_id: user_id, going: false)
     else
-      EventMember.create!(event_id: event_id, user_id: user_id)
+      EventMember.create(event_id: event_id, user_id: user_id)
     end
   end
 end
@@ -199,6 +199,6 @@ end
   group_id = rand(10) + 1
   user_id = rand(500) + 1
   if GroupMember.where(group_id: group_id, user_id: user_id).length <= 1
-    GroupMember.create!(group_id: group_id, user_id: user_id)
+    GroupMember.create(group_id: group_id, user_id: user_id)
   end
 end

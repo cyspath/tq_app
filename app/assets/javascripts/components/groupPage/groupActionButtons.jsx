@@ -5,13 +5,25 @@ var GroupActionButtons = React.createClass({
     $(e.target).addClass('active');
   },
 
+  joinGroup: function() {
+    GroupActions.joinGroup(this.props.group.id)
+  },
+
   render: function() {
     return (
       <div className="content-banner__lower" >
-        <div className="content-banner__lower-item active" onClick={this.isActive}>群主页</div>
-        <div className="content-banner__lower-item" onClick={this.isActive}>群员</div>
-        <div className="content-banner__lower-item" onClick={this.isActive}>图片</div>
-        <div className="content-banner__lower-item" onClick={this.isActive}>讨论</div>
+
+        <div className="content-banner__lower__left" >
+          <div className="content-banner__lower-item active" onClick={this.isActive}>群主页</div>
+          <div className="content-banner__lower-item" onClick={this.isActive}>群员</div>
+          <div className="content-banner__lower-item" onClick={this.isActive}>图片</div>
+          <div className="content-banner__lower-item" onClick={this.isActive}>讨论</div>
+        </div>
+
+        <div className="content-banner__lower__right" >
+          <div className="btn btn-red-3d" onClick={this.joinGroup}>加入我们</div>
+        </div>
+
       </div>
     )
   }

@@ -32,27 +32,4 @@ var Api = new _.extend({}, {
     })
   }
 
-  // xhr: function(route, params, verb) {
-  //   return fetch(
-  //     route + '.json',
-  //     _.merge(
-  //       { method: verb, credentials: 'include', headers: this.headers() },
-  //       { body: JSON.stringify(params) }
-  //     )
-  //   ).then(function(resp) { return resp.json(); })
-  // },
-
-  // token: function() {
-  //   var el = document.querySelector('meta[name="csrf-token"]')
-  //   return el ? el.getAttribute('content') : "";
-  // },
-  //
-  // headers: function() {
-  //   return {
-  //     'Accept': 'application/json',
-  //     'Content-Type': 'application/json',
-  //     'X-CSRF-Token': this.token(),
-  //     'X-Requested-With': 'XMLHttpRequest'
-  //   }
-  // }
 });

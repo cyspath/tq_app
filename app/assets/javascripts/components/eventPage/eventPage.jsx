@@ -38,7 +38,7 @@ var EventPage = React.createClass({
       if (event.id == this.state.eventId) {
         return (
           <div key={event.id} className="content-page__container-inner" >
-            <GroupBanner name={event.group_name}/>
+            <GroupBanner group={event.group}/>
             <EventBody group={event.group} event={event}/>
           </div>
         )

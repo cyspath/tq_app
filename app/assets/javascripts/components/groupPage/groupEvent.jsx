@@ -78,9 +78,9 @@ var GroupEvent = React.createClass({
             <p className="time" >
               { moment(this.props.start_time, "hmm").format("a hh:mm")}
             </p>
-            <a className="btn btn-green" >
+            <Link to="eventDetail" params={{ eventId: this.props.id }} className="btn btn-green">
               我想去
-            </a>
+            </Link>
             <p className="num-going" >
               <span className="text-darken text-small" >{this.props.member_count}&nbsp;</span>
               <span className="text-small" >人会参加</span>

@@ -17,6 +17,10 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     resources :groups
     resources :events
+
+    resources :event_members
+    resources :group_members
+    
     resources :user, only: [:show, :index, :current_user_detail]
     get 'current_user' => "user#current_user_detail"
     resources :images, only: [:create, :destroy]

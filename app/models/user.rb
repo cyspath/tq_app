@@ -22,8 +22,12 @@ class User < ActiveRecord::Base
   #
   # has_many :authored_comments, foreign_key: :owner_id, class_name: Comment
 
-  def nearby_events
-    Event.where("date >= ?", Time.now).select {|e| e.group.location_id == self.location_id}
+  def groups_upcoming_events_count
+    groups.includes(:events).flat_map(&:events).select {|e| e.date >= Date.today}.count
+  end
+
+  def nearby_events_count
+    Event.where("date >= ?", Time.now).includes(:group).select {|e| e.group.location_id == self.location_id}.size
   end
 
   def display_name

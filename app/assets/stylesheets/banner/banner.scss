@@ -30,24 +30,30 @@
   letter-spacing: 7px;
 }
 
-.content-banner__lower-item {
-  float: left;
-  background-color: $white;
-  padding: 7px 10px;
-  border-radius: 3px;
-  text-align: center;
-  margin-right: 5px;
-  color: $grey-5;
-}
-
-.content-banner__lower-item:hover, .content-banner__lower-item.active {
-  background-color: $red-banner;
-  color: $grey-2;
-  cursor: pointer;
-  cursor: hand;
-}
 
 .content-banner__lower {
   padding: 10px;
   overflow: auto;
+  .content-banner__lower__left {
+    float: left;
+    .content-banner__lower-item {
+      float: left;
+      background-color: $white;
+      padding: 7px 10px;
+      border-radius: 3px;
+      text-align: center;
+      margin-right: 5px;
+      color: $grey-5;
+    }
+    .content-banner__lower-item:hover, .content-banner__lower-item.active {
+      background-color: $red-banner;
+      color: $grey-2;
+      cursor: pointer;
+      cursor: hand;
+    }
+  }
+  .content-banner__lower__right {
+    float: right;
+    overflow: visible;
+  }
 }

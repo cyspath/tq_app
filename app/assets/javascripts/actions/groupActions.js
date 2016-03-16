@@ -11,11 +11,11 @@ var GroupActions = new _.extend({}, {
 
   addGroup: function(params) {
     Api.post('/api/groups', { group: params}).then(function(group) {
-        window.AppDispatcher.dispatch({
-          actionType: Constants.ADD_GROUP,
-          group: group
-        });
-      })
+      AppDispatcher.dispatch({
+        actionType: Constants.ADD_GROUP,
+        group: group
+      });
+    })
   },
 
   getGroupDetail: function(groupId) {
@@ -25,6 +25,15 @@ var GroupActions = new _.extend({}, {
         group: group
       })
     }.bind(this))
+  },
+
+  joinGroup: function(groupId) {
+    Api.post('/api/group_members', { group_id: groupId}).then(function(group) {
+      // AppDispatcher.dispatch({
+      //   actionType: Constants.ADD_GROUP,
+      //   group: group
+      // });
+    })
   }
   // upvoteGroup: function(comment) {
   //   Api

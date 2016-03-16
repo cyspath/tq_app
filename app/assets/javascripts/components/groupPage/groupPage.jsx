@@ -38,7 +38,7 @@ var GroupPage = React.createClass({
       if (group.id == this.state.groupId) {
         return (
           <div key={group.id} className="content-page__container-inner" >
-            <GroupBanner name={group.name}/>
+            <GroupBanner group={group}/>
             <GroupBody group={group}/>
           </div>
         )

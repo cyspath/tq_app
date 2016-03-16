@@ -78,8 +78,8 @@ var BannerMain = React.createClass({
             </div>
 
             <div className="right" >
-              <div className="item" ><div className="count" >{user.upcoming_events.length}</div> 个您群里将来的活动</div>
-              <div className="item" ><div className="count" >{user.nearby_events}</div> 个将来的同城活动</div>
+              <div className="item" ><div className="count" >{user.groups_upcoming_events_count}</div> 个您群里将来的活动</div>
+              <div className="item" ><div className="count" >{user.nearby_events_count}</div> 个将来的同城活动</div>
             </div>
 
           </div>

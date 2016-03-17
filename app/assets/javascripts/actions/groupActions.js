@@ -29,6 +29,7 @@ var GroupActions = new _.extend({}, {
 
   joinGroup: function(groupId) {
     Api.post('/api/group_members', { group_id: groupId}).then(function(group_member) {
+      UserActions.getCurrentUser()
       AppDispatcher.dispatch({
         actionType: Constants.JOIN_GROUP,
         group_member: group_member
@@ -38,6 +39,7 @@ var GroupActions = new _.extend({}, {
 
   leaveGroup: function(groupId) {
     Api.delete('/api/group_members/' + groupId, {}).then(function(group_member) {
+      UserActions.getCurrentUser()
       AppDispatcher.dispatch({
         actionType: Constants.LEAVE_GROUP,
         group_member: group_member

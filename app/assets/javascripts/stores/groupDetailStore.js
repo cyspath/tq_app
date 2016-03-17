@@ -22,6 +22,15 @@ var GroupDetailStore = new _.extend({}, EventEmitter.prototype, {
     }
   },
 
+  joinGroup: function(groupMember) {
+    for (var i = 0; i < this._groupDetails.length ; i++) {
+      if (this._groupDetails[i].id == groupMember.group_id) {
+        this._groupDetails[i].members.push(UserStore._currentUser)
+        this._currentDetail = this._groupDetails[i]
+      }
+    }
+  },
+
   addChangeListener: function(callback) {
     this.on(Constants.CHANGE_EVENT, callback)
   },
@@ -43,6 +52,11 @@ AppDispatcher.register(function(payload) {
 
     case Constants.GET_GROUP_DETAIL:
       GroupDetailStore.addGroupDetail(payload.group);
+      GroupDetailStore.emitChange();
+      break;
+
+    case Constants.JOIN_GROUP:
+      GroupDetailStore.joinGroup(payload.group_member);
       GroupDetailStore.emitChange();
       break;
 

@@ -5,33 +5,7 @@ var GroupActionButtons = React.createClass({
     $(e.target).addClass('active');
   },
 
-  joinGroup: function() {
-    GroupActions.joinGroup(this.props.group.id)
-  },
-
-  joinGroupButton: function() {
-    if (UserStore._currentUser === null || UserStore._currentUser === true) {
-      return (
-        <a href='/users/sign_in'>
-          <div className="btn btn-red-3d">加入我们</div>
-        </a>
-      )
-    }
-    var members = this.props.group.members
-    for(var i = 0; i < members.length; i++) {
-      if (members[i].id == UserStore._currentUser.id) {
-        return (
-          <div className="btn btn-grey-3d">退出此群</div>
-        )
-      }
-    }
-    return (
-      <div className="btn btn-red-3d" onClick={this.joinGroup}>加入我们</div>
-    )
-  },
-
   render: function() {
-    var joinGroupButton = this.joinGroupButton()
     return (
       <div className="content-banner__lower" >
 
@@ -43,7 +17,7 @@ var GroupActionButtons = React.createClass({
         </div>
 
         <div className="content-banner__lower__right" >
-          {joinGroupButton}
+          <JoinGroupButton group={this.props.group} />
         </div>
 
       </div>

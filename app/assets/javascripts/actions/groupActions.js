@@ -28,8 +28,11 @@ var GroupActions = new _.extend({}, {
   },
 
   joinGroup: function(groupId) {
-    Api.post('/api/group_members', { group_id: groupId}).then(function(group) {
-      UserActions.getCurrentUser()
+    Api.post('/api/group_members', { group_id: groupId}).then(function(group_member) {
+      AppDispatcher.dispatch({
+        actionType: Constants.JOIN_GROUP,
+        group_member: group_member
+      });
     })
   }
   // upvoteGroup: function(comment) {

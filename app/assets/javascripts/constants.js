@@ -7,6 +7,8 @@ var Constants = {
   DELETE_GROUP: 'groups.delete',
   GET_GROUP_DETAIL: 'groups.get_detail',
   JOIN_GROUP: 'groups.join',
+  LEAVE_GROUP: 'groups.leave',
+
 
   GET_EVENTS: 'events.get_events',
   GET_EVENT_DETAIL: 'events.get_detail',

@@ -10,9 +10,9 @@ class Api::GroupMembersController < ApplicationController
   end
 
   def destroy
-    @group_member = GroupMember.find(params[:id])
+    @group_member = GroupMember.find_by(user_id: current_user.id, group_id: params[:id])
     @group_member.destroy if @group_member
-    render json: {}
+    render json: @group_member
   end
 
   def group_member_params

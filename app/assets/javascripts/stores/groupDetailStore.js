@@ -31,6 +31,19 @@ var GroupDetailStore = new _.extend({}, EventEmitter.prototype, {
     }
   },
 
+  leaveGroup: function(groupMember) {
+    for (var i = 0; i < this._groupDetails.length ; i++) {
+      if (this._groupDetails[i].id == groupMember.group_id) {
+        var groupMembers = this._groupDetails[i].members
+        for (var j = 0; j < groupMembers.length ; j++) {
+          if (groupMembers[j].id == UserStore._currentUser.id) {
+            groupMembers.splice(j, 1)
+          }
+        }
+      }
+    }
+  },
+
   addChangeListener: function(callback) {
     this.on(Constants.CHANGE_EVENT, callback)
   },
@@ -57,6 +70,11 @@ AppDispatcher.register(function(payload) {
 
     case Constants.JOIN_GROUP:
       GroupDetailStore.joinGroup(payload.group_member);
+      GroupDetailStore.emitChange();
+      break;
+
+    case Constants.LEAVE_GROUP:
+      GroupDetailStore.leaveGroup(payload.group_member);
       GroupDetailStore.emitChange();
       break;
 

@@ -34,6 +34,15 @@ var GroupActions = new _.extend({}, {
         group_member: group_member
       });
     })
+  },
+
+  leaveGroup: function(groupId) {
+    Api.delete('/api/group_members/' + groupId, {}).then(function(group_member) {
+      AppDispatcher.dispatch({
+        actionType: Constants.LEAVE_GROUP,
+        group_member: group_member
+      });
+    })
   }
   // upvoteGroup: function(comment) {
   //   Api

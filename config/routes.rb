@@ -19,8 +19,10 @@ Rails.application.routes.draw do
     resources :events
 
     resources :event_members
-    resources :group_members
-    
+
+    resources :group_members, only: [:create, :destroy]
+    # delete 'group_members' => 'group_members#destroy'
+
     resources :user, only: [:show, :index, :current_user_detail]
     get 'current_user' => "user#current_user_detail"
     resources :images, only: [:create, :destroy]

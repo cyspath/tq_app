@@ -12,6 +12,8 @@ var Constants = {
 
   GET_EVENTS: 'events.get_events',
   GET_EVENT_DETAIL: 'events.get_detail',
+  JOIN_EVENT: 'events.join',
+  LEAVE_EVENT: 'events.leave',
 
   GET_USER_DETAIL: 'users.get_detail',
   GET_CURRENT_USER: 'user.get_current_user',

@@ -19,7 +19,6 @@ Rails.application.routes.draw do
     resources :events
 
     resources :event_members
-
     resources :group_members, only: [:create, :destroy]
     # delete 'group_members' => 'group_members#destroy'
 

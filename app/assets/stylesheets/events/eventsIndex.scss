@@ -65,7 +65,7 @@
   font-size: 13px;
   line-height: 1.2;
   border-bottom: 1px solid $grey-3;
-  color: $grey-5;
+  color: $grey-light-primary;
 }
 
 .events-index__container-inner-left {
@@ -79,7 +79,7 @@
   }
   .right {
     float: left;
-    font-size: 10px;
+    font-size: 12px;
   }
 }
 
@@ -92,7 +92,10 @@
     margin-bottom: 7px;
   }
   .mid {
-    color: $grey-10;
+    font-weight: bold;
+    font-family: $heiti;
+    letter-spacing: 3px;
+    color: $grey-dark-primary;
     margin-bottom: 7px;
     font-size: 20px;
   }

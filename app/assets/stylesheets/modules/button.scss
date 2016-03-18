@@ -94,9 +94,12 @@ button:hover {
   border-radius: 3px;
   color: $white;
   background: $red-banner;
-  padding: 9px 18px 7px;
+  padding: 7px 18px;
   -webkit-box-shadow: #851518 0 2px 0 0;
   box-shadow: #851518 0 2px 0 0;
+  &:hover {
+    background-color: #d02126;
+  }
   &:active {
     top: 0px;
     -webkit-box-shadow: none;
@@ -109,9 +112,12 @@ button:hover {
   border-radius: 3px;
   color: $grey-5;
   background: $grey-2-5;
-  padding: 9px 18px 7px;
+  padding: 7px 18px;
   -webkit-box-shadow: $grey-4 0 2px 0 0;
   box-shadow: $grey-4 0 2px 0 0;
+  &:hover {
+    background-color: $grey-3;
+  }
   &:active {
     top: 0px;
     -webkit-box-shadow: none;

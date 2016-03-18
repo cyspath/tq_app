@@ -5,6 +5,23 @@
   vertical-align:top;
   border-left: 1px solid $grey-3;
 
+  .join-event-section {
+    padding: 18px;
+    font-size: 20px;
+    color: $grey-dark-primary;
+    border-bottom: 1px solid $grey-2-5;
+    .btn {
+      font-size: 20px;
+      font-family: $kaiti;
+      width: 48%;
+      margin-top: 15px;
+      display: inline-block;
+    }
+    .btn.btn-red-3d {
+      margin-right: 4%;
+    }
+  }
+
   .events-members__list {
     padding: 0 15px;
 
@@ -13,7 +30,7 @@
       padding: 15px 0;
       color: $grey-7;
       font-family: $kaiti;
-
+      overflow: hidden;
       div {
         float: left;
       }

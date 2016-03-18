@@ -39,6 +39,7 @@ var EventBodyMain = React.createClass({
         </div>
 
         <div className="content-body-main__right__container" >
+          <JoinEventSection event={event} />
           <EventMembers going={event.members} notGoing={event.bailed_members} />
         </div>
 

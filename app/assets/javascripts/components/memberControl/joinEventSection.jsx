@@ -21,7 +21,10 @@ var JoinEventSection = React.createClass({
       if (members[i].id == UserStore._currentUser.id) {
         return {
           section: (
-            <div className="btn btn-grey-3d" onClick={this.leaveEvent}>im going</div>
+            <div>
+              currently going
+              <div className="btn btn-grey-3d" onClick={this.leaveEvent}>im going</div>
+            </div>
           )
         }
       }
@@ -31,7 +34,9 @@ var JoinEventSection = React.createClass({
       if (bailedMembers[i].id == UserStore._currentUser.id) {
         return {
           section: (
-            <div className="btn btn-grey-3d" onClick={this.leaveEvent}>i bailed</div>
+            <div>currently NOT going
+              <div className="btn btn-grey-3d" onClick={this.leaveEvent}>i bailed</div>
+            </div>
           )
         }
       }

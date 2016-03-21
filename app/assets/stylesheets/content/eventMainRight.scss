@@ -5,6 +5,14 @@
   vertical-align:top;
   border-left: 1px solid $grey-3;
 
+  .join-event-section.green-joined {
+    background-color: #62AC75;
+  }
+
+  .join-event-section.grey-left {
+    background-color: $grey-4;
+  }
+
   .join-event-section {
     padding: 18px;
     font-size: 20px;

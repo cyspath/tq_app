@@ -55,14 +55,21 @@ var JoinEventSection = React.createClass({
   joinEvent: function() {
     EventActions.joinEvent(this.props.event.id)
     this.setState({ section: (
-      <div className="btn btn-grey-3d" onClick={this.leaveEvent}>退出此群</div>
+      <div className="join-event-section green-joined" >
+        您准备参加这项活动
+        <div className="btn btn-red-3d" onClick={this.joinEvent}>去</div>
+        <div className="btn btn-grey-3d" onClick={this.leaveEvent}>不去</div>
+      </div>
     ) });
   },
 
   leaveEvent: function() {
     EventActions.leaveEvent(this.props.event.id)
     this.setState({ section: (
-      <div className="btn btn-red-3d" onClick={this.joinEvent}>加入我们</div>
+      <div className="join-event-section grey-left" >
+        <div className="btn btn-red-3d" onClick={this.joinEvent}>去</div>
+        <div className="btn btn-grey-3d" onClick={this.leaveEvent}>不去</div>
+      </div>
     ) });
   },
 

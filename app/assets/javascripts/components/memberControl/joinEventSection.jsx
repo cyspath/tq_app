@@ -21,9 +21,13 @@ var JoinEventSection = React.createClass({
       if (members[i].id == UserStore._currentUser.id) {
         return {
           section: (
-            <div>
-              currently going
-              <div className="btn btn-grey-3d" onClick={this.leaveEvent}>im going</div>
+            <div className="join-event-section green-joined" >
+              您准备参加此活动
+              <div className="toggle__box__trigger" onClick={this.toggleToggleBox}><a>改变回复</a></div>
+              <div className="toggle__box__content" >
+                <div className="btn btn-red-3d" onClick={this.joinEvent}>去</div>
+                <div className="btn btn-grey-3d" onClick={this.leaveEvent}>不去</div>
+              </div>
             </div>
           )
         }
@@ -34,8 +38,13 @@ var JoinEventSection = React.createClass({
       if (bailedMembers[i].id == UserStore._currentUser.id) {
         return {
           section: (
-            <div>currently NOT going
-              <div className="btn btn-grey-3d" onClick={this.leaveEvent}>i bailed</div>
+            <div className="join-event-section grey-left" >
+              您不打算参加此活动
+              <div className="toggle__box__trigger" onClick={this.toggleToggleBox}><a>改变回复</a></div>
+              <div className="toggle__box__content" >
+                <div className="btn btn-red-3d" onClick={this.joinEvent}>去</div>
+                <div className="btn btn-grey-3d" onClick={this.leaveEvent}>不去</div>
+              </div>
             </div>
           )
         }
@@ -56,9 +65,12 @@ var JoinEventSection = React.createClass({
     EventActions.joinEvent(this.props.event.id)
     this.setState({ section: (
       <div className="join-event-section green-joined" >
-        您准备参加这项活动
-        <div className="btn btn-red-3d" onClick={this.joinEvent}>去</div>
-        <div className="btn btn-grey-3d" onClick={this.leaveEvent}>不去</div>
+        您准备参加此活动
+        <div className="toggle__box__trigger" onClick={this.toggleToggleBox}><a>改变回复</a></div>
+        <div className="toggle__box__content" >
+          <div className="btn btn-red-3d" onClick={this.joinEvent}>去</div>
+          <div className="btn btn-grey-3d" onClick={this.leaveEvent}>不去</div>
+        </div>
       </div>
     ) });
   },
@@ -67,10 +79,18 @@ var JoinEventSection = React.createClass({
     EventActions.leaveEvent(this.props.event.id)
     this.setState({ section: (
       <div className="join-event-section grey-left" >
-        <div className="btn btn-red-3d" onClick={this.joinEvent}>去</div>
-        <div className="btn btn-grey-3d" onClick={this.leaveEvent}>不去</div>
+        您不打算参加此活动
+        <div className="toggle__box__trigger" onClick={this.toggleToggleBox}><a>改变回复</a></div>
+        <div className="toggle__box__content" >
+          <div className="btn btn-red-3d" onClick={this.joinEvent}>去</div>
+          <div className="btn btn-grey-3d" onClick={this.leaveEvent}>不去</div>
+        </div>
       </div>
     ) });
+  },
+
+  toggleToggleBox: function() {
+    $('.toggle__box__content').slideToggle()
   },
 
   render: function() {

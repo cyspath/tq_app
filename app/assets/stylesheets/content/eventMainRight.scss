@@ -6,11 +6,37 @@
   border-left: 1px solid $grey-3;
 
   .join-event-section.green-joined {
+    color: $white;
     background-color: #62AC75;
+    font-size: 16px;
+    text-align: center;
+    .toggle__box__trigger {
+      background-color: #83C49E;
+    }
+  }
+
+  .toggle__box__content {
+    display: none;
+  }
+
+  .toggle__box__trigger {
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 3px;
+    margin: 15px 0 5px;
+    font-family: $songti;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   .join-event-section.grey-left {
     background-color: $grey-4;
+    font-size: 16px;
+    text-align: center;
+    .toggle__box__trigger {
+      background-color: $grey-2-5;
+    }
   }
 
   .join-event-section {

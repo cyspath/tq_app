@@ -35,15 +35,11 @@ class User < ActiveRecord::Base
   end
 
   def upcoming_events
-    today = DateTime.now
-    events.select {|e| e.date >= today }
-          .sort { |a, b| a.date <=> b.date }
+    events.where("date >= ?", Date.today).order("date ASC, start_time ASC")
   end
 
   def past_events
-    today = DateTime.now
-    events.select {|e| e.date < today }
-          .sort { |a, b| b.date <=> a.date }
+    events.where("date < ?", Date.today).order("date DESC, start_time DESC")
   end
 
 end

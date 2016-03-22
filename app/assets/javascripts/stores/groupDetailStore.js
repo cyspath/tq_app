@@ -25,7 +25,10 @@ var GroupDetailStore = new _.extend({}, EventEmitter.prototype, {
   joinGroup: function(groupMember) {
     for (var i = 0; i < this._groupDetails.length ; i++) {
       if (this._groupDetails[i].id == groupMember.group_id) {
-        this._groupDetails[i].members.push(UserStore._currentUser)
+        var members = this._groupDetails[i].members
+        if (members.filter(function(e) { return e.id == UserStore._currentUser.id }).length === 0) {
+          members.push(UserStore._currentUser)
+        }
         this._currentDetail = this._groupDetails[i]
       }
     }
@@ -34,10 +37,10 @@ var GroupDetailStore = new _.extend({}, EventEmitter.prototype, {
   leaveGroup: function(groupMember) {
     for (var i = 0; i < this._groupDetails.length ; i++) {
       if (this._groupDetails[i].id == groupMember.group_id) {
-        var groupMembers = this._groupDetails[i].members
-        for (var j = 0; j < groupMembers.length ; j++) {
-          if (groupMembers[j].id == UserStore._currentUser.id) {
-            groupMembers.splice(j, 1)
+        var members = this._groupDetails[i].members
+        for (var j = 0; j < members.length ; j++) {
+          if (members[j].id == UserStore._currentUser.id) {
+            members.splice(j, 1)
           }
         }
       }

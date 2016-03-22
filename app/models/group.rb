@@ -15,16 +15,14 @@ class Group < ActiveRecord::Base
   has_many :events
 
   def upcoming_events
-    today = DateTime.now
     # events.select {|e| e.date >= today }
-    Event.where("group_id = ? AND date >= ? ", id, today).order("date ASC").includes(:founder, :members, :bailed_members)
+    Event.where("group_id = ? AND date >= ? ", id, Date.today).order("date ASC").includes(:founder, :members, :bailed_members)
           # .sort { |a, b| a.date <=> b.date }
   end
 
   def past_events
-    today = DateTime.now
     # events.select {|e| e.date < today }
-    Event.where("group_id = ? AND date < ?", id, today).order("date DESC").includes(:founder, :members, :bailed_members)
+    Event.where("group_id = ? AND date < ?", id, Date.today).order("date DESC").includes(:founder, :members, :bailed_members)
           # .sort { |a, b| b.date <=> a.date }
   end
 

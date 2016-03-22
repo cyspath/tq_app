@@ -1,6 +1,6 @@
 var JoinEventSection = React.createClass({
 
-  getInitialState: function() {
+  sectionState: function() {
     if (UserStore._currentUser === null || UserStore._currentUser === true) {
       return {
         section: (
@@ -61,36 +61,35 @@ var JoinEventSection = React.createClass({
     }
   },
 
+  getInitialState: function() {
+    return this.sectionState()
+  },
+
   joinEvent: function() {
     EventActions.joinEvent(this.props.event.id)
-    this.setState({ section: (
-      <div className="join-event-section green-joined" >
-        您准备参加此活动
-        <div className="toggle__box__trigger" onClick={this.toggleToggleBox}><a>改变回复</a></div>
-        <div className="toggle__box__content" >
-          <div className="btn btn-red-3d" onClick={this.joinEvent}>去</div>
-          <div className="btn btn-grey-3d" onClick={this.leaveEvent}>不去</div>
-        </div>
-      </div>
-    ) });
+    this.toggleToggleBox()
   },
 
   leaveEvent: function() {
     EventActions.leaveEvent(this.props.event.id)
-    this.setState({ section: (
-      <div className="join-event-section grey-left" >
-        您不打算参加此活动
-        <div className="toggle__box__trigger" onClick={this.toggleToggleBox}><a>改变回复</a></div>
-        <div className="toggle__box__content" >
-          <div className="btn btn-red-3d" onClick={this.joinEvent}>去</div>
-          <div className="btn btn-grey-3d" onClick={this.leaveEvent}>不去</div>
-        </div>
-      </div>
-    ) });
+    this.toggleToggleBox()
   },
 
   toggleToggleBox: function() {
     $('.toggle__box__content').slideToggle()
+  },
+
+  componentDidMount: function() {
+    EventDetailStore.addChangeListener(this._onChange)
+  },
+
+  componentWillUnmount: function() {
+    EventDetailStore.removeChangeListener(this._onChange);
+  },
+
+  _onChange: function() {
+    var state = this.sectionState()
+    this.setState(state);
   },
 
   render: function() {

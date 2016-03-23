@@ -5,6 +5,6 @@ json.events do
     json.partial! 'event',
                   event: event,
                   display_group: false,
-                  display_members: false
+                  display_members: true
   end
 end

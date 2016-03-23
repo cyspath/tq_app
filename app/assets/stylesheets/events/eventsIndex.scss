@@ -72,6 +72,9 @@
   float: left;
   padding: 15px 10px;
   width: 20%;
+  a {
+    display: block;
+  }
   .left {
     float: left;
     font-size: 16px;
@@ -80,6 +83,21 @@
   .right {
     float: left;
     font-size: 12px;
+  }
+  .attending-status {
+    font-size: 18px;
+    padding: 10px 2px;
+    font-family: $kaiti;
+    span {
+      letter-spacing: normal;
+      margin: 0 5px;
+    }
+  }
+  .attending-status-going {
+    color: $red-banner;
+  }
+  .attending-status-bailed {
+    color: $grey-4;
   }
 }
 

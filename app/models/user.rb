@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
   end
 
   def upcoming_events
-    events.where("date >= ?", Date.today).order("date ASC, start_time ASC")
+    events.where("date >= ? AND going = ?", Date.today, true).order("date ASC, start_time ASC")
   end
 
   def past_events

@@ -1,9 +1,49 @@
 var Event = React.createClass({
 
+  setEventStatus: function() {
+    this.currentUserMembership = this.memberStatus()
+    if (this.currentUserMembership === "isMember") {
+      this.going = (<div className="attending-status attending-status-going" ><i className="fa fa-check-circle"></i><span>会参加</span></div>)
+      this.color = "#E14F52"
+    } else if (this.currentUserMembership === "isBailedMember") {
+      this.going = (<div className="attending-status attending-status-bailed"><i className="fa fa-ban"></i><span>已退出</span></div>)
+      this.color = "#FFDFD4"
+    } else {
+      this.going = (<div></div>)
+      this.color = "#FFDFD4"
+    }
+  },
+
+  memberStatus: function() {
+    var isMember = this.hasCurrentUser(this.props.members)
+    if (isMember === false) {
+      var isBailedMember = this.hasCurrentUser(this.props.bailed_members)
+    }
+    if (isMember === true) {
+      return "isMember"
+    } else if (isBailedMember === true) {
+      return "isBailedMember"
+    } else {
+      return "isNotMember"
+    }
+  },
+
+  hasCurrentUser: function(arr) {
+    for (var i = 0; i < arr.length; i++) {
+      if (arr[i].id == UserStore._currentUser.id) {
+        return true
+      }
+    }
+    return false
+  },
+
   render: function() {
     var time = moment(this.props.start_time, "hmm").format("hh:mma")
+    this.setEventStatus()
+    var color = {'borderLeft': '5px solid '  + this.color}
+    var status = this.going
     return (
-      <div className="events-index__item-container">
+      <div className="events-index__item-container" style={color}>
 
         <div className="events-index__container-inner-left" >
           <Link to="eventDetail" params={{eventId: this.props.id}}>
@@ -14,6 +54,7 @@ var Event = React.createClass({
               {time.slice(time.length - 2)}
             </div>
           </Link>
+          {status}
         </div>
 
         <div className="events-index__container-inner-right" >

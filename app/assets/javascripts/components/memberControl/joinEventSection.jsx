@@ -68,11 +68,13 @@ var JoinEventSection = React.createClass({
   joinEvent: function() {
     EventActions.joinEvent(this.props.event.id)
     this.toggleToggleBox()
+    GroupDetailStore._groupDetails = []
   },
 
   leaveEvent: function() {
     EventActions.leaveEvent(this.props.event.id)
     this.toggleToggleBox()
+    GroupDetailStore._groupDetails = []
   },
 
   toggleToggleBox: function() {

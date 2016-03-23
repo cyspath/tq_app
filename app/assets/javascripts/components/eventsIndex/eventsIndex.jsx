@@ -9,6 +9,7 @@ var EventsIndex = React.createClass({
   },
 
   componentDidMount: function() {
+    this.resetState()
     window.showSpinner()
     window.addEventListener("scroll", this.handleScroll)
     this.getMore()
@@ -34,6 +35,15 @@ var EventsIndex = React.createClass({
     window.hideSpinner()
     $('#event-index__grey-spinner').addClass('hide')
     this.setState({ eventsList: EventStore._allEvents });
+  },
+
+  resetState: function() {
+    EventStore.resetState()
+    this.setState({
+      page: 1,
+      atPageBottom: false,
+      eventsList: EventStore._allEvents
+    });
   },
 
   getMore: function() {

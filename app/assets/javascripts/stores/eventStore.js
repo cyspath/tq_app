@@ -3,6 +3,11 @@ var EventStore = new _.extend({}, EventEmitter.prototype, {
   _allEvents: [],
   _doneFetching: false,
 
+  resetState: function() {
+    this._allEvents = []
+    this._doneFetching = false
+  },
+
   getEvents: function(events) {
     if (events.length === 0) {
       this._doneFetching = true
